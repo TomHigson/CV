@@ -1,0 +1,46 @@
+{
+  "name":"Thomas Higson",
+  "intro":"Blah",
+  "portrait":"face.jpg",
+  "skills": [
+    {
+      "name":"Dancing",
+      "level":"beginner",
+      "link":"www.dancy-pants.com"
+    },
+    {
+      "name":"Kissing",
+      "level":"expert"
+    }
+  ],
+  "jobs": [
+    {
+      "company":"MBDA Systems",
+      "avatar":"mbda.png",
+      "link":"www.mbda-systems.com",
+      "startYear":"1999",
+      "startMonth":"4",
+      "endYear":"2001",
+      "endMonth":"4",
+      "contact":"Ms. Tough",
+      "contactEmail":"tough@gmail.com",
+      "roles": [
+        {
+          "project":"Future Cruise & Anti-Ship System Concept",
+          "role":"System Architect",
+          "image":"mbda2.png",
+          "link":"www.dancy-pants.com",
+          "responsibilities": [
+            {
+              "description":"woo",
+              "subResponsibilities":[
+                "whee",
+                "hoobie"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
