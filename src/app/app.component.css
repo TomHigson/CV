@@ -1,0 +1,17 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.stick-to-top {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure app content doesn't overlap it */
+}
+
+.role-image {
+  float: right;
+  width: 250px;
+  margin-left:  20px;
+  margin-bottom: 20px;
+}
