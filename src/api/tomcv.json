@@ -15,7 +15,7 @@
   ],
   "jobs": [
     {
-      "company":"MBDA Systems",
+      "companyName":"MBDA Systems",
       "avatar":"mbda.png",
       "link":"www.mbda-systems.com",
       "startYear":"1999",
