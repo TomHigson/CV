@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title}     from '@angular/platform-browser';
 import {Cv} from './cv';
 import {Skill} from './Skill';
 import {CvService} from './cv.service';
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
   cv:Cv = null;
   filteredSkills:Skill[] = [];
   
-  constructor(private cvService:CvService) {}
+  constructor(private cvService:CvService, private titleService:Title) {}
 
   ngOnInit(): void {
 
@@ -23,6 +24,7 @@ export class AppComponent implements OnInit {
         this.cv = cv;
         this.filteredSkills = cv.skills;
         this.pageTitle = cv.name + `'s CV`;
+        this.titleService.setTitle(this.pageTitle);
       }
     );
   }
