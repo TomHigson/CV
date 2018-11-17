@@ -6,6 +6,6 @@ export interface Skill {
 
 export enum SkillLevel {
   expert = "Expert",
-  practitioner = "Practitioner",
+  professional = "Professional",
   experienced = "Experienced"
 }
