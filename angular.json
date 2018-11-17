@@ -23,8 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/theme/styles.scss",
-              "src/theme/orange_pink.scss"
+              "src/styles.scss",
             ],
             "scripts": []
           },

@@ -15,9 +15,23 @@ $theme-accent:  mat-palette($mat-red, A100, 50, 600);
 $theme-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$dark-theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$dark-theme:  mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
 $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Include the theme style for angular material core
 // Note: should also import and @include the theme mixins for each local component
-@include angular-material-theme($dark-theme);
+.dark-theme{
+  @include angular-material-theme($dark-theme);
+}
+.light-theme{
+  @include angular-material-theme($light-theme);
+}
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}

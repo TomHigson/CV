@@ -3,6 +3,7 @@ import {Title}     from '@angular/platform-browser';
 import {Cv} from './cv';
 import {Skill} from './Skill';
 import {CvService} from './cv.service';
+import {OverlayContainer} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,15 @@ export class AppComponent implements OnInit {
   pageTitle = '';
   cv:Cv = null;
   filteredSkills:Skill[] = [];
+  currentTheme=`light-theme`;
   
-  constructor(private cvService:CvService, private titleService:Title) {}
+  constructor(private cvService:CvService,
+              private titleService:Title,
+              private overlayContainer:OverlayContainer) {}
 
   ngOnInit(): void {
+
+    this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
 
     //load cv using cv service
     this.cvService.getCv().subscribe(
@@ -28,4 +34,17 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  toggleTheme():void {
+    this.currentTheme = this.currentTheme===`dark-theme`?`light-theme`:`dark-theme`;
+
+    //also change theme of overlays
+    const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
+    const themeClassesToRemove = Array.from(overlayContainerClasses).filter((item: string) => item.includes('-theme'));
+    if (themeClassesToRemove.length) {
+       overlayContainerClasses.remove(...themeClassesToRemove);
+    }
+    overlayContainerClasses.add(this.currentTheme);
+  }
+
 }
