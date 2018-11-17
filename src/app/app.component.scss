@@ -1,0 +1,50 @@
+.stick-to-top {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure app content doesn't overlap it */
+}
+
+.job-avatar {
+  width:80px;
+  height:80px;
+  overflow: hidden;
+  border-radius:50%;
+  position: relative;
+}
+.job-avatar img {
+  /* center and scale to fit width */
+  width:80px;
+  height:auto;
+  position: absolute;
+  top:50%;
+  transform: translate(0,-50%)
+}
+
+.job-level {
+  font-size:200%;
+}
+.job-company {
+  font-size:120%;
+}
+.job-period {
+  font-size:120%;
+  font-weight:bold;
+}
+.job-duration {
+  font-size:120%;
+}
+
+.role-project {
+  font-weight:bold;
+}
+.role-title {
+  font-weight:bold;
+}
+.role-image {
+  float: right;
+  width: 250px;
+  margin-left:  20px;
+  margin-bottom: 20px;
+}
+
