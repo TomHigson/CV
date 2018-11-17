@@ -53,7 +53,11 @@
     },
     {
       "name":"User experience design",
-      "level":"Expert"
+      "level":"Professional"
+    },
+    {
+      "name":"People Management",
+      "level":"Professional"
     }
   ],
   "skills": [
@@ -61,6 +65,11 @@
       "name":"Angular",
       "level":"Experienced",
       "link":"https://angular.io/"
+    },
+    {
+      "name":"SASS",
+      "level":"Experienced",
+      "link":"https://sass-lang.com/"
     },
     {
       "name":"Microsoft Azure",
@@ -270,7 +279,7 @@
       "endMonth":"9",
       "roles": [
         {
-          "project":"Future Cruise & Anti-Ship System Concept",
+          "project":"Future Cruise & Anti-Ship System",
           "role":"System Architect",
           "image":"mbda1.png",
           "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
@@ -430,8 +439,7 @@
       "description":"Introduced an IT system to replace the existing manual system\nReduced fines due to late work by approximately 75%\nCoordinated 6 teams of labourers"
     },
     {
-      "companyName":"Personal Project",
-      "level":"Developer",
+      "level":"Personal Projects",
       "avatar":"personal.png",
       "roles": [
         {
@@ -453,6 +461,21 @@
           "responsibilities": [
             {
               "description":"Coming soon"
+            }
+          ]
+        },
+        {
+          "role":"Presenting roles",
+          "image":"personal3.png",
+          "responsibilities": [
+            {
+              "description":"I like to present at technology conferences when I have the opportunity. Topics I have presented so far include:",
+              "subResponsibilities":[
+                "Specialising the Systems Modelling Language for safety analysis",
+                "Analysing the safety of intended functions",
+                "Apps in Defence",
+                "Blockchain in defence"
+              ]
             }
           ]
         }
