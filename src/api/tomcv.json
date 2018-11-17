@@ -1,6 +1,6 @@
 {
   "name":"Thomas Higson",
-  "intro":"Blah",
+  "description":"Blah",
   "portrait":"face.jpg",
   "fields": [
     {
@@ -36,7 +36,11 @@
       "level":"Professional"
     },
     {
-      "name":"Automotive and aerospace safety analysis using ISO26262 and IEC61508",
+      "name":"Aerospace safety analysis using IEC61508",
+      "level":"Professional"
+    },
+    {
+      "name":"Automotive safety analysis using ISO26262",
       "level":"Professional"
     },
     {
@@ -181,35 +185,12 @@
         {
           "project":"Vertex",
           "role":"Engineering Lead",
-          "responsibilities": [
-            {
-              "description":"Developed a prototype application platform for peer-to-peer defence networks",
-              "subResponsibilities":[
-                "Uses a simple, modular architecture to prevent vendor lock-in",
-                "Open and flexible enough to allow complete vendor freedom, though featured enough to encourage participation"
-              ]
-            },
-            {
-              "description":"Identified the need for and introduced DevOps specialists to improve release cadence, reduce defect severity and increase the project’s ability to react to change",
-              "subResponsibilities":[
-                "Championed cultural change",
-                "Designed and implemented several pipelines across multiple teams",
-                "Working to replace lab-based 3rd party integration with secure, web-based, self-service integration environments"
-              ]
-            },
-            {
-              "description":"Introduced a simple, flexible project management plan to allow IRAD activities to be more collaborative and consistent"
-            }            
-          ]
+          "description":"Coming soon"
         },
         {
           "project":"MORPHEUS Evolve to Open",
           "role":"3rd Party Developer Lead",
-          "responsibilities": [
-            {
-              "description":"Coming soon"
-            }       
-          ]
+          "description": "Coming soon"
         }
       ]
     },
@@ -228,43 +209,7 @@
           "role":"System Safety Lead",
           "image":"zf1.png",
           "link":"https://www.youtube.com/watch?v=GLdKrCWDaAg",
-          "responsibilities": [
-            {
-              "description":"Delivered safety cases for autonomy level 1 (hands on) systems",
-              "subResponsibilities":[
-                "Lead an activity to adapt a passenger vehicle safety case for trucks",
-                "Analysed the safety impact of different sensor configurations",
-                "Worked alongside project managers to plan system and safety milestones",
-                "Acted as the primary point of contact between prototype and project development teams"
-              ]
-            },
-            {
-              "description":"Assisted in developing concepts for autonomy level 2 (hands off) systems"
-            },
-            {
-              "description":"Part-authored and revieed key safety work products",
-              "subResponsibilities":[
-                "Impact analysis",
-                "Failure mode and Effect Analysis for hardware design and production (DFMEA, PFMEA)",
-                "Failure Tree Analysis for software (FTA)",
-                "Robustness analysis"
-              ]
-            },
-            {
-              "description":"Managed 6 people and expanded the team by recruiting new talent",
-              "subResponsibilities":[
-                "whee",
-                "hoobie"
-              ]
-            },
-            {
-              "description":"Encouraged a stronger safety culture",
-              "subResponsibilities":[
-                "Delivering safety training",
-                "Working between multiple departments to determine, record and propagate best practice"
-              ]
-            }
-          ]
+          "description": "Coming soon"
         }
       ]
     },
@@ -283,75 +228,18 @@
           "role":"System Architect",
           "image":"mbda1.png",
           "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "responsibilities": [
-            {
-              "description":"Investigated novel warhead, electronic warfare and flight path management technologies"
-            },
-            {
-              "description":"Scoped and planned an uplift program to further investigate disruptive technologies and assess their feasibility"
-            },
-            {
-              "description":"Created the weapon system architecture to identify, assess and resolve the project’s major decision points",
-              "subResponsibilities":[
-                "Focused on integration onto multiple existing infrastructures, interoperability, communications architecture and the implications of various technologies"
-              ]
-            },
-            {
-              "description":"Captured and traded the customer’s needs through a set of international workshops"
-            }       
-          ]
+          "description": "Coming soon"
         },
         {
           "project":"Autonomous Air Vehicle",
           "role":"Flight Path Management Domain Lead",
           "image":"mbda2.png",
           "link":"https://www.mbda-systems.com/press-releases/team-lm-launches-fire-shadow-to-meet-uk-mod-loitering-munition-requirement/",
-          "responsibilities": [
-            {
-              "description":"Managed work packages for several systems engineers and test engineers"
-            },
-            {
-              "description":"Allocated functionality and specified the interface between internal and external software teams"
-            },
-            {
-              "description":"Introduced new model-based systems engineering techniques",
-              "subResponsibilities":[
-                "Removed duplication of effort by shifting the emphasis to model definition rather than text definition",
-                "Worked with software, algorithm and testing teams to make the model work for them",
-                "Found and resolved several design and implementation issues"
-              ]
-            },
-            {
-              "description":"Received a Contribution to the Business award at MBDA 2011 National Awards"
-            }       
-          ]
+          "description": "Coming soon"
         },
         {
           "project":"Company Improvement",
-          "responsibilities": [
-            {
-              "description":"Identified the need for, proposed and managed the formalisation of international model-based systems engineering practices",
-              "subResponsibilities":[
-                "Focused on integration onto multiple existing infrastructures, interoperability, communications architecture and the implications of various technologies",
-                "Led a team of principal engineers to produce new modelling standards and guidelines to improve the international tool set and associated training",
-                "Rolled out new business practices across multiple billion euros worth of projects"
-              ]
-            },
-            {
-              "description":"Established an international systems engineering working group to:",
-              "subResponsibilities":[
-                "Disseminate lessons learned",
-                "Encourage skill sharing between software and systems teams",
-                "Improve product reuse potential"
-              ]
-            },
-            {
-              "description":"Wrote and delivered an MBSE training course to over 100 engineers, including 4 chief engineers"
-            },
-            {
-              "description":"Managed the development of new java tools to query, visualise and manipulate a wide variety of models using customisable schema"
-            }       
-          ]
+          "description": "Coming soon"
         }
       ]
     },
@@ -370,50 +258,19 @@
           "role":"Software Engineer",
           "image":"thales1.png",
           "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "responsibilities": [
-            {
-              "description":"Designed and produced modular C# desktop products that queried an SQL database"
-            },
-            {
-              "description":"Maintained and reworked C++ integrated software components for use across multiple radio products"
-            },
-            {
-              "description":"Proposed an automated test bench using Lauterbach trace modules, allowing far more detailed testing and debugging than previously possible"
-            }    
-          ]
+          "description": "Coming soon"
         },
         {
           "project":"Command & Control Information System",
           "role":"Software Engineer",
           "link":"http://www.defense-aerospace.com/article-view/release/74687/thales-uk-wins-allied-reaction-corps-contract.html",
-          "responsibilities": [
-            {
-              "description":"Worked within a team to design, implement and maintain a multi-domain Windows Server",
-              "subResponsibilities":[
-                "Incorporated a complex oracle database system",
-                "Required accrediting to NATO security standards",
-                "Included 8 weeks of overseas customer support",
-                "Project received an award for excellence by the ministry of defence in 2008",
-                "At completion, the project achieved the highest recorded MOD feedback score of all UK Thales Land and Joint Systems projects"
-              ]
-            }     
-          ]
+          "description": "Coming soon"
         },
         {
           "project":"Military Tracking System",
           "role":"Researcher",
           "link":"https://www.thalesgroup.com/en/miltrak-alert-and-tracking-system",
-          "responsibilities": [
-            {
-              "description":"Investigated repurposing factory monitoring equipment and mobile phone technology to produce a mesh network to improve battle-space awareness for soldiers"
-            },
-            {
-              "description":"Produced embedded software using C"
-            },
-            {
-              "description":"Received a silver award at the Thales 2008 International Innovation Awards"
-            }       
-          ]
+          "description": "Coming soon"
         }
       ]
     },
@@ -447,37 +304,19 @@
           "role":"Developer",
           "image":"personal1.png",
           "link":"https://github.com/TomHigson/CV",
-          "responsibilities": [
-            {
-              "description":"Coming soon"
-            }
-          ]
+          "description": "Coming soon"
         },
         {
           "project":"Graphical recipe system",
           "role":"Developer",
           "image":"personal2.png",
           "link":"https://github.com/TomHigson/GraphicalRecipeSystem",
-          "responsibilities": [
-            {
-              "description":"Coming soon"
-            }
-          ]
+          "description": "Coming soon"
         },
         {
           "role":"Presenting roles",
           "image":"personal3.png",
-          "responsibilities": [
-            {
-              "description":"I like to present at technology conferences when I have the opportunity. Topics I have presented so far include:",
-              "subResponsibilities":[
-                "Specialising the Systems Modelling Language for safety analysis",
-                "Analysing the safety of intended functions",
-                "Apps in Defence",
-                "Blockchain in defence"
-              ]
-            }
-          ]
+          "description": "Coming soon"
         }
       ]
     }
