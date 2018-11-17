@@ -6,15 +6,15 @@
 }
 
 .job-avatar {
-  width:80px;
-  height:80px;
+  width:60px;
+  height:60px;
   overflow: hidden;
   border-radius:50%;
   position: relative;
 }
 .job-avatar img {
   /* center and scale to fit width */
-  width:80px;
+  width:60px;
   height:auto;
   position: absolute;
   top:50%;
@@ -47,4 +47,3 @@
   margin-left:  20px;
   margin-bottom: 20px;
 }
-
