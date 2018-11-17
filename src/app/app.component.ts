@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   pageTitle = '';
   cv:Cv = null;
   filteredSkills:Skill[] = [];
-  currentTheme=`light-theme`;
+  currentTheme=`dark-theme`;
   
   constructor(private cvService:CvService,
               private titleService:Title,
