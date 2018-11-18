@@ -5,9 +5,9 @@
 
 // collected themes from all local components in one place
 @mixin themes-for-local-components($theme) {
-  @include app-component-color-allocation($theme);
-  @include job-component-color-allocation($theme);
-  @include role-component-color-allocation($theme);
+  @include app-component-style($theme);
+  @include job-component-style($theme);
+  @include role-component-style($theme);
   // ...populate as components are created
 
 }

@@ -1,23 +1,21 @@
 @import '~@angular/material/theming';
-@mixin role-component-color-allocation($theme) {
+@mixin role-component-style($theme) {
   $primary:    map-get($theme, primary);
   $accent:     map-get($theme, accent);
   $warn:       map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  //colour assignments to go here
-}
-
-.role-project {
-  font-weight:bold;
-}
-.role-title {
-  font-weight:bold;
-}
-.role-image {
-  float: right;
-  width: 250px;
-  margin-left:  20px;
-  margin-bottom: 20px;
+  .role-project {
+    font-weight:bold;
+  }
+  .role-title {
+    font-weight:bold;
+  }
+  .role-image {
+    float: right;
+    width: 250px;
+    margin-left:  20px;
+    margin-bottom: 20px;
+  }
 }

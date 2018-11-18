@@ -1,5 +1,5 @@
 @import '~@angular/material/theming';
-@mixin app-component-color-allocation($theme) {
+@mixin app-component-style($theme) {
   $primary:    map-get($theme, primary);
   $accent:     map-get($theme, accent);
   $warn:       map-get($theme, warn);
@@ -10,16 +10,14 @@
   ::-moz-selection { //for Firefox
     background:mat-color($accent);
   }
-
   ::selection { //for other browsers
     background:mat-color($accent);
   }
-}
 
-.stick-to-top {
-  position: sticky;
-  position: -webkit-sticky; /* For macOS/iOS Safari */
-  top: 0; /* Sets the sticky toolbar to be on top */
-  z-index: 1000; /* Ensure app content doesn't overlap it */
+  .stick-to-top {
+    position: sticky;
+    position: -webkit-sticky; /* For macOS/iOS Safari */
+    top: 0; /* Sets the sticky toolbar to be on top */
+    z-index: 1000; /* Ensure app content doesn't overlap it */
+  }
 }
-
