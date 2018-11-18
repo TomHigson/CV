@@ -1,9 +1,13 @@
 @import '~@angular/material/theming';
 @import './app/app.component.scss';
+@import './app/job/job.component.scss';
+@import './app/role/role.component.scss';
 
 // collected themes from all local components in one place
 @mixin themes-for-local-components($theme) {
   @include app-component-color-allocation($theme);
+  @include job-component-color-allocation($theme);
+  @include role-component-color-allocation($theme);
   // ...populate as components are created
 
 }

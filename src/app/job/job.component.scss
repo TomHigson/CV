@@ -1,0 +1,32 @@
+@import '~@angular/material/theming';
+@mixin job-component-color-allocation($theme) {
+  $primary:    map-get($theme, primary);
+  $accent:     map-get($theme, accent);
+  $warn:       map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .job-company {
+    color:mat-color($foreground, secondary-text);
+  }
+}
+
+.job-avatar {
+  width:60px;
+  height:60px;
+  background-size:cover;
+  background-position:center;
+  border-radius:50%;
+}
+
+.job-level {
+  font-size:200%;
+}
+.job-company {
+  font-size:140%;
+}
+.job-period {
+  font-weight:bold;
+}
+.job-duration {
+}

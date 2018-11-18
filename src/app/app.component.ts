@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Title}     from '@angular/platform-browser';
 import {Cv} from './cv';
-import {Skill} from './Skill';
+import {Skill} from './skill/skill';
 import {CvService} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
 

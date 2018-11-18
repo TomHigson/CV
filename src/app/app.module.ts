@@ -16,10 +16,16 @@ import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
 import {AppComponent} from './app.component';
+import {JobComponent} from './job/job.component';
+import {RoleComponent} from './role/role.component';
+import {SkillComponent} from './skill/skill.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    JobComponent,
+    RoleComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,

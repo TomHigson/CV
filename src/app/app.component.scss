@@ -6,8 +6,13 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  .job-company {
-    color:mat-color($foreground, secondary-text);
+  //change text selection colour
+  ::-moz-selection { //for Firefox
+    background:mat-color($accent);
+  }
+
+  ::selection { //for other browsers
+    background:mat-color($accent);
   }
 }
 
@@ -18,45 +23,3 @@
   z-index: 1000; /* Ensure app content doesn't overlap it */
 }
 
-.job-avatar {
-  width:60px;
-  height:60px;
-  overflow: hidden;
-  border-radius:50%;
-  position: relative;
-}
-.job-avatar img {
-  /* center and scale to fit width */
-  width:60px;
-  height:auto;
-  position: absolute;
-  top:50%;
-  transform: translate(0,-50%)
-}
-
-.job-level {
-  font-size:200%;
-}
-.job-company {
-  font-size:140%;
-}
-.job-period {
-  font-size:120%;
-  font-weight:bold;
-}
-.job-duration {
-  font-size:120%;
-}
-
-.role-project {
-  font-weight:bold;
-}
-.role-title {
-  font-weight:bold;
-}
-.role-image {
-  float: right;
-  width: 250px;
-  margin-left:  20px;
-  margin-bottom: 20px;
-}

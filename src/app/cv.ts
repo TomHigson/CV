@@ -1,5 +1,5 @@
-import { Job } from "./job";
-import { Skill } from "./skill";
+import { Job } from "./job/job";
+import { Skill } from "./skill/skill";
 
 export interface Cv {
   name:string;  //the name of the person the CV describes
