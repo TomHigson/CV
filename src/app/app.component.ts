@@ -13,7 +13,6 @@ import {DomSanitizer} from "@angular/platform-browser";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  pageTitle = '';
   cv:Cv = null;
   filteredSkills:Skill[] = [];
   currentTheme=`dark-theme`;
@@ -33,11 +32,12 @@ export class AppComponent implements OnInit {
       cv => {
         this.cv = cv;
         this.filteredSkills = cv.skills;
-        this.pageTitle = cv.name + `'s CV`;
-        this.titleService.setTitle(this.pageTitle);
+        this.titleService.setTitle(cv.name + `'s CV`);
+
       }
     );
 
+    //load icons
     this.addIcon(`lightbulb-on`)
     this.addIcon(`lightbulb-off`)
   }
