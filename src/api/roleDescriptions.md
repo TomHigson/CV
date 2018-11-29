@@ -24,19 +24,17 @@ Encouraged a stronger safety culture
   Delivering safety training
   Working between multiple departments to determine, record and propagate best practice
 
-Investigated novel warhead, electronic warfare and flight path management technologies
-Scoped and planned an uplift program to further investigate disruptive technologies and assess their feasibility
+Scoped and planned an uplift program to assess feasibility of disruptive technologies
 Created the weapon system architecture to identify, assess and resolve the project’s major decision points
-  Focused on integration onto multiple existing infrastructures, interoperability, communications architecture and the implications of various technologies
+  Focused on integration onto multiple existing infrastructures, interoperability, communications architecture and the implications of new technologies
 Captured and traded the customer’s needs through a set of international workshops
 
 Managed work packages for several systems engineers and test engineers
-Allocated functionality and specified the interface between internal and external software teams
+Specified the interface between internal and external software teams
 Introduced new model-based systems engineering techniques
-  Removed duplication of effort by shifting the emphasis to model definition rather than text definition
+  Icreased productivity by removing duplication of effort
   Worked with software, algorithm and testing teams to make the model work for them
-  Found and resolved several design and implementation issues
-Received a Contribution to the Business award at MBDA 2011 National Awards
+Received a Contribution to the Business award at the MBDA 2011 National Awards
 
 Identified the need for, proposed and managed the formalisation of international model-based systems engineering practices
   Led a team of principal engineers to produce new modelling standards and guidelines to improve the international tool set and associated training
