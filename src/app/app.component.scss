@@ -13,11 +13,23 @@
   ::selection { //for other browsers
     background:mat-color($accent);
   }
+}
 
-  .stick-to-top {
-    position: sticky;
-    position: -webkit-sticky; /* For macOS/iOS Safari */
-    top: 0; /* Sets the sticky toolbar to be on top */
-    z-index: 1000; /* Ensure app content doesn't overlap it */
-  }
+//allows setting angular material icon sizes
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+mat-icon {
+  @include md-icon-size(24px);
+}
+
+.stick-to-top {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure app content doesn't overlap it */
 }

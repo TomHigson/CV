@@ -4,6 +4,8 @@ import {Cv} from './cv';
 import {Skill} from './skill/skill';
 import {CvService} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
+import {MatIconRegistry} from "@angular/material/icon";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ export class AppComponent implements OnInit {
   
   constructor(private cvService:CvService,
               private titleService:Title,
-              private overlayContainer:OverlayContainer) {}
+              private overlayContainer:OverlayContainer,
+              private matIconRegistry: MatIconRegistry,
+              private domSanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
 
@@ -32,6 +36,21 @@ export class AppComponent implements OnInit {
         this.pageTitle = cv.name + `'s CV`;
         this.titleService.setTitle(this.pageTitle);
       }
+    );
+
+    this.addIcon(`lightbulb-on`)
+    this.addIcon(`lightbulb-off`)
+  }
+  
+  /**Helper method to load an icon into the material icon registry
+   * It assumes the icon is located in assets/icons and is an SVG.
+   * It uses the filename as the registered name
+   * @param name The of the new icon without any extension or leading path
+   */
+  private addIcon (filename:string):void {
+    this.matIconRegistry.addSvgIcon(
+      filename,
+      this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/` + filename + `.svg`)
     );
   }
 
