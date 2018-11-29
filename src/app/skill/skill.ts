@@ -1,6 +1,6 @@
 export interface Skill {
   name:string;
-  level:SkillLevel;
+  level?:SkillLevel;
   link?:string;  //for technology/tool homepage
 }
 
