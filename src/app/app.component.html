@@ -1,22 +1,28 @@
 <div [class]="currentTheme">
-  <mat-toolbar class="stick-to-top">
-    <div>
+  <mat-toolbar class="stick-to-top"
+               fxLayout="row"
+               fxLayoutGap="10px"
+               fxLayoutAlign="end center">
+    <div fxFlex="grow">
       Thomas Higson's CV
     </div>
     <button mat-button
             color="primary"
-            (click)='toggleTheme()'>
+            (click)='toggleTheme()'
+            fxFlex="none">
       <mat-icon [svgIcon]="currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'">
       </mat-icon>
       Toggle theme
     </button>
     <button mat-button
-            color="primary">
+            color="primary"
+            fxFlex="none">
       <mat-icon>arrow_downward</mat-icon>
       Download
     </button>
     <button mat-button
-            color="primary">
+            color="primary"
+            fxFlex="none">
       <mat-icon>alternate_email</mat-icon>
       Contact
     </button>
