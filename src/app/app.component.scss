@@ -15,10 +15,6 @@
   }
 }
 
-mat-icon {
-  @include md-icon-size(24px);
-}
-
 .stick-to-top {
   position: sticky;
   position: -webkit-sticky; /* For macOS/iOS Safari */

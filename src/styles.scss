@@ -42,14 +42,6 @@ body {
   margin: 0;
 }
 
-//allows setting angular material icon sizes
-@mixin md-icon-size($size: 24px) {
-  font-size: $size;
-  height: $size;
-  width: $size;
-  line-height: $size;
-}
-
 .basic-container {
   padding: 30px;
 }
