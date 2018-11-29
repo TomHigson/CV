@@ -1,17 +1,17 @@
 <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center">
   <div class=    "job-avatar"
-       [ngStyle]="{'background-image':'url(' + '../assets/mbda.png' + ')'}"
+       [ngStyle]="{'background-image':'url(../assets/logos/' + job.avatar + ')'}"
        fxFlex=   "none"></div>
   <div fxFlex="auto" fxLayout="column" fxLayoutGap="4px" fxLayoutAlign="space-evenly">
     <div class="job-level">
-      Principal engineer
+      {{job.level}}
     </div>
     <div class="job-company">
-      MBDA Systems
+      {{job.companyName}}
     </div>
   </div>
   <div fxFlexAlign="end" align="right">
-    <span class="job-period">Sep 2017 – Current</span>
+    <span class="job-period">{{job.startDate}} –  Current</span>
     <br>
     <span class="job-duration">(1 year, 1 month)</span>
   </div>

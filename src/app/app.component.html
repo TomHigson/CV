@@ -21,16 +21,17 @@
       Download
     </button>
     <button mat-button
-            color="primary"
-            fxFlex="none">
+       color="primary"
+       fxFlex="none">
       <mat-icon>alternate_email</mat-icon>
       Contact
-    </button>
+  </button>
   </mat-toolbar>
 
   <div class="mat-app-background basic-container">
 
-    <app-job></app-job>
+
+    <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
     
   </div>
 </div>
