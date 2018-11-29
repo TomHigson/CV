@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError, tap, map} from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 
 import {Cv} from './cv';
 
@@ -21,7 +21,7 @@ export class CvService {
 
   private handleError(err: HttpErrorResponse) {
     // in larger scale app could send to remote logging service
-    // instead of just log it to the console
+    // instead just log it to the console
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
       // client-side or network error
