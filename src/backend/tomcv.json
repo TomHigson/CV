@@ -1,6 +1,6 @@
 {
   "name":"Thomas Higson",
-  "description":"Blah",
+  "description":"#intro.md",
   "portrait":"face.jpg",
   "fields": [
     {
@@ -178,19 +178,19 @@
       "avatar":"gd.png",
       "link":"https://www.gd.com/",
       "startYear":"2017",
-      "startMonth":"10",
+      "startMonth":"9",
       "contact":"Bina Taylor",
       "contactEmail":"bina.taylor@gd-ms.uk",
       "roles": [
         {
           "project":"Vertex",
           "role":"Engineering Lead",
-          "description":"Coming soon"
+          "description":"#gd1.md"
         },
         {
           "project":"MORPHEUS Evolve to Open",
           "role":"3rd Party Developer Lead",
-          "description": "Coming soon"
+          "description": "#gd2.md"
         }
       ]
     },
@@ -208,8 +208,9 @@
           "project":"Radar Customer Projects",
           "role":"System Safety Lead",
           "image":"zf1.png",
+          "imageAlt":"Adaptive Cruise Control concept image",
           "link":"https://www.youtube.com/watch?v=GLdKrCWDaAg",
-          "description": "Coming soon"
+          "description": "#zf1.md"
         }
       ]
     },
@@ -227,19 +228,21 @@
           "project":"Future Cruise & Anti-Ship System",
           "role":"System Architect",
           "image":"mbda1.png",
+          "imageAlt":"Concept visions render",
           "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "description": "Coming soon"
+          "description": "#mbda1.md"
         },
         {
           "project":"Autonomous Air Vehicle",
           "role":"Flight Path Management Domain Lead",
           "image":"mbda2.png",
+          "imageAlt":"Trial launch",
           "link":"https://www.mbda-systems.com/press-releases/team-lm-launches-fire-shadow-to-meet-uk-mod-loitering-munition-requirement/",
-          "description": "Coming soon"
+          "description": "#mbda2.md"
         },
         {
           "project":"Company Improvement",
-          "description": "Coming soon"
+          "description": "#mbda3.md"
         }
       ]
     },
@@ -257,33 +260,34 @@
           "project":"Covert Radio System",
           "role":"Software Engineer",
           "image":"thales1.png",
+          "imageAlt":"Similar radio",
           "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "description": "Coming soon"
+          "description": "#thales1.md"
         },
         {
           "project":"Command & Control Information System",
           "role":"Software Engineer",
           "link":"http://www.defense-aerospace.com/article-view/release/74687/thales-uk-wins-allied-reaction-corps-contract.html",
-          "description": "Coming soon"
+          "description": "#thales2.md"
         },
         {
           "project":"Military Tracking System",
           "role":"Researcher",
           "link":"https://www.thalesgroup.com/en/miltrak-alert-and-tracking-system",
-          "description": "Coming soon"
+          "description": "#thales3.md"
         }
       ]
     },
     {
       "companyName":"The University Of Manchester",
       "level":"B.Sc. in Computer Science",
-      "avatar":"manchester.png",
+      "avatar":"uni.png",
       "link":"http://www.manchester.ac.uk/",
       "startYear":"2004",
       "startMonth":"9",
       "endYear":"2007",
       "endMonth":"9",
-      "description":"Studied computer vision, mathematics, software engineering and electronics/nWrote a dissertation on estimating details of photographs within a large library based on imperfect data"
+      "description":"#uni1.md"
     },
     {
       "companyName":"Wren Utilities",
@@ -293,7 +297,7 @@
       "startMonth":"8",
       "endYear":"2004",
       "endMonth":"9",
-      "description":"Introduced an IT system to replace the existing manual system\nReduced fines due to late work by approximately 75%\nCoordinated 6 teams of labourers"
+      "description":"#wren1.md"
     },
     {
       "level":"Personal Projects",
@@ -302,23 +306,33 @@
         {
           "project":"This CV",
           "role":"Developer",
-          "image":"personal1.png",
           "link":"https://github.com/TomHigson/CV",
-          "description": "Coming soon"
+          "description": "#personal1.md"
         },
         {
           "project":"Graphical recipe system",
           "role":"Developer",
-          "image":"personal2.png",
+          "image":"personal1.png",
+          "imageAlt":"Early concept",
           "link":"https://github.com/TomHigson/GraphicalRecipeSystem",
-          "description": "Coming soon"
+          "description": "#personal2.md"
         },
         {
           "role":"Presenting roles",
-          "image":"personal3.png",
-          "description": "Coming soon"
+          "description": "#personal3.md"
         }
       ]
+    },
+    {
+      "companyName":"Holy Cross College",
+      "level":"Advanced Level qualification",
+      "avatar":"college.png",
+      "link":"https://www.holycross.ac.uk/",
+      "startYear":"2002",
+      "startMonth":"8",
+      "endYear":"2003",
+      "endMonth":"8",
+      "description":"#college1.md"
     }
   ]
 }
