@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title}     from '@angular/platform-browser';
-import {Cv} from './cv';
-import {Skill} from './skill/skill';
-import {CvService} from './cv.service';
+import {CvService, Cv, Skill} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -16,6 +14,7 @@ export class AppComponent implements OnInit {
   cv:Cv = null;
   filteredSkills:Skill[] = [];
   currentTheme=`dark-theme`;
+  errorMessage='';
   
   constructor(private cvService:CvService,
               private titleService:Title,
@@ -29,11 +28,13 @@ export class AppComponent implements OnInit {
 
     //load cv using cv service
     this.cvService.getCv().subscribe(
-      cv => {
-        this.cv = cv;
-        this.filteredSkills = cv.skills;
-        this.titleService.setTitle(cv.name + `'s CV`);
+      (data:Cv) => {
+        this.cv = data;
+        this.filteredSkills = data.skills;
+        //todo format dates into Date objects
+        this.titleService.setTitle(data.name + `'s CV`),
 
+        error => this.errorMessage=error;
       }
     );
 
