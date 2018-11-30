@@ -1,11 +1,15 @@
 <div [class]="currentTheme">
+
+  <!-- toolbar with title to left, buttons to right -->
   <mat-toolbar class="stick-to-top"
                fxLayout="row"
                fxLayoutGap="10px"
                fxLayoutAlign="end center">
-    <div fxFlex="grow">
-      Thomas Higson's CV
+
+    <div fxFlex="grow" *ngIf = "cv">
+      {{cv?.name}}'s CV
     </div>
+
     <button mat-button
             color="primary"
             (click)='toggleTheme()'
@@ -14,22 +18,29 @@
       </mat-icon>
       Toggle theme
     </button>
+
     <button mat-button
             color="primary"
             fxFlex="none">
       <mat-icon>arrow_downward</mat-icon>
       Download
     </button>
+
     <button mat-button
        color="primary"
        fxFlex="none">
       <mat-icon>alternate_email</mat-icon>
       Contact
-  </button>
+    </button>
+
   </mat-toolbar>
 
+  <!-- main content -->
   <div class="mat-app-background basic-container">
 
+    <div>
+      {{cv?.description}}
+    </div>
 
     <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
     
