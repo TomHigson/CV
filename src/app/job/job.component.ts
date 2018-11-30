@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CvService } from '../cv.service';
 
 @Component({
   selector: 'app-job',
@@ -7,9 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class JobComponent implements OnInit {
   @Input() job = null;
-  constructor() { }
 
-  ngOnInit() {
-  }
+  constructor(private cvService:CvService) { }
+
+  ngOnInit() { }
 
 }

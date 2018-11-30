@@ -1,19 +1,37 @@
+<!-- 3 columns for company logo, body text, start and end date -->
 <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center">
-  <div class=    "job-avatar"
-       [ngStyle]="{'background-image':'url(../assets/logos/' + job.avatar + ')'}"
-       fxFlex=   "none"></div>
+
+  <!-- company logo -->
+  <div class=       "job-avatar"
+       [ngStyle]=   "{'background-image':'url( ' + cvService.getLogoUrl(job.avatar) + ')'}"
+       fxFlex=      "none"
+       fxFlexAlign= "start">
+  </div>
+
+  <!-- body text includes 3 rows for job level, comapny, role descriptions -->
   <div fxFlex="auto" fxLayout="column" fxLayoutGap="4px" fxLayoutAlign="space-evenly">
+
     <div class="job-level">
       {{job.level}}
     </div>
+
     <div class="job-company">
       {{job.companyName}}
     </div>
+
+    <div>
+      {{job.description}}
+    </div>
+
+    <app-role *ngFor = 'let role of job?.roles' [role] = 'role'></app-role>
+
   </div>
-  <div fxFlexAlign="end" align="right">
+
+  <!-- start, end date -->
+  <div fxFlexAlign="start" align="right">
     <span class="job-period">{{job.startDate}} –  Current</span>
     <br>
     <span class="job-duration">(1 year, 1 month)</span>
   </div>
+
 </div>
-<app-role></app-role>

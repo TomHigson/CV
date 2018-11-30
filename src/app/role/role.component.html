@@ -1,30 +1,27 @@
-<img src="../assets/photos/mbda2.png" alt="FCASW Concept" class="role-image">
-<span class="role-title">
-  Future Cruise & Anti-Ship System<br>
-  System architect
-</span>
-<ul>
-  <li>Scoped and planned an uplift program to further investigate disruptive technologies and assess their feasibility</li>
-  <li>Created the weapon system architecture to identify, assess and resolve the project’s major decision points</li>
-  <ul>
-    <li>Focused on integration onto multiple existing infrastructures, interoperability, communications architecture and the implications of various technologies</li>
-  </ul>
-  <li>Captured and traded the customer’s needs through a set of international workshops</li>
-</ul>  
+<!-- <div *ngIf = "role?.image">
+  <img [src]='"../assets/photos/" + role.image' [alt]='role.imageAlt' class="role-image">
+</div> -->
 
-<img src="../assets/photos/mbda1.png" alt="Launch" class="role-image">
-<span class="role-title">
-  Autonomous Air Vehicle<br>
-  Flight path management domain lead
-</span>
-<ul>
-  <li>Managed work packages for several systems and test engineers</li>
-  <li>Allocated functionality and specified the interface between internal and external software teams</li>
-  <li>Introduced new model based systems engineering techniques</li>
+<div *ngIf = "role?.image">
+  <img [src]="cvService.getPhotoUrl(role.image)" [alt]='role.imageAlt' class="role-image">
+</div>
+<div>
+  <span class="role-title">
+    {{role.project}}<br>
+    {{role.role}}
+  </span>
+</div>
+<div>
   <ul>
-    <li>Removed duplication of effort by shifting the emphasis to model definition rather than text definition</li>
-    <li>Worked with software, algorithm and testing teams to make the model work for them</li>
-  </ul>
-  <li>Found and resolved several design and implementation issues</li>
-  <li>Received a Contribution to the Business award at MBDA 2011 National Awards</li>
-</ul>
+      <li>Managed work packages for several systems and test engineers</li>
+      <li>Allocated functionality and specified the interface between internal and external software teams</li>
+      <li>Introduced new model based systems engineering techniques</li>
+      <ul>
+        <li>Removed duplication of effort by shifting the emphasis to model definition rather than text definition</li>
+        <li>Worked with software, algorithm and testing teams to make the model work for them</li>
+      </ul>
+      <li>Found and resolved several design and implementation issues</li>
+      <li>Received a Contribution to the Business award at MBDA 2011 National Awards</li>
+    </ul>
+  <!-- {{role.description}} -->
+</div>
