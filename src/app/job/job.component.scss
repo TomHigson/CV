@@ -6,30 +6,31 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  .job-company {
-    color:mat-color($foreground, secondary-text);
+  .job-logo {
+    background-color: mat-color($accent); //required as some browsers leave a small gap at some zooms
+    width :95px;
+    height:95px;
+    margin:5px;
+    border:5px solid mat-color($accent);  //so elements don't overlap the border
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
   }
 
-  .job-logo {
-    border:1px solid mat-color($foreground, secondary-text);
-    width:60px;
-    height:60px;
-    background-size:cover;
-    background-position:center;
-    border-radius:50%;
-    -moz-border-radius:50%;
-    -webkit-border-radius:50%;
+  .job-header {
+    min-height:105px;
   }
 
   .job-level {
     font-size:200%;
+    font-weight: bold;
   }
 
   .job-company {
-    font-size:140%;
+    font-weight: bold;
   }
 
   .job-period {
-    font-weight:bold;
+    color:mat-color($foreground, secondary-text);
   }
 }

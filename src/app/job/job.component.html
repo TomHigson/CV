@@ -1,35 +1,43 @@
-<!-- 3 columns for company logo, body text, start and end date -->
-<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center">
+<div fxLayout="row" fxLayoutGap="30px">
 
-  <!-- company logo -->
-  <div class=       "job-logo"
-       [ngStyle]=   "{'background-image':'url( ' + cvService.getLogoUrl(job.logo) + ')'}"
-       fxFlex=      "none"
-       fxFlexAlign= "start">
-  </div>
+  <!-- company logo column -->
+  <img class       = "job-logo"
+       [src]       = "cvService.getLogoUrl(job.logo)"
+       fxFlex      = "none"
+       fxFlexAlign = "start">
 
-  <!-- body text includes 3 rows for job level, comapny, role descriptions -->
-  <div fxFlex="auto" fxLayout="column" fxLayoutGap="4px" fxLayoutAlign="space-evenly">
+  <!-- main content column -->
+  <div fxLayout = "column" fxFlex>
 
-    <div class="job-level">
-      {{job.level}}
+    <!-- header for job level, company, period of work -->
+    <!-- in line with company logo -->
+    <div class         = "job-header"
+         fxLayout      = "column"
+         fxLayoutGap   = "6px"
+         fxLayoutAlign = "center">
+
+      <div class="job-level">
+        {{job.level}}
+      </div>
+
+      <div class="job-company">
+        <a [href] = "job.link">{{job.companyName}}</a>
+      </div>
+
+      <!-- start, end date -->
+      <div class="job-period">
+        {{job.startYear}} – Current (1 year, 1 month)
+      </div>
+
     </div>
 
-    <div class="job-company">
-      {{job.companyName}}
+    <!-- job description and roles -->
+    <div>
+
+      <markdown *ngIf = "job?.description" [src]="cvService.getTextUrl(job.description)"></markdown>
+      <app-role *ngFor = 'let role of job?.roles' [role] = 'role'></app-role>
+  
     </div>
 
-    <markdown *ngIf = "job?.description" [src]="cvService.getTextUrl(job.description)"></markdown>
-
-    <app-role *ngFor = 'let role of job?.roles' [role] = 'role'></app-role>
-
   </div>
-
-  <!-- start, end date -->
-  <div fxFlexAlign="start" align="right">
-    <span class="job-period">{{job.startDate}} –  Current</span>
-    <br>
-    <span class="job-duration">(1 year, 1 month)</span>
-  </div>
-
 </div>
