@@ -14,8 +14,8 @@ export interface Cv {
 export interface Job {
   companyName?:string;
   level:string;
-  logo:string;  //path to company logo. should be square
-  link?:string;  //comapny website
+  logo:string;  //path to company logo. should be square to avoid squashing
+  link?:string;  //company website
   startMonth?:number; //if not present, assume January
   startYear?:number;
   endMonth?:number;   //if not present, assume January
