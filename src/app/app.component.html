@@ -38,7 +38,7 @@
   <!-- main content -->
   <div class="mat-app-background basic-container">
 
-    <div *ngIf = "cv?.descritpion">
+    <div *ngIf = "cv?.description">
       <markdown [src]="cvService.getTextUrl(cv.description)"></markdown>
     </div>
 
