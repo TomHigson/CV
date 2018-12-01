@@ -11,17 +11,6 @@
     {{role.role}}
   </span>
 </div>
-<div>
-  <ul>
-      <li>Managed work packages for several systems and test engineers</li>
-      <li>Allocated functionality and specified the interface between internal and external software teams</li>
-      <li>Introduced new model based systems engineering techniques</li>
-      <ul>
-        <li>Removed duplication of effort by shifting the emphasis to model definition rather than text definition</li>
-        <li>Worked with software, algorithm and testing teams to make the model work for them</li>
-      </ul>
-      <li>Found and resolved several design and implementation issues</li>
-      <li>Received a Contribution to the Business award at MBDA 2011 National Awards</li>
-    </ul>
-  <!-- {{role.description}} -->
+<div *ngIf = "role?.description">
+  <markdown [src]="cvService.getTextUrl(role.description)"></markdown>
 </div>

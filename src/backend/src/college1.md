@@ -1,1 +1,0 @@
-Studied Computing, Maths, Advanced Maths and Physics

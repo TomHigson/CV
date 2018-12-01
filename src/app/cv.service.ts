@@ -7,14 +7,14 @@ export interface Cv {
   name:string;  //the name of the person the CV describes
   description:string; //markdown encoded
   portrait:string;  //path to image of the person's face. Should be square
-  fields:Skill[];
-  skills:Skill[];
+  fields?:Skill[];
+  skills?:Skill[];
   jobs:Job[];
 }
 export interface Job {
   companyName?:string;
   level:string;
-  avatar:string;  //path to company logo. should be square
+  logo:string;  //path to company logo. should be square
   link?:string;  //comapny website
   startMonth?:number; //if not present, assume January
   startYear?:number;
@@ -29,8 +29,7 @@ export interface Role {
   project?:string;
   role:string;
   image?:string; //path to image
-  imageAlt?:string; //image's alt text
-  link?:string; //if project is describved on the internet
+  imageCaption?:string; //image's caption. Also used for alt text
   description?:string;  //markdown encoded description
 }
 export interface Skill {
@@ -52,9 +51,19 @@ export class CvService {
   //collected here for convinience
   //future enhancement could be to get this from a config service
   private config = {
-    cvUrl:'src/backend/tomcv.json',
+    cvUrl:'src/backend/cvs/tomcv.json',
     photoUrl:`src/backend/photos/`,
-    logoUrl:`src/backend/logos/`
+    logoUrl: `src/backend/logos/`,
+    textUrl: `src/backend/text/`
+  }
+  getPhotoUrl(name:string) {
+    return this.config.photoUrl + name;
+  }
+  getLogoUrl(name:string) {
+    return this.config.logoUrl + name;
+  }
+  getTextUrl(name:string) {
+    return this.config.textUrl + name;
   }
 
   constructor(private http: HttpClient) { }
@@ -88,14 +97,6 @@ export class CvService {
 
     }
     return throwError(userErrorMessage);
-  }
-
-  getPhotoUrl(name:string) {
-    return this.config.photoUrl + name;
-  }
-
-  getLogoUrl(name:string) {
-    return this.config.logoUrl + name;
   }
 
 }

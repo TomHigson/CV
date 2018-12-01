@@ -38,8 +38,8 @@
   <!-- main content -->
   <div class="mat-app-background basic-container">
 
-    <div>
-      {{cv?.description}}
+    <div *ngIf = "cv?.descritpion">
+      <markdown [src]="cvService.getTextUrl(cv.description)"></markdown>
     </div>
 
     <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>

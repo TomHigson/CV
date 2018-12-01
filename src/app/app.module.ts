@@ -4,6 +4,9 @@ import {NgModule}                from '@angular/core';
 
 import {HttpClientModule}        from '@angular/common/http';
 
+import {MarkdownModule,
+        MarkedOptions}           from 'ngx-markdown';
+
 import {MatButtonModule}         from '@angular/material';
 import {MatCardModule}           from '@angular/material/card';
 import {MatToolbarModule}        from '@angular/material/toolbar';
@@ -37,7 +40,20 @@ import {SkillComponent}          from './skill/skill.component';
     MatListModule,
     MatSelectModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MarkdownModule.forRoot({
+      markedOptions: {
+        provide: MarkedOptions, useValue: {
+          gfm: true,
+          tables: true,
+          breaks: false,
+          pedantic: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+        }
+      }
+    })
   ],
   providers: [
     Title

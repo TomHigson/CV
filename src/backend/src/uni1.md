@@ -1,2 +1,0 @@
-Studied computer vision, mathematics, software engineering and electronics
-Wrote a dissertation on estimating details of photographs within a large library based on imperfect data

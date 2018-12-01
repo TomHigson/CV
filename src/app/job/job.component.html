@@ -2,8 +2,8 @@
 <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="space-between center">
 
   <!-- company logo -->
-  <div class=       "job-avatar"
-       [ngStyle]=   "{'background-image':'url( ' + cvService.getLogoUrl(job.avatar) + ')'}"
+  <div class=       "job-logo"
+       [ngStyle]=   "{'background-image':'url( ' + cvService.getLogoUrl(job.logo) + ')'}"
        fxFlex=      "none"
        fxFlexAlign= "start">
   </div>
@@ -19,9 +19,7 @@
       {{job.companyName}}
     </div>
 
-    <div>
-      {{job.description}}
-    </div>
+    <markdown *ngIf = "job?.description" [src]="cvService.getTextUrl(job.description)"></markdown>
 
     <app-role *ngFor = 'let role of job?.roles' [role] = 'role'></app-role>
 

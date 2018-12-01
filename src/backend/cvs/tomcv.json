@@ -1,6 +1,6 @@
 {
   "name":"Thomas Higson",
-  "description":"#intro.md",
+  "description":"intro.md",
   "portrait":"face.jpg",
   "fields": [
     {
@@ -69,6 +69,11 @@
       "name":"Angular",
       "level":"Experienced",
       "link":"https://angular.io/"
+    },
+    {
+      "name":"Powershell",
+      "level":"Experienced",
+      "link":"https://docs.microsoft.com/en-us/powershell/scripting"
     },
     {
       "name":"SASS",
@@ -175,7 +180,7 @@
     {
       "companyName":"General Dynamics",
       "level":"Engineering Manager",
-      "avatar":"gd.png",
+      "logo":"gd.png",
       "link":"https://www.gd.com/",
       "startYear":"2017",
       "startMonth":"9",
@@ -185,19 +190,19 @@
         {
           "project":"Vertex",
           "role":"Engineering Lead",
-          "description":"#gd1.md"
+          "description":"gd1.md"
         },
         {
           "project":"MORPHEUS Evolve to Open",
           "role":"3rd Party Developer Lead",
-          "description": "#gd2.md"
+          "description": "gd2.md"
         }
       ]
     },
     {
       "companyName":"ZF TRW",
       "level":"Engineering Manager",
-      "avatar":"zf.png",
+      "logo":"zf.png",
       "link":"https://www.zf.com",
       "startYear":"2016",
       "startMonth":"9",
@@ -209,15 +214,14 @@
           "role":"System Safety Lead",
           "image":"zf1.png",
           "imageAlt":"Adaptive Cruise Control concept image",
-          "link":"https://www.youtube.com/watch?v=GLdKrCWDaAg",
-          "description": "#zf1.md"
+          "description": "zf1.md"
         }
       ]
     },
     {
       "companyName":"MBDA Systems",
       "level":"Principal Engineer",
-      "avatar":"mbda.png",
+      "logo":"mbda.png",
       "link":"https://www.mbda-systems.com/",
       "startYear":"2009",
       "startMonth":"6",
@@ -229,27 +233,25 @@
           "role":"System Architect",
           "image":"mbda1.png",
           "imageAlt":"Concept visions render",
-          "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "description": "#mbda1.md"
+          "description": "mbda1.md"
         },
         {
           "project":"Autonomous Air Vehicle",
           "role":"Flight Path Management Domain Lead",
           "image":"mbda2.png",
           "imageAlt":"Trial launch",
-          "link":"https://www.mbda-systems.com/press-releases/team-lm-launches-fire-shadow-to-meet-uk-mod-loitering-munition-requirement/",
-          "description": "#mbda2.md"
+          "description": "mbda2.md"
         },
         {
           "project":"Company Improvement",
-          "description": "#mbda3.md"
+          "description": "mbda3.md"
         }
       ]
     },
     {
       "companyName":"Thales",
       "level":"Graduate Engineer",
-      "avatar":"thales.png",
+      "logo":"thales.png",
       "link":"http://www.thalesgroup.com/en",
       "startYear":"2007",
       "startMonth":"9",
@@ -261,78 +263,73 @@
           "role":"Software Engineer",
           "image":"thales1.png",
           "imageAlt":"Similar radio",
-          "link":"https://www.mbda-systems.com/innovation/concept-visions/perseus-2011/",
-          "description": "#thales1.md"
+          "description": "thales1.md"
         },
         {
           "project":"Command & Control Information System",
           "role":"Software Engineer",
-          "link":"http://www.defense-aerospace.com/article-view/release/74687/thales-uk-wins-allied-reaction-corps-contract.html",
-          "description": "#thales2.md"
+          "description": "thales2.md"
         },
         {
           "project":"Military Tracking System",
           "role":"Researcher",
-          "link":"https://www.thalesgroup.com/en/miltrak-alert-and-tracking-system",
-          "description": "#thales3.md"
+          "description": "thales3.md"
         }
       ]
     },
     {
       "companyName":"The University Of Manchester",
       "level":"B.Sc. in Computer Science",
-      "avatar":"uni.png",
+      "logo":"uni.png",
       "link":"http://www.manchester.ac.uk/",
       "startYear":"2004",
       "startMonth":"9",
       "endYear":"2007",
       "endMonth":"9",
-      "description":"#uni1.md"
+      "description":"uni1.md"
     },
     {
       "companyName":"Wren Utilities",
       "level":"IT Administrator",
-      "avatar":"wren.png",
+      "logo":"wren.png",
       "startYear":"2003",
       "startMonth":"8",
       "endYear":"2004",
       "endMonth":"9",
-      "description":"#wren1.md"
+      "description":"wren1.md"
     },
     {
       "level":"Personal Projects",
-      "avatar":"personal.png",
+      "logo":"personal.png",
       "roles": [
         {
           "project":"This CV",
           "role":"Developer",
-          "link":"https://github.com/TomHigson/CV",
-          "description": "#personal1.md"
+          "description": "personal1.md"
         },
         {
           "project":"Graphical recipe system",
           "role":"Developer",
           "image":"personal1.png",
           "imageAlt":"Early concept",
-          "link":"https://github.com/TomHigson/GraphicalRecipeSystem",
-          "description": "#personal2.md"
+          "description": "personal2.md"
         },
         {
           "role":"Presenting roles",
-          "description": "#personal3.md"
+          "description": "personal3.md"
         }
       ]
     },
     {
       "companyName":"Holy Cross College",
       "level":"Advanced Level qualification",
-      "avatar":"college.png",
+      "logo":"college.png",
       "link":"https://www.holycross.ac.uk/",
       "startYear":"2002",
       "startMonth":"8",
       "endYear":"2003",
       "endMonth":"8",
-      "description":"#college1.md"
+      "description":"college1.md"
     }
   ]
 }
