@@ -3,9 +3,9 @@
 @import './app/job/job.component.scss';
 @import './app/role/role.component.scss';
 
-// collected themes from all local components in one place
+// collected themes for all local components
+// that don't care about light or dark
 @mixin themes-for-local-components($theme) {
-  @include app-component-style($theme);
   @include job-component-style($theme);
   @include role-component-style($theme);
   // ...populate as components are created
@@ -31,21 +31,10 @@ $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 .dark-theme{
   @include angular-material-theme($dark-theme);
   @include themes-for-local-components($dark-theme);
+  @include app-component-style-dark($dark-theme);
 }
 .light-theme{
   @include angular-material-theme($light-theme);
   @include themes-for-local-components($light-theme);
-}
-
-body { 
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
-}
-
-li, p {
-  line-height:1.5;
-}
-
-.basic-container {
-  padding: 30px;
+  @include app-component-style-light($light-theme);
 }

@@ -1,10 +1,47 @@
 @import '~@angular/material/theming';
-@mixin app-component-style($theme) {
+@mixin app-component-style-light($theme) {
   $primary:    map-get($theme, primary);
   $accent:     map-get($theme, accent);
   $warn:       map-get($theme, warn);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
+
+  li, p {
+    color:mat-color($foreground, secondary-text);
+  }
+  
+  //change text selection colour
+  ::-moz-selection { //for Firefox
+    background:mat-color($accent);
+  }
+  ::selection { //for other browsers
+    background:mat-color($accent);
+  }
+
+  a {
+    color:darken(mat-color($accent),25%);
+    text-decoration: none;
+  }
+  a:visited {
+    color:darken(mat-color($accent),30%);
+    text-decoration: none;
+  }
+  a:hover {
+    color:darken(mat-color($accent),30%);
+    text-decoration: underline;
+  }
+}
+
+@mixin app-component-style-dark($theme) {
+  $primary:    map-get($theme, primary);
+  $accent:     map-get($theme, accent);
+  $warn:       map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  li, p {
+    color:mat-color($foreground, secondary-text);
+  }
 
   //change text selection colour
   ::-moz-selection { //for Firefox
@@ -13,6 +50,23 @@
   ::selection { //for other browsers
     background:mat-color($accent);
   }
+
+  a {
+    color:mat-color($accent);
+    text-decoration: none;
+  }
+  a:visited {
+    color:darken(mat-color($accent),5%);
+    text-decoration: none;
+  }
+  a:hover {
+    color:darken(mat-color($accent),5%);
+    text-decoration: underline;
+  }
+}
+
+.basic-container {
+  padding: 30px;
 }
 
 .stick-to-top {
@@ -21,3 +75,22 @@
   top: 0; /* Sets the sticky toolbar to be on top */
   z-index: 1000; /* Ensure app content doesn't overlap it */
 }
+
+.main-column {
+  max-width: 900px;
+}
+
+.main-logo {
+  width:  30px;
+  height: 30px;
+}
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+li, p {
+  line-height:1.5;
+}
+
