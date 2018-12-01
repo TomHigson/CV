@@ -1,10 +1,13 @@
 <div [class]="currentTheme">
 
-  <!-- toolbar with title to left, buttons to right -->
+  <!-- toolbar - Title to left, buttons to right -->
   <mat-toolbar class="stick-to-top"
                fxLayout="row"
                fxLayoutGap="10px"
                fxLayoutAlign="end center">
+
+    <img class = "main-logo"
+         src   = "../assets/logo.png">
 
     <div fxFlex="grow" *ngIf = "cv">
       {{cv?.name}}'s CV
@@ -35,14 +38,27 @@
 
   </mat-toolbar>
 
-  <!-- main content -->
-  <div class="mat-app-background basic-container">
+  <div class         = "mat-app-background
+                        basic-container"
+       fxLayout      = "row"
+       fxLayoutAlign = "center start">
+         
+    <!-- main content -->
+    <div class  = "main-column">
+         <!-- fxFlex = "3 0 200"> -->
 
-    <div *ngIf = "cv?.description">
-      <markdown [src]="cvService.getTextUrl(cv.description)"></markdown>
+      <div *ngIf = "cv?.description">
+        <markdown [src]="cvService.getTextUrl(cv.description)"></markdown>
+      </div>
+
+      <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
+      
     </div>
 
-    <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
-    
+    <!-- nav bar -->
+    <div>
+      <img src="src\assets\nav-bar-standin.png">
+    </div>
+
   </div>
 </div>
