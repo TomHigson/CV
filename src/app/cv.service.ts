@@ -17,18 +17,15 @@ export interface Job {
   level:string;
   logo:string;  //path to company logo. should be square to avoid squashing
   link?:string;  //company website
-  startMonth?:number; //if not present, assume January
-  startYear?:number;
-  endMonth?:number;   //if not present, assume January
-  endYear?:number;    //if not present, assume current
+  start?:Date;  //javascript encoded string e.g. 2017-09-01T00:00:00.000Z
+  end?:Date;  //same format as start. If not present, assumes current job
   contact?:string;
   contactEmail?:string;
   roles?:Role[];
   description?:string; //name of the markdown file
 }
 export interface Role {
-  project?:string;
-  role:string;
+  position:string;
   image?:string; //path to image
   imageCaption?:string; //image's caption. Also used for alt text
   description?:string; //name of the markdown file

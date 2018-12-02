@@ -1,15 +1,8 @@
-<!-- <div *ngIf = "role?.image">
-  <img [src]='"../assets/photos/" + role.image' [alt]='role.imageAlt' class="role-image">
-</div> -->
-
-<div *ngIf = "role?.image">
-  <img [src]="cvService.getPhotoUrl(role.image)" [alt]='role.imageAlt' class="role-image">
-</div>
 <div>
-  <span class="role-title">
-    {{role.project}}<br>
-    {{role.role}}
-  </span>
+  {{role?.position}}
+</div>
+<div *ngIf = "role?.image">
+    <img [src]="cvService.getPhotoUrl(role.image)" [alt]='role.imageAlt' class="role-image">
 </div>
 <div *ngIf = "role?.description">
   <markdown [src]="cvService.getTextUrl(role.description)"></markdown>

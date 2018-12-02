@@ -183,19 +183,16 @@
       "level":"Engineering Manager",
       "logo":"gd.png",
       "link":"https://www.gd.com/",
-      "startYear":"2017",
-      "startMonth":"9",
+      "start":"2017-09-01",
       "contact":"Bina Taylor",
       "contactEmail":"bina.taylor@gd-ms.uk",
       "roles": [
         {
-          "project":"Vertex",
-          "role":"Engineering Lead",
+          "position":"Vertex engineering lead",
           "description":"gd1.md"
         },
         {
-          "project":"MORPHEUS Evolve to Open",
-          "role":"3rd Party Developer Lead",
+          "position":"3rd party developer lead for MORPHEUS Evolve to Open",
           "description": "gd2.md"
         }
       ]
@@ -205,14 +202,11 @@
       "level":"Engineering Manager",
       "logo":"zf.png",
       "link":"https://www.zf.com",
-      "startYear":"2016",
-      "startMonth":"9",
-      "endYear":"2017",
-      "endMonth":"9",
+      "start":"2016-09-01",
+      "end":"2017-09-01",
       "roles": [
         {
-          "project":"Radar Customer Projects",
-          "role":"System Safety Lead",
+          "position":"System safety lead for radar customer projects",
           "image":"zf1.png",
           "imageAlt":"Adaptive Cruise Control concept image",
           "description": "zf1.md"
@@ -224,27 +218,23 @@
       "level":"Principal Engineer",
       "logo":"mbda.png",
       "link":"https://www.mbda-systems.com/",
-      "startYear":"2009",
-      "startMonth":"6",
-      "endYear":"2016",
-      "endMonth":"9",
+      "start":"2009-06-01",
+      "end":"2016-09-01",
       "roles": [
         {
-          "project":"Future Cruise & Anti-Ship System",
-          "role":"System Architect",
+          "position":"System architect for Future Cruise & Anti-Ship System",
           "image":"mbda1.png",
           "imageAlt":"Concept visions render",
           "description": "mbda1.md"
         },
         {
-          "project":"Autonomous Air Vehicle",
-          "role":"Flight Path Management Domain Lead",
+          "position":"Flight path management domain lead for Fire Shadow",
           "image":"mbda2.png",
           "imageAlt":"Trial launch",
           "description": "mbda2.md"
         },
         {
-          "project":"Company Improvement",
+          "position":"Company Improvement",
           "description": "mbda3.md"
         }
       ]
@@ -254,26 +244,21 @@
       "level":"Graduate Engineer",
       "logo":"thales.png",
       "link":"http://www.thalesgroup.com/en",
-      "startYear":"2007",
-      "startMonth":"9",
-      "endYear":"2009",
-      "endMonth":"6",
+      "start":"2007-09-01",
+      "end":"2009-06-01",
       "roles": [
         {
-          "project":"Covert Radio System",
-          "role":"Software Engineer",
+          "position":"Software engineer for covert radio system",
           "image":"thales1.png",
           "imageAlt":"Similar radio",
           "description": "thales1.md"
         },
         {
-          "project":"Command & Control Information System",
-          "role":"Software Engineer",
+          "position":"Software engineer for Command & Control Information System",
           "description": "thales2.md"
         },
         {
-          "project":"Military Tracking System",
-          "role":"Researcher",
+          "project":"Research engineer for military tracking system",
           "description": "thales3.md"
         }
       ]
@@ -283,20 +268,16 @@
       "level":"B.Sc. in Computer Science",
       "logo":"uni.png",
       "link":"http://www.manchester.ac.uk/",
-      "startYear":"2004",
-      "startMonth":"9",
-      "endYear":"2007",
-      "endMonth":"9",
+      "start":"2004-09-01",
+      "end":"2007-09-01",
       "description":"uni1.md"
     },
     {
       "companyName":"Wren Utilities",
       "level":"IT Administrator",
       "logo":"wren.png",
-      "startYear":"2003",
-      "startMonth":"8",
-      "endYear":"2004",
-      "endMonth":"9",
+      "start":"2003-08-01",
+      "end":"2004-09-01",
       "description":"wren1.md"
     },
     {
@@ -304,19 +285,17 @@
       "logo":"personal.png",
       "roles": [
         {
-          "project":"This CV",
-          "role":"Developer",
+          "position":"Developing this CV",
           "description": "personal1.md"
         },
         {
-          "project":"Graphical recipe system",
-          "role":"Developer",
+          "position":"Graphical recipe system",
           "image":"personal1.png",
           "imageAlt":"Early concept",
           "description": "personal2.md"
         },
         {
-          "role":"Presenting roles",
+          "position":"Presenting roles",
           "description": "personal3.md"
         }
       ]
@@ -326,10 +305,8 @@
       "level":"Advanced Level qualification",
       "logo":"college.png",
       "link":"https://www.holycross.ac.uk/",
-      "startYear":"2002",
-      "startMonth":"8",
-      "endYear":"2003",
-      "endMonth":"8",
+      "start":"2001-08-01",
+      "end":"2003-08-01",
       "description":"college1.md"
     }
   ]

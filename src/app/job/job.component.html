@@ -20,13 +20,22 @@
         {{job.level}}
       </div>
 
-      <div class="job-company">
-        <a [href] = "job.link">{{job.companyName}}</a>
-      </div>
+      <div fxLayout="row wrap">
 
-      <!-- start, end date -->
-      <div class="job-period">
-        {{job.startYear}} – Current (1 year, 1 month)
+        <div class = "job-company">
+          <a [href] = "job.link">{{job.companyName}}</a>
+        </div>
+        
+        <div class = "job-period"
+             *ngIf = "job?.start">
+            &nbsp;•
+            {{job.end?'':'since'}}
+            {{job.start | date:'MMM yyyy'}}
+            {{job.end?' – ':''}}
+            {{job.end?(job.end | date:'MMM yyyy'):''}}
+            {{getJobDurationString()}}
+        </div>
+
       </div>
 
     </div>

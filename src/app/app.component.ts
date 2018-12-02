@@ -30,8 +30,18 @@ export class AppComponent implements OnInit {
     this.cvService.getCv().subscribe(
       (data:Cv) => {
         this.cv = data;
+        
+        //convert dates from strings into JS Dates
+        for(let job of this.cv.jobs) {
+          if(job.start) {
+            job.start = new Date(job.start);
+          }
+          if(job.end) {
+            job.end = new Date(job.end);
+          }
+        }
+
         this.filteredSkills = data.skills;
-        //todo format dates into Date objects
         this.titleService.setTitle(data.name + `'s CV`),
 
         error => this.errorMessage=error;
