@@ -198,6 +198,26 @@
       ]
     },
     {
+      "level":"Personal Projects",
+      "logo":"personal.png",
+      "roles": [
+        {
+          "position":"Developing this CV",
+          "description": "personal1.md"
+        },
+        {
+          "position":"Graphical recipe system",
+          "image":"personal1.png",
+          "imageAlt":"Early concept",
+          "description": "personal2.md"
+        },
+        {
+          "position":"Presenting roles",
+          "description": "personal3.md"
+        }
+      ]
+    },
+    {
       "companyName":"ZF TRW",
       "level":"Engineering Manager",
       "logo":"zf.png",
@@ -279,26 +299,6 @@
       "start":"2003-08-01",
       "end":"2004-09-01",
       "description":"wren1.md"
-    },
-    {
-      "level":"Personal Projects",
-      "logo":"personal.png",
-      "roles": [
-        {
-          "position":"Developing this CV",
-          "description": "personal1.md"
-        },
-        {
-          "position":"Graphical recipe system",
-          "image":"personal1.png",
-          "imageAlt":"Early concept",
-          "description": "personal2.md"
-        },
-        {
-          "position":"Presenting roles",
-          "description": "personal3.md"
-        }
-      ]
     },
     {
       "companyName":"Holy Cross College",
