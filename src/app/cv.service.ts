@@ -5,7 +5,8 @@ import {catchError, retry} from 'rxjs/operators';
 
 export interface Cv {
   name:string;  //the name of the person the CV describes
-  description:string; //markdown encoded
+  email:string; //email to contact CV owner
+  description:string; //name of the markdown file
   portrait:string;  //path to image of the person's face. Should be square
   fields?:Skill[];
   skills?:Skill[];
@@ -23,14 +24,14 @@ export interface Job {
   contact?:string;
   contactEmail?:string;
   roles?:Role[];
-  description?:string;  //markdown encoded description
+  description?:string; //name of the markdown file
 }
 export interface Role {
   project?:string;
   role:string;
   image?:string; //path to image
   imageCaption?:string; //image's caption. Also used for alt text
-  description?:string;  //markdown encoded description
+  description?:string; //name of the markdown file
 }
 export interface Skill {
   name:string;
