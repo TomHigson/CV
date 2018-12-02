@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CvService } from '../cv.service';
+import { CvService, Job } from '../cv.service';
 
 @Component({
   selector: 'app-job',
@@ -7,7 +7,7 @@ import { CvService } from '../cv.service';
   styleUrls: ['./job.component.scss']
 })
 export class JobComponent implements OnInit {
-  @Input() job = null;
+  @Input() job:Job = null;
 
   constructor(private cvService:CvService) { }
 
