@@ -1,64 +1,32 @@
 <div [class]="currentTheme">
 
-  <!-- toolbar - Title to left, buttons to right -->
-  <mat-toolbar class="stick-to-top"
-               fxLayout="row"
-               fxLayoutGap="10px"
-               fxLayoutAlign="end center">
-
-    <img class = "main-logo"
-         src   = "../assets/logo.png">
-
-    <div fxFlex="grow" *ngIf = "cv">
-      {{cv?.name}}'s CV
-    </div>
-
-    <button mat-button
-            color="primary"
-            (click)='toggleTheme()'
-            fxFlex="none">
-      <mat-icon [svgIcon]="currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'">
-      </mat-icon>
-      Toggle theme
-    </button>
-
-    <button mat-button
-            color="primary"
-            fxFlex="none">
-      <mat-icon>arrow_downward</mat-icon>
-      Download
-    </button>
-
-    <button mat-button
-       color="primary"
-       fxFlex="none">
-      <mat-icon>alternate_email</mat-icon>
-      Contact
-    </button>
-
-  </mat-toolbar>
+  <!-- title bar -->
+  <app-title-bar [cvOwnersName]  = "cv?.name"
+                 [cvOwnersEmail] = "cv?.email"
+                 [currentTheme]  = "currentTheme"
+                 (themeChanged)  = "setTheme($event)">
+  </app-title-bar>
 
   <div class         = "mat-app-background
                         basic-container"
        fxLayout      = "row"
        fxLayoutAlign = "center start">
          
-    <!-- main content -->
+    <!-- main content column -->
     <div class  = "main-column">
-         <!-- fxFlex = "3 0 200"> -->
 
+      <!-- intro section -->
       <div *ngIf = "cv?.description">
         <markdown [src]="cvService.getTextUrl(cv.description)"></markdown>
       </div>
 
+      <!-- all jobs listed -->
       <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
       
     </div>
 
-    <!-- nav bar -->
-    <div>
-      <img src="src\assets\nav-bar-standin.png">
-    </div>
+    <!-- nav bar column -->
+    <app-nav-bar></app-nav-bar>
 
   </div>
 </div>

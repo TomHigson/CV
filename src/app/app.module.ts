@@ -21,13 +21,17 @@ import {AppComponent}            from './app.component';
 import {JobComponent}            from './job/job.component';
 import {RoleComponent}           from './role/role.component';
 import {SkillComponent}          from './skill/skill.component';
+import {TitleBarComponent}       from './title-bar/title-bar.component';
+import {NavBarComponent}       from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobComponent,
     RoleComponent,
-    SkillComponent
+    SkillComponent,
+    TitleBarComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

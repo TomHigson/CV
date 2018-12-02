@@ -2,12 +2,16 @@
 @import './app/app.component.scss';
 @import './app/job/job.component.scss';
 @import './app/role/role.component.scss';
+@import './app/title-bar/title-bar.component.scss';
+@import './app/nav-bar/nav-bar.component.scss';
 
 // collected themes for all local components
 // that don't care about light or dark
 @mixin themes-for-local-components($theme) {
   @include job-component-style($theme);
   @include role-component-style($theme);
+  @include title-bar-component-style($theme);
+  @include nav-bar-component-style($theme);
   // ...populate as components are created
 
 }

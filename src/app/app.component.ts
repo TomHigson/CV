@@ -13,7 +13,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 export class AppComponent implements OnInit {
   cv:Cv = null;
   filteredSkills:Skill[] = [];
-  currentTheme=`dark-theme`;
+  currentTheme:string = 'dark-theme';
   errorMessage='';
   
   constructor(private cvService:CvService,
@@ -55,8 +55,9 @@ export class AppComponent implements OnInit {
     );
   }
 
-  toggleTheme():void {
-    this.currentTheme = this.currentTheme===`dark-theme`?`light-theme`:`dark-theme`;
+  setTheme(themeName:string):void {
+    
+    this.currentTheme = themeName;
 
     //also change theme of overlays
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
@@ -64,7 +65,7 @@ export class AppComponent implements OnInit {
     if (themeClassesToRemove.length) {
        overlayContainerClasses.remove(...themeClassesToRemove);
     }
-    overlayContainerClasses.add(this.currentTheme);
+    overlayContainerClasses.add(themeName);
   }
 
 }

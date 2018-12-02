@@ -69,20 +69,8 @@
   padding: 30px;
 }
 
-.stick-to-top {
-  position: sticky;
-  position: -webkit-sticky; /* For macOS/iOS Safari */
-  top: 0; /* Sets the sticky toolbar to be on top */
-  z-index: 1000; /* Ensure app content doesn't overlap it */
-}
-
 .main-column {
   max-width: 900px;
-}
-
-.main-logo {
-  width:  30px;
-  height: 30px;
 }
 
 body { 
@@ -93,4 +81,3 @@ body {
 li, p {
   line-height:1.5;
 }
-
