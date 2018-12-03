@@ -1,9 +1,8 @@
-<div>
-  {{role?.position}}
-</div>
-<div *ngIf = "role?.image">
-    <img [src]="cvService.getPhotoUrl(role.image)" [alt]='role.imageAlt' class="role-image">
-</div>
+{{role?.position}}
 <div *ngIf = "role?.description">
+  <img *ngIf = "role?.image"
+       [src] = "cvService.getPhotoUrl(role.image)"
+       [alt] = 'role.imageAlt'
+       class = "role-image">
   <markdown [src]="cvService.getTextUrl(role.description)"></markdown>
 </div>
