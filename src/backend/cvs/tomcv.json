@@ -189,10 +189,12 @@
       "roles": [
         {
           "position":"Vertex engineering lead",
+          "image":"gd1.png",
           "description":"gd1.md"
         },
         {
           "position":"3rd party developer lead for MORPHEUS Evolve to Open",
+          "image":"gd2.png",
           "description": "gd2.md"
         }
       ]
@@ -275,6 +277,7 @@
         },
         {
           "position":"Software engineer for Command & Control Information System",
+          "image":"thales2.png",
           "description": "thales2.md"
         },
         {
