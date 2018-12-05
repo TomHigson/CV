@@ -19,7 +19,7 @@
       <markdown *ngIf = "cv?.description"
                 [src] = "cvService.getTextUrl(cv.description)"></markdown>
 
-      <h1>Fields of extertise</h1>
+      <h1>Fields of expertise</h1>
       <ul>
         <div class = "columns">
           <li *ngFor = "let field of cv?.fields">{{field}}</li>
