@@ -14,24 +14,25 @@ import {MatDividerModule}        from '@angular/material/divider';
 import {MatListModule}           from '@angular/material/list';
 import {MatSelectModule}         from '@angular/material/select';
 import {MatIconModule}           from '@angular/material/icon';
+import {MatChipsModule}          from '@angular/material/chips';
 
 import {FlexLayoutModule}        from '@angular/flex-layout';
 
 import {AppComponent}            from './app.component';
 import {JobComponent}            from './job/job.component';
 import {RoleComponent}           from './role/role.component';
-import {SkillComponent}          from './skill/skill.component';
 import {TitleBarComponent}       from './title-bar/title-bar.component';
-import {NavBarComponent}       from './nav-bar/nav-bar.component';
+import {NavBarComponent}         from './nav-bar/nav-bar.component';
+import {TechListComponent}       from './tech-list/tech-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JobComponent,
     RoleComponent,
-    SkillComponent,
     TitleBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    TechListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import {NavBarComponent}       from './nav-bar/nav-bar.component';
     MatListModule,
     MatSelectModule,
     MatIconModule,
+    MatChipsModule,
     FlexLayoutModule,
     MarkdownModule.forRoot({
       markedOptions: {

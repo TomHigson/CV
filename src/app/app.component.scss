@@ -19,7 +19,7 @@
   }
 
   a {
-    color:darken(mat-color($accent),25%);
+    color:darken(mat-color($accent),20%);
     text-decoration: none;
   }
   a:visited {
@@ -27,7 +27,6 @@
     text-decoration: none;
   }
   a:hover {
-    color:darken(mat-color($accent),30%);
     text-decoration: underline;
   }
 }
@@ -56,11 +55,10 @@
     text-decoration: none;
   }
   a:visited {
-    color:darken(mat-color($accent),5%);
+    color:darken(mat-color($accent),10%);
     text-decoration: none;
   }
   a:hover {
-    color:darken(mat-color($accent),5%);
     text-decoration: underline;
   }
 }
@@ -71,6 +69,11 @@
 
 .main-column {
   max-width: 900px;
+}
+
+.columns {
+  column-count: 2;
+  column-gap: 40px;
 }
 
 body { 

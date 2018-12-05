@@ -23,7 +23,8 @@
       <div fxLayout="row wrap">
 
         <div class = "job-company">
-          <a [href] = "job.link">{{job.companyName}}</a>
+          <a *ngIf = "job.link" [href] = "job.link">{{job.companyName}}</a>
+          <span *ngIf = "!job.link">{{job.companyName}}</span>
         </div>
         
         <div class = "job-period"
@@ -48,5 +49,11 @@
   
     </div>
 
+    <!-- list of technologies used -->
+    <ng-container *ngIf = "job?.technologies">
+      <h2>Technologies used</h2>
+      <app-tech-list [techs] = "job.technologies"></app-tech-list>
+    </ng-container>
+    
   </div>
 </div>

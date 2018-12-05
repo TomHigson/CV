@@ -4,6 +4,7 @@
 @import './app/role/role.component.scss';
 @import './app/title-bar/title-bar.component.scss';
 @import './app/nav-bar/nav-bar.component.scss';
+@import './app/tech-list/tech-list.component.scss';
 
 // collected themes for all local components
 // that don't care about light or dark
@@ -36,9 +37,11 @@ $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   @include angular-material-theme($dark-theme);
   @include themes-for-local-components($dark-theme);
   @include app-component-style-dark($dark-theme);
+  @include tech-list-style-dark($dark-theme);
 }
 .light-theme{
   @include angular-material-theme($light-theme);
   @include themes-for-local-components($light-theme);
   @include app-component-style-light($light-theme);
+  @include tech-list-style-light($light-theme);
 }

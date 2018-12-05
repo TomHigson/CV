@@ -2,180 +2,21 @@
   "name":"Thomas Higson",
   "email":"Thomas.Higson@gmail.com",
   "description":"intro.md",
-  "portrait":"face.jpg",
   "fields": [
-    {
-      "name":"Model based systems engineering (MBSE)",
-      "level":"Expert"
-    },
-    {
-      "name":"Systems Modelling Language (SysML)",
-      "level":"Expert"
-    },
-    {
-      "name":"Web apps and services",
-      "level":"Professional"
-    },
-    {
-      "name":"Microservice architectures",
-      "level":"Experienced"
-    },
-    {
-      "name":"Web apps and services",
-      "level":"Professional"
-    },
-    {
-      "name":"DevOps",
-      "level":"Experienced"
-    },
-    {
-      "name":"Data visualisation",
-      "level":"Professional"
-    },
-    {
-      "name":"Agile development",
-      "level":"Professional"
-    },
-    {
-      "name":"Aerospace safety analysis using IEC61508",
-      "level":"Professional"
-    },
-    {
-      "name":"Automotive safety analysis using ISO26262",
-      "level":"Professional"
-    },
-    {
-      "name":"Modularity and reuse across product lines",
-      "level":"Professional"
-    },
-    {
-      "name":"Training",
-      "level":"Professional"
-    },
-    {
-      "name":"Mentoring",
-      "level":"Professional"
-    },
-    {
-      "name":"User experience design",
-      "level":"Professional"
-    },
-    {
-      "name":"People Management",
-      "level":"Professional"
-    }
-  ],
-  "skills": [
-    {
-      "name":"Angular",
-      "level":"Experienced",
-      "link":"https://angular.io/"
-    },
-    {
-      "name":"Powershell",
-      "level":"Experienced",
-      "link":"https://docs.microsoft.com/en-us/powershell/scripting"
-    },
-    {
-      "name":"SASS",
-      "level":"Experienced",
-      "link":"https://sass-lang.com/"
-    },
-    {
-      "name":"Microsoft Azure",
-      "level":"Experienced",
-      "link":"https://azure.microsoft.com"
-    },
-    {
-      "name":"ODATA4",
-      "level":"Professional",
-      "link":"https://www.odata.org/"
-    },
-    {
-      "name":"Swagger",
-      "level":"Experienced",
-      "link":"https://swagger.io/"
-    },
-    {
-      "name":"JavaScript / TypeScript",
-      "level":"Professional",
-      "link":"https://www.javascript.com/"
-    },
-    {
-      "name":"D3.js",
-      "level":"Professional",
-      "link":"https://d3js.org/"
-    },
-    {
-      "name":"HTML",
-      "level":"Professional",
-      "link":"https://en.wikipedia.org/wiki/HTML"
-    },
-    {
-      "name":"CSS",
-      "level":"Experienced",
-      "link":"https://en.wikipedia.org/wiki/Cascading_Style_Sheets"
-    },
-    {
-      "name":"C#",
-      "level":"Professional",
-      "link":"https://docs.microsoft.com/en-us/dotnet/csharp/"
-    },
-    {
-      "name":"Java",
-      "level":"Professional",
-      "link":"https://www.java.com"
-    },
-    {
-      "name":"Adobe Photoshop",
-      "level":"Experienced",
-      "link":"https://www.adobe.com/uk/creativecloud"
-    },
-    {
-      "name":"Adobe Premier Pro",
-      "level":"Experienced",
-      "link":"https://www.adobe.com/uk/creativecloud"
-    },
-    {
-      "name":"Rational Team Concert",
-      "level":"Experienced",
-      "link":"https://www.ibm.com/uk-en/marketplace/change-and-configuration-management"
-    },
-    {
-      "name":"Git",
-      "level":"Professional",
-      "link":"https://git-scm.com/"
-    },
-    {
-      "name":"Rational DOORS",
-      "level":"Expert",
-      "link":"https://www.ibm.com/us-en/marketplace/rational-doors"
-    },
-    {
-      "name":"Rational Rhapsody",
-      "level":"Expert",
-      "link":"https://www.ibm.com/uk-en/marketplace/rational-rhapsody"
-    },
-    {
-      "name":"Progressive Web Apps",
-      "level":"Experienced",
-      "link":"https://developers.google.com/web/progressive-web-apps/"
-    },
-    {
-      "name":"Markdown",
-      "level":"Professional",
-      "link":"https://daringfireball.net/projects/markdown/syntax"
-    },
-    {
-      "name":"NPM",
-      "level":"Professional",
-      "link":"https://www.npmjs.com/"
-    },
-    {
-      "name":"DFMEA",
-      "level":"Professional",
-      "link":"https://www.isixsigma.com/dictionary/dfmea/"
-    }
+    "Cloud architectures",
+    "Microservice architectures",
+    "Web apps and services",
+    "DevOps / System Reliability Engineering",
+    "Agile development",
+    "Model based systems engineering (MBSE)",
+    "Systems Modelling Language (SysML)",
+    "User experience design",
+    "People Management",
+    "Mentoring",
+    "Training",
+    "Aerospace safety analysis using IEC61508",
+    "Automotive safety analysis using ISO26262",
+    "Modularity and reuse across product lines"
   ],
   "jobs": [
     {
@@ -197,6 +38,48 @@
           "image":"gd2.png",
           "description": "gd2.md"
         }
+      ],
+      "technologies": [
+        {
+          "name":"Azure",
+          "link":"https://azure.microsoft.com"
+        },
+        {
+          "name":"Office 365",
+          "link":"https://www.office.com/"
+        },
+        {
+          "name":"REST & OData",
+          "link":"https://www.odata.org/"
+        },
+        {
+          "name":"Swagger",
+          "link":"https://swagger.io/"
+        },
+        {
+          "name":"Progressive Web Apps",
+          "link":"https://developers.google.com/web/progressive-web-apps/"
+        },
+        {
+          "name":"Powershell",
+          "link":"https://docs.microsoft.com/en-us/powershell/scripting"
+        },
+        {
+          "name":"Git",
+          "link":"https://git-scm.com/"
+        },
+        {
+          "name":"Rational Rhapsody",
+          "link":"https://www.ibm.com/uk-en/marketplace/rational-rhapsody"
+        },
+        {
+          "name":"Rational DOORS",
+          "link":"https://www.ibm.com/us-en/marketplace/rational-doors"
+        },
+        {
+          "name":"Rational Team Concert",
+          "link":"https://www.ibm.com/uk-en/marketplace/change-and-configuration-management"
+        }
       ]
     },
     {
@@ -204,11 +87,11 @@
       "logo":"personal.png",
       "roles": [
         {
-          "position":"Developing this CV",
+          "position":"CV App",
           "description": "personal1.md"
         },
         {
-          "position":"Graphical recipe system",
+          "position":"Graphical recipe web app",
           "image":"personal1.png",
           "imageAlt":"Early concept",
           "description": "personal2.md"
@@ -216,6 +99,60 @@
         {
           "position":"Presenting roles",
           "description": "personal3.md"
+        }
+      ],
+      "technologies": [
+        {
+          "name":"Azure",
+          "link":"https://azure.microsoft.com"
+        },
+        {
+          "name":"Angular",
+          "link":"https://angular.io/"
+        },
+        {
+          "name":"Progressive Web Apps",
+          "link":"https://developers.google.com/web/progressive-web-apps/"
+        },
+        {
+          "name":"JavaScript / TypeScript",
+          "link":"https://www.javascript.com/"
+        },
+        {
+          "name":"NPM",
+          "link":"https://www.npmjs.com/"
+        },
+        {
+          "name":"D3.js",
+          "link":"https://d3js.org/"
+        },
+        {
+          "name":"HTML",
+          "link":"https://en.wikipedia.org/wiki/HTML"
+        },
+        {
+          "name":"CSS / SASS",
+          "link":"https://sass-lang.com/"
+        },
+        {
+          "name":"Powershell",
+          "link":"https://docs.microsoft.com/en-us/powershell/scripting"
+        },
+        {
+          "name":"Git",
+          "link":"https://git-scm.com/"
+        },
+        {
+          "name":"Markdown",
+          "link":"https://daringfireball.net/projects/markdown/syntax"
+        },
+        {
+          "name":"Adobe Photoshop",
+          "link":"https://www.adobe.com/uk/creativecloud"
+        },
+        {
+          "name":"Adobe Premier Pro",
+          "link":"https://www.adobe.com/uk/creativecloud"
         }
       ]
     },
@@ -232,6 +169,24 @@
           "image":"zf1.png",
           "imageAlt":"Adaptive Cruise Control concept image",
           "description": "zf1.md"
+        }
+      ],
+      "technologies": [
+        {
+          "name":"IQ-RM Pro",
+          "link":"https://www.apis-iq.com/software/products/apis-iq-rm-pro/"
+        },
+        {
+          "name":"FaultTree +",
+          "link":"https://www.isograph.com/software/reliability-workbench/fault-tree-analysis-software/"
+        },
+        {
+          "name":"Rational Rhapsody",
+          "link":"https://www.ibm.com/uk-en/marketplace/rational-rhapsody"
+        },
+        {
+          "name":"Rational DOORS",
+          "link":"https://www.ibm.com/us-en/marketplace/rational-doors"
         }
       ]
     },
@@ -259,6 +214,24 @@
           "position":"Company Improvement",
           "description": "mbda3.md"
         }
+      ],
+      "technologies": [
+        {
+          "name":"Java",
+          "link":"https://www.java.com/en/"
+        },
+        {
+          "name":"Rational Rhapsody",
+          "link":"https://www.ibm.com/uk-en/marketplace/rational-rhapsody"
+        },
+        {
+          "name":"Rational DOORS",
+          "link":"https://www.ibm.com/us-en/marketplace/rational-doors"
+        },
+        {
+          "name":"Rational Team Concert",
+          "link":"https://www.ibm.com/uk-en/marketplace/change-and-configuration-management"
+        }
       ]
     },
     {
@@ -284,6 +257,28 @@
           "position":"Research engineer for military tracking system",
           "description": "thales3.md"
         }
+      ],
+      "technologies": [
+        {
+          "name":"C#",
+          "link":"https://docs.microsoft.com/en-us/dotnet/csharp/"
+        },
+        {
+          "name":"C++",
+          "link":"http://www.cplusplus.com/"
+        },
+        {
+          "name":"SQL",
+          "link":"https://en.wikipedia.org/wiki/SQL"
+        },
+        {
+          "name":"Windows Server",
+          "link":"https://en.wikipedia.org/wiki/Windows_Server"
+        },
+        {
+          "name":"Oracle Database",
+          "link":"https://www.oracle.com/uk/database/"
+        }
       ]
     },
     {
@@ -305,7 +300,7 @@
     },
     {
       "companyName":"Holy Cross College",
-      "level":"Advanced Level qualification",
+      "level":"Advanced Level Qualification",
       "logo":"college.png",
       "link":"https://www.holycross.ac.uk/",
       "start":"2001-08-01",

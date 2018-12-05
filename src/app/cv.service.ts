@@ -8,8 +8,7 @@ export interface Cv {
   email:string; //email to contact CV owner
   description:string; //name of the markdown file
   portrait:string;  //path to image of the person's face. Should be square
-  fields?:Skill[];
-  skills?:Skill[];
+  fields:string[];
   jobs:Job[];
 }
 export interface Job {
@@ -23,6 +22,7 @@ export interface Job {
   contactEmail?:string;
   roles?:Role[];
   description?:string; //name of the markdown file
+  technologies?:Technology[];
 }
 export interface Role {
   position:string;
@@ -30,15 +30,9 @@ export interface Role {
   imageCaption?:string; //image's caption. Also used for alt text
   description?:string; //name of the markdown file
 }
-export interface Skill {
+export interface Technology {
   name:string;
-  level?:SkillLevel;
-  link?:string;  //for technology/tool homepage
-}
-export enum SkillLevel {
-  expert = "Expert",
-  professional = "Professional",
-  experienced = "Experienced"
+  link:string;
 }
 @Injectable({
   providedIn: 'root'

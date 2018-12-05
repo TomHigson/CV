@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title}     from '@angular/platform-browser';
-import {CvService, Cv, Skill} from './cv.service';
+import {CvService, Cv, Technology} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -12,8 +12,8 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class AppComponent implements OnInit {
   cv:Cv = null;
-  filteredSkills:Skill[] = [];
   currentTheme:string = 'dark-theme';
+  combinedTechList:Technology[] = [];
   errorMessage='';
   
   constructor(private cvService:CvService,
@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
               private matIconRegistry: MatIconRegistry,
               private domSanitizer: DomSanitizer) {}
 
-  ngOnInit(): void {
+  ngOnInit():void {
 
     this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
 
@@ -31,23 +31,35 @@ export class AppComponent implements OnInit {
       (data:Cv) => {
         this.cv = data;
         
-        //convert dates from strings into JS Dates
+        this.titleService.setTitle(data.name + `'s CV`);
+
+
         for(let job of this.cv.jobs) {
+
+          //convert dates from strings into JS Dates
           if(job.start) {
             job.start = new Date(job.start);
           }
           if(job.end) {
             job.end = new Date(job.end);
           }
+
+          if(job.technologies) {
+
+            //consolodate technologies into master list
+            let newTechsToAdd:Technology[] =
+              job.technologies.filter(newTech => !(this.combinedTechList.some(
+                existingTech => existingTech.name === newTech.name)));
+
+            this.combinedTechList = [...this.combinedTechList, ...newTechsToAdd];
+          }
+
         }
-
-        this.filteredSkills = data.skills;
-        this.titleService.setTitle(data.name + `'s CV`),
-
-        error => this.errorMessage=error;
-      }
+        
+      },
+      error => this.errorMessage = error
     );
-
+  
     //load icons
     this.addIcon(`lightbulb-on`)
     this.addIcon(`lightbulb-off`)

@@ -1,0 +1,10 @@
+<div fxLayout="row wrap">
+
+  <div *ngFor = "let tech of techs" class = "tech-container">
+    <a *ngIf = "tech.link" href={{tech.link}}>
+      <div> {{tech.name}} </div>
+    </a>
+    <div *ngIf = "!(tech.link)"> {{tech.name}} </div>
+  </div>
+
+</div>
