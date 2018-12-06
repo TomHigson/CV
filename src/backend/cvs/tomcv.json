@@ -14,7 +14,7 @@
     "User experience design",
     "People Management",
     "Mentoring",
-    "Training",
+    "Delivering training",
     "Aerospace safety analysis using IEC61508",
     "Automotive safety analysis using ISO26262",
     "Modularity and reuse across product lines"
@@ -84,7 +84,7 @@
       ]
     },
     {
-      "level":"Personal Projects",
+      "level":"Personal Development",
       "logo":"personal.png",
       "roles": [
         {
@@ -98,7 +98,7 @@
           "description": "personal2.md"
         },
         {
-          "position":"Presenting roles",
+          "position":"Other",
           "description": "personal3.md"
         }
       ],
