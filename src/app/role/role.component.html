@@ -1,4 +1,4 @@
-<h2>{{role?.position}}</h2>
+<h3>{{role?.position}}</h3>
 <div *ngIf = "role?.description">
   <img *ngIf = "role?.image"
        [src] = "cvService.getPhotoUrl(role.image)"
