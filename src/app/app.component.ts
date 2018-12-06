@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Title}     from '@angular/platform-browser';
-import {CvService, Cv, Technology} from './cv.service';
+import {CvService, Cv, Technology, Job} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -10,10 +10,18 @@ import {DomSanitizer} from "@angular/platform-browser";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
   cv:Cv = null;
-  currentTheme:string = 'dark-theme';
+
+  INITIAL_JOBS_TO_SHOW:number = 4;
+  shownJobs:Job[] = [];
+  truncatingJobs:boolean = true;
+
   combinedTechList:Technology[] = [];
+
+  currentTheme:string = 'dark-theme';
+
   errorMessage='';
   
   constructor(private cvService:CvService,
@@ -32,7 +40,6 @@ export class AppComponent implements OnInit {
         this.cv = data;
         
         this.titleService.setTitle(data.name + `'s CV`);
-
 
         for(let job of this.cv.jobs) {
 
@@ -53,7 +60,14 @@ export class AppComponent implements OnInit {
 
             this.combinedTechList = [...this.combinedTechList, ...newTechsToAdd];
           }
+        }
 
+        if(this.cv.jobs.length <= this.INITIAL_JOBS_TO_SHOW) {
+          this.truncatingJobs = false;
+        }
+        else {
+          this.truncatingJobs = true;
+          this.shownJobs = this.cv.jobs.slice(0,this.INITIAL_JOBS_TO_SHOW);
         }
         
       },
@@ -88,6 +102,11 @@ export class AppComponent implements OnInit {
        overlayContainerClasses.remove(...themeClassesToRemove);
     }
     overlayContainerClasses.add(themeName);
+  }
+
+  showAllJobs() {
+    this.shownJobs=this.cv.jobs;
+    this.truncatingJobs=false;
   }
 
 }

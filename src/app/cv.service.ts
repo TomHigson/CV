@@ -7,7 +7,7 @@ export interface Cv {
   name:string;  //the name of the person the CV describes
   email:string; //email to contact CV owner
   description:string; //name of the markdown file
-  portrait:string;  //path to image of the person's face. Should be square
+  banner:string;  //path to image of the person's face. Should be square
   fields:string[];
   jobs:Job[];
 }

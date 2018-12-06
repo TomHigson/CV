@@ -7,35 +7,55 @@
                  (themeChanged)  = "setTheme($event)">
   </app-title-bar>
 
+  <!-- intro section -->
+  <div *ngIf     = cv?.banner
+       class     = "banner"
+       [ngStyle] = "{'background-image':'url(src/backend/photos/banner.png)'}">
+
+    <markdown *ngIf = "cv?.description"
+              [src] = "cvService.getTextUrl(cv.description)"></markdown>
+
+  </div>
+
   <div class         = "mat-app-background
-                        basic-container"
-       fxLayout      = "row"
-       fxLayoutAlign = "center start">
-         
-    <!-- main content column -->
-    <div class  = "main-column">
+                        basic-container">
 
-      <!-- intro section -->
-      <markdown *ngIf = "cv?.description"
-                [src] = "cvService.getTextUrl(cv.description)"></markdown>
+    <div fxLayout      = "row"
+         fxLayoutAlign = "center start">
+           
+      <!-- main content column -->
+      <div class  = "app-main-column">
 
-      <h1>Fields of expertise</h1>
-      <ul>
-        <div class = "columns">
-          <li *ngFor = "let field of cv?.fields">{{field}}</li>
-        </div>
-      </ul>
-      <h1>Technology proficiencies</h1>
-      <app-tech-list [techs] = combinedTechList></app-tech-list>
+        <h1>Fields of expertise</h1>
+        <ul>
+          <div class = "app-two-columns">
+            <li *ngFor = "let field of cv?.fields">{{field}}</li>
+          </div>
+        </ul>
+        <h1>Technology proficiencies</h1>
+        <app-tech-list [techs] = combinedTechList></app-tech-list>
 
-      <h1>Experience</h1>
-      <!-- all jobs listed -->
-      <app-job *ngFor = 'let job of cv?.jobs' [job] = 'job'></app-job>
-      
+        <h1>Experience</h1>
+        <!-- all jobs listed -->
+        <app-job *ngFor = 'let job of shownJobs' [job] = 'job'></app-job>
+      </div>
+
+      <!-- nav bar column -->
+      <app-nav-bar></app-nav-bar>
+
     </div>
 
-    <!-- nav bar column -->
-    <app-nav-bar></app-nav-bar>
-
+    <!-- show more button -->
+    <div fxLayout = row
+         fxLayoutAlign = "center center">
+      <button mat-button
+              class = "app-show-more-button"
+              *ngIf = "truncatingJobs"
+              (click) = "showAllJobs()"
+              fxLayout = "center">
+        SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
+      </button>
+    </div>
+    
   </div>
 </div>

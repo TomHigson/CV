@@ -1,10 +1,11 @@
 {
   "name":"Thomas Higson",
   "email":"Thomas.Higson@gmail.com",
+  "banner":"banner.png",
   "description":"intro.md",
   "fields": [
-    "Cloud architectures",
-    "Microservice architectures",
+    "Cloud architecture",
+    "Microservice architecture",
     "Web apps and services",
     "DevOps / System Reliability Engineering",
     "Agile development",
