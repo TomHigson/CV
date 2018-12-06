@@ -24,9 +24,9 @@
 
   a {
     color:darken(mat-color($primary),20%);
-  }
-  a:visited {
-    color:darken(mat-color($primary),30%);
+    &:visited {
+      color:darken(mat-color($primary),30%);
+    }
   }
 }
 
@@ -55,11 +55,10 @@
 
   a {
     color:mat-color($primary);
+    &:visited {
+      color:darken(mat-color($primary),10%);
+    }
   }
-  a:visited {
-    color:darken(mat-color($primary),10%);
-  }
-
 }
 
 body { 
@@ -72,12 +71,12 @@ body {
 
 a {
   text-decoration: none;
-}
-a:hover {
+  &:hover {
   text-decoration: underline;
-}
-a:visited {
+  }
+  &:visited {
   text-decoration: none;
+  }
 }
 
 li, p {
@@ -111,10 +110,20 @@ li > ul > li:last-of-type {
   z-index: 1000; /* Ensure draws over app content */
 }
 
-.banner {
+.app-banner {
   height:100%;
   background-size: cover;
   background-position: 50% 50%;
+}
+
+.app-banner div {
+  background-color: rgba(0,0,0,.3);
+  padding: 20px;
+  color: rgba(255,255,255,.4);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .app-main-column {
