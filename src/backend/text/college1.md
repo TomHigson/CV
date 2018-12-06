@@ -1,4 +1,4 @@
-2 year A-Level diploma studying:
+I studied:
  - Computing
  - Maths
  - Advanced Maths

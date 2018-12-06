@@ -35,7 +35,7 @@
           "description":"gd1.md"
         },
         {
-          "position":"3rd party developer lead for MORPHEUS Evolve to Open",
+          "position":"3rd party developer lead for Evolve to Open",
           "image":"gd2.png",
           "description": "gd2.md"
         }
@@ -88,11 +88,11 @@
       "logo":"personal.png",
       "roles": [
         {
-          "position":"CV App",
+          "position":"Developer of CV App",
           "description": "personal1.md"
         },
         {
-          "position":"Graphical recipe web app",
+          "position":"Developer of graphical recipe web app",
           "image":"personal1.png",
           "imageAlt":"Early concept",
           "description": "personal2.md"

@@ -1,4 +1,5 @@
-A demonstration of the system I contributed to is available in [this video](https://www.youtube.com/watch?v=GLdKrCWDaAg)
+I was responsible for assessing the safety of advanced driver assistance systems. A demonstration of some of the systems I contributed to can be seen in [this video](https://www.youtube.com/watch?v=GLdKrCWDaAg). 
+My contributions included:
 - Delivered safety cases for autonomy level 1 (hands on) systems
 	- Lead an activity to adapt a passenger vehicle safety case for trucks
 	- Analysed the safety impact of different sensor configurations
@@ -10,7 +11,7 @@ A demonstration of the system I contributed to is available in [this video](http
 	- Failure mode and Effect Analysis for hardware design and production (DFMEA, PFMEA)
 	- Failure Tree Analysis for software (FTA)
 	- Robustness analysis
-- Managed 6 people and expanded the team by recruiting new talent
 - Encouraged a stronger safety culture
 	- Delivering safety training
 	- Working between multiple departments to determine, record and propagate best practice
+- Managed 6 people and expanded the team by recruiting new talent

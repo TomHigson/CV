@@ -1,15 +1,7 @@
-As my professional projects generally security restricted, I produced this CV website to demonstrate my ... [The source is available online](https://github.com/TomHigson/CV).
-Key features include:
-- Filters to allow you to do so quickly and easily
-- The timeline view provides both a summary of the CV and a navigation aid
-- Material design compiant
-- Reactive to different screen sizes
-- Features automated end-to-end and unit tests
-- Deployable in 1 command as either a development or deployment build
-- Dynamically generates printable PDFs using the user's selected filters
-- Properly formatted Angular components allow for modular testing and reuse
-- Uses SASS dynamic theming
-- Utilises an Azure data service interface to load contents
-- Service worker ready. Try disconnecting from the internet and reloading the page!
-- Uses polyfills to render on all major browsers (excluding internet explorer)
-- Accessibility support through comprehensive ARIA tagging
+This CV is not just a CV! It is an open source web app that:
+- Separates app shell and content connected with data services
+- Is hosted as [an Azure web app](coming soon...), utilising Azure blob storage for content
+- Leverages properly formatted Angular structuring to allow component reuse
+- Is service worker ready – try disconnecting from the internet and reloading the page!
+
+As my work is typically security controlled and so cannot be shared, I hope this CV helps demonstrate some of my technical abilities. Check out [the repository](https://github.com/TomHigson/CV) for more details
