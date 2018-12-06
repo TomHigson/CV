@@ -1,4 +1,4 @@
-This CV is not just a CV! It is an open source web app that:
+This CV is not just a CV, it's an open source web app that:
 - Separates app shell and content connected with data services
 - Is hosted as [an Azure web app](coming soon...), utilising Azure blob storage for content
 - Leverages properly formatted Angular structuring to allow component reuse
