@@ -24,8 +24,8 @@
 // Palettes defined using the Material Design palettes available in palette.scss (imported above).
 // Some specify a default, lighter, and darker hue.
 // Available color palettes: https://material.io/design/color/
-$theme-primary: mat-palette($mat-orange, A700, A200, A900);
-$theme-accent:  mat-palette($mat-red, A100, 50, 600);
+$theme-primary: mat-palette($mat-red, A100, 50, 600);
+$theme-accent:  mat-palette($mat-orange, A700, A200, A900);
 $theme-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).

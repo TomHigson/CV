@@ -11,22 +11,22 @@
   }
 
   li::before {
-    color:mat-color($accent);
+    color:mat-color($primary);
   }
   
   //change text selection colour
   ::-moz-selection { //for Firefox
-    background:mat-color($accent);
+    background:mat-color($primary);
   }
   ::selection { //for other browsers
-    background:mat-color($accent);
+    background:mat-color($primary);
   }
 
   a {
-    color:darken(mat-color($accent),20%);
+    color:darken(mat-color($primary),20%);
   }
   a:visited {
-    color:darken(mat-color($accent),30%);
+    color:darken(mat-color($primary),30%);
   }
 }
 
@@ -42,22 +42,22 @@
   }
 
   li::before {
-    color:mat-color($accent);
+    color:mat-color($primary);
   }
 
   //change text selection colour
   ::-moz-selection { //for Firefox
-    background:mat-color($accent);
+    background:mat-color($primary);
   }
   ::selection { //for other browsers
-    background:mat-color($accent);
+    background:mat-color($primary);
   }
 
   a {
-    color:mat-color($accent);
+    color:mat-color($primary);
   }
   a:visited {
-    color:darken(mat-color($accent),10%);
+    color:darken(mat-color($primary),10%);
   }
 
 }
