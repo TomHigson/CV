@@ -104,6 +104,13 @@ li > ul > li:last-of-type {
   padding-bottom:12px;
 }
 
+.stick-to-top {
+  position: sticky;
+  position: -webkit-sticky; /* For Safari */
+  top: 0;
+  z-index: 1000; /* Ensure draws over app content */
+}
+
 .banner {
   height:100%;
   background-size: cover;

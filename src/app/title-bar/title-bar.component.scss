@@ -8,13 +8,6 @@
   
 }
 
-.stick-to-top {
-  position: sticky;
-  position: -webkit-sticky; /* For Safari */
-  top: 0;
-  z-index: 1000; /* Ensure draws over app content */
-}
-
 .main-logo {
   width:  30px;
   height: 30px;
