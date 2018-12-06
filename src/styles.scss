@@ -29,7 +29,7 @@ $theme-accent:  mat-palette($mat-red, A100, 50, 600);
 $theme-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$dark-theme:  mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+$dark-theme:  mat-dark-theme( $theme-primary, $theme-accent, $theme-warn);
 $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Define classes for each theme
