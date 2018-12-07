@@ -10,14 +10,13 @@
   </div>
 
   <!-- intro section -->
-  <div *ngIf     = cv?.banner
-       class     = "banner"
-       [ngStyle] = "{'background-image':'url(src/backend/photos/banner.png)'}">
-
-    <markdown *ngIf = "cv?.description"
-              [src] = "cvService.getTextUrl(cv.description)"></markdown>
-
-  </div>
+  <app-banner [twitter]       = "cv?.twitter"
+              [linkedIn]      = "cv?.linkedIn"
+              [gitHub]        = "cv?.gitHub"
+              [textUrl]       = "cv?.description"
+              [backgroundImg] = "cv?.banner"
+              [portraitImg]   = "cv?.portrait"
+              class           = "mat-app-background"></app-banner>
 
   <div class         = "mat-app-background
                         basic-container">
@@ -40,24 +39,21 @@
         <h1>Experience</h1>
         <!-- all jobs listed -->
         <app-job *ngFor = 'let job of shownJobs' [job] = 'job'></app-job>
+
+        <!-- show more button -->
+        <button mat-button
+                class    = "app-show-more-button"
+                *ngIf    = "truncatingJobs"
+                (click)  = "showAllJobs()"
+                fxLayout = "center">
+          SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
+        </button>
       </div>
 
       <!-- nav bar column -->
-      <app-nav-bar></app-nav-bar>
+      <app-nav-bar class = float-below-title-bar></app-nav-bar>
 
     </div>
 
-    <!-- show more button -->
-    <div fxLayout = row
-         fxLayoutAlign = "center center">
-      <button mat-button
-              class = "app-show-more-button"
-              *ngIf = "truncatingJobs"
-              (click) = "showAllJobs()"
-              fxLayout = "center">
-        SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
-      </button>
-    </div>
-    
   </div>
 </div>

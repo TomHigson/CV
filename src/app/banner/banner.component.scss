@@ -1,0 +1,39 @@
+@import '~@angular/material/theming';
+@mixin banner-component-style($theme) {
+  $primary:    map-get($theme, primary);
+  $accent:     map-get($theme, accent);
+  $warn:       map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .app-banner-background {
+    background-color: mat-color($accent);
+  }
+  .app-banner-background div {
+    background-color: rgba(mat-color($background, background), 0.9);
+  }
+}
+
+.app-banner-background {
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 100%;
+}
+
+.app-banner-background img {
+  position: absolute;
+  height: 440px; //this may need tweaking if there's a large banner
+
+  //the flexbox places this in the middle. After this, offset slightly
+  transform: translatex(-450px);
+  -webkit-transform: translatex(-450px);  //compatability
+}
+
+.app-banner-text-box {
+  width: 700px;
+  padding: 30px;
+
+  //the flexbox places this in the middle. After this, offset slightly
+  transform: translatex(200px);
+  -webkit-transform: translatex(200px);  //compatability
+}

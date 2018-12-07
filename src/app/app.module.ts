@@ -24,6 +24,7 @@ import {RoleComponent}           from './role/role.component';
 import {TitleBarComponent}       from './title-bar/title-bar.component';
 import {NavBarComponent}         from './nav-bar/nav-bar.component';
 import {TechListComponent}       from './tech-list/tech-list.component';
+import {BannerComponent} from './banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {TechListComponent}       from './tech-list/tech-list.component';
     RoleComponent,
     TitleBarComponent,
     NavBarComponent,
-    TechListComponent
+    TechListComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@
 @import './app/title-bar/title-bar.component.scss';
 @import './app/nav-bar/nav-bar.component.scss';
 @import './app/tech-list/tech-list.component.scss';
+@import './app/banner/banner.component.scss';
 
 // collected themes for all local components
 // that don't care about light or dark
@@ -13,6 +14,7 @@
   @include role-component-style($theme);
   @include title-bar-component-style($theme);
   @include nav-bar-component-style($theme);
+  @include banner-component-style($theme);
   // ...populate as components are created
 
 }

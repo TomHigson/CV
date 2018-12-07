@@ -1,0 +1,18 @@
+<div class     = "app-banner-background"
+     [style.background-image] = "backgroundImg ? 'url('+cvService.getPhotoUrl(backgroundImg)+')' : 'none'"
+     fxLayout = "row"
+     fxLayoutAlign = "center end">
+
+  <img *ngIf = "portraitImg"
+       [src] = "cvService.getPhotoUrl(portraitImg)"
+       class = "app-banner-portrait">
+
+  <div class  = "app-banner-text-box">
+    <h1>About me</h1>
+    <markdown *ngIf = "textUrl"
+              [src] = "cvService.getTextUrl(textUrl)" ></markdown>
+
+    
+  </div>
+  
+</div>
