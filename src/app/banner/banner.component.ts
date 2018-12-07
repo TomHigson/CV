@@ -21,7 +21,7 @@ export class BannerComponent implements OnInit{
   onResize() {
 
       //get the height of the text box
-      let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-text-box`);
+      let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-content`);
       let targetHeight:number = null;
       if(textBoxes.length) targetHeight=(textBoxes[0] as HTMLElement).offsetHeight;
   

@@ -9,7 +9,7 @@
   .app-banner-background {
     background-color: mat-color($accent);
   }
-  .app-banner-text-box {
+  .app-banner-content {
     background-color: rgba(mat-color($background, background), 0.9);
   }
 }
@@ -22,18 +22,49 @@
 
 .app-banner-portrait {
   position: absolute;
-  height: 440px; //this may need tweaking if there's a large banner
+
+  //this may need tweaking if there's a large banner
+  //It will resize on screen size change though I've not found an efficient way of
+  //resizing the when the content fist loads and resizes the flex box
+  height: 500px;
 
   //the flexbox places this in the middle. After this, offset slightly
   transform: translatex(-450px);
   -webkit-transform: translatex(-450px);  //compatability
 }
 
-.app-banner-text-box {
+.app-banner-content {
   width: 700px;
-  padding: 30px;
 
   //the flexbox places this in the middle. After this, offset slightly
   transform: translatex(200px);
   -webkit-transform: translatex(200px);  //compatability
+}
+.app-banner-text-box{
+  padding: 30px 30px 0px 30px;
+}
+
+.app-banner-link-bar {
+  height: 64px;
+  width: 100%;
+  margin-bottom:16px;
+
+  //this is a hack to get space-evenly to work on Edge and Safari
+  //(currently not working on them)
+  //places empty elements to the start and end of the flex box, to 
+  //turn space-between into a pseudo-space-evenly
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+}
+
+.app-banner-link-bar a mat-icon {
+  transform: scale(1.5);
+}
+.app-banner-link-bar a {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
 }

@@ -77,6 +77,9 @@ export class AppComponent implements OnInit {
     //load icons
     this.addIcon(`lightbulb-on`)
     this.addIcon(`lightbulb-off`)
+    this.addIcon(`twitter`)
+    this.addIcon(`linked-in`)
+    this.addIcon(`github`)
   }
   
   /**Helper method to load an icon into the material icon registry

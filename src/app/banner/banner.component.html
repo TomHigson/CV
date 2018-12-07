@@ -1,18 +1,55 @@
-<div class     = "app-banner-background"
+<div class         = "app-banner-background"
      [style.background-image] = "backgroundImg ? 'url('+cvService.getPhotoUrl(backgroundImg)+')' : 'none'"
-     fxLayout = "row"
+     fxLayout      = "row"
      fxLayoutAlign = "center end">
 
   <img *ngIf = "portraitImg"
        [src] = "cvService.getPhotoUrl(portraitImg)"
        class = "app-banner-portrait">
 
-  <div class  = "app-banner-text-box">
-    <h1>About me</h1>
-    <markdown *ngIf = "textUrl"
-              [src] = "cvService.getTextUrl(textUrl)" ></markdown>
+  <div class  = "app-banner-content">
 
-    
+    <div class = "app-banner-text-box">
+      <h1>About me</h1>
+      <markdown *ngIf = "textUrl"
+                [src] = "cvService.getTextUrl(textUrl)" ></markdown>
+    </div>
+
+    <div class         = "app-banner-link-bar"
+         fxLayout      = "row"
+         fxLayoutAlign = "space-between center">
+
+      <a mat-icon-button
+         *ngIf  = "linkedIn"
+         color  = "primary"
+         fxFlex = "none"
+         [href] = "linkedIn"
+         target = "_blank">
+
+        <mat-icon svgIcon = "linked-in"></mat-icon>
+      </a>
+
+      <a mat-icon-button
+         *ngIf  = "gitHub"
+         color  = "primary"
+         fxFlex = "none"
+         [href] = "gitHub"
+         target = "_blank">
+
+        <mat-icon svgIcon = "github"></mat-icon>
+      </a>
+
+      <a mat-icon-button
+         *ngIf  = "twitter"
+         color  = "primary"
+         fxFlex = "none"
+         [href] = "twitter"
+         target = "_blank">
+
+        <mat-icon svgIcon = "twitter"></mat-icon>
+      </a>
+
+    </div>
   </div>
   
 </div>
