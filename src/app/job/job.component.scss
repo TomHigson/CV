@@ -8,29 +8,33 @@
 
   .job-logo {
     background-color: mat-color($primary); //required as some browsers leave a small gap at some zooms
-    width :95px;
-    height:95px;
-    margin:5px;
     border:5px solid mat-color($primary);  //so elements don't overlap the border
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
   }
 
   .job-period {
     color:mat-color($foreground, secondary-text);
   }
 
-  .job-header {
-    min-height:105px;
-  }
+}
 
-  .job-level {
-    font-size:200%;
-    font-weight: bold;
-  }
+.job-logo {
+  width :95px;
+  height:95px;
+  margin:5px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
 
-  .job-company {
-    font-weight: bold;
-  }
+.job-header {
+  min-height:105px;
+}
+
+.job-level {
+  font-size:200%;
+  font-weight: bold;
+}
+
+.job-company {
+  font-weight: bold;
 }
