@@ -23,9 +23,8 @@
 .app-banner-portrait {
   position: absolute;
 
-  //this may need tweaking if there's a large banner
-  //It will resize on screen size change though I've not found an efficient way of
-  //resizing the when the content fist loads and resizes the flex box
+  //gives portrait sensible starting size while loading
+  //Note: this will be replaced to fit the banner height once the text is loaded
   height: 500px;
 
   //the flexbox places this in the middle. After this, offset slightly

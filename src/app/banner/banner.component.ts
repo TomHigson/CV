@@ -19,15 +19,19 @@ export class BannerComponent implements OnInit{
   // Instead, it is resized here to match any container resized on screen resize
   @HostListener('window:resize', ['$event'])
   onResize() {
+    this.resizePortrait();
+  }
 
-      //get the height of the text box
-      let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-content`);
-      let targetHeight:number = null;
-      if(textBoxes.length) targetHeight=(textBoxes[0] as HTMLElement).offsetHeight;
-  
-      //set the image height to be the same
-      let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
-      Array.from(portraits).forEach(portrait => (portrait as HTMLElement).style.height = targetHeight + `px`);
+  resizePortrait():void {
+
+    //get the height of the text box
+    let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-content`);
+    let targetHeight:number = null;
+    if(textBoxes.length) targetHeight=(textBoxes[0] as HTMLElement).offsetHeight;
+
+    //set the image height to be the same
+    let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
+    Array.from(portraits).forEach(portrait => (portrait as HTMLElement).style.height = targetHeight + `px`);
 
   }
 
@@ -35,7 +39,5 @@ export class BannerComponent implements OnInit{
 
   ngOnInit() {
   }
-
-
 
 }

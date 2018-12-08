@@ -11,8 +11,9 @@
 
     <div class = "app-banner-text-box">
       <h1>About me</h1>
-      <markdown *ngIf = "textUrl"
-                [src] = "cvService.getTextUrl(textUrl)" ></markdown>
+      <markdown *ngIf  = "textUrl"
+                [src]  = "cvService.getTextUrl(textUrl)"
+                (load) = "resizePortrait()"></markdown>
     </div>
 
     <div class         = "app-banner-link-bar"
