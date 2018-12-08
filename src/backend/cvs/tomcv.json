@@ -34,14 +34,14 @@
       "contactEmail":"bina.taylor@gd-ms.uk",
       "roles": [
         {
-          "position":"Vertex engineering lead",
-          "image":"gd1.png",
-          "description":"gd1.md"
-        },
-        {
           "position":"3rd party developer lead for Evolve to Open",
           "image":"gd2.png",
           "description": "gd2.md"
+        },
+        {
+          "position":"Vertex engineering lead",
+          "image":"gd1.png",
+          "description":"gd1.md"
         }
       ],
       "technologies": [
