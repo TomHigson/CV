@@ -96,11 +96,9 @@ ul li::before {
 li > ul > li::before {
   content: "-";
 }
-li > ul > li:first-of-type {
-  padding-top:12px;
-}
-li > ul > li:last-of-type {
-  padding-bottom:12px;
+li > ul { //give 2nd level bullets margin similar to 1st level bullets
+  margin-top:12px;
+  margin-bottom:12px;
 }
 
 .stick-to-top {
