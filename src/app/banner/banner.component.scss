@@ -28,19 +28,19 @@
   height: 500px;
 
   //the flexbox places this in the middle. After this, offset slightly
-  transform: translatex(-450px);
-  -webkit-transform: translatex(-450px);  //compatability
+  transform: translatex(-300px);
+  -webkit-transform: translatex(-300px);  //compatability
 }
 
 .app-banner-content {
   width: 700px;
 
   //the flexbox places this in the middle. After this, offset slightly
-  transform: translatex(200px);
-  -webkit-transform: translatex(200px);  //compatability
+  transform: translatex(300px);
+  -webkit-transform: translatex(300px);  //compatability
 }
 .app-banner-text-box{
-  padding: 30px 30px 0px 30px;
+  padding: 0px 30px 0px 30px;
 }
 
 .app-banner-link-bar {
