@@ -6,6 +6,9 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
   
+  mat-toolbar {
+    background: mat-color($background,background) !important;
+  }
 }
 
 .main-logo {
