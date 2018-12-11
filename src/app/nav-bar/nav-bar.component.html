@@ -1,1 +1,40 @@
-<img src="src\assets\nav-bar-standin.png">
+<div fxLayout    = "row"
+     fxFlex>
+
+  <!-- axis -->
+  <div fxFlex        = "none"
+       fxLayout      = "column"
+       fxLayoutAlign = "space-between">
+
+    <div *ngFor = "let scaleLabel of scaleLabels"
+         class  = "nav-bar-timeline-label">
+      {{scaleLabel}}
+    </div>
+
+  </div>
+
+  <!-- links column -->
+  <div fxLayout = "column">
+
+    <!-- link -->
+    <div class    = "nav-bar-job"
+         *ngFor   = "let job of jobsWithStartDate; let even = even"
+         fxLayout = "row"
+         [fxFlex] = "'1 1 ' + durationOf(job) + '%'"
+         (click)  = "something()">
+
+      <!-- period indicator -->
+      <div class     = "nav-bar-job-period"
+           fxFlex    = "none"
+           [ngClass] = "{'light-band':even?true:false}"></div>
+
+      <!-- text label -->
+      <div fxFlexAlign = "center"
+           class       = "nav-bar-job-label">
+        {{job.level}} <span class = "avoid-wrap" *ngIf = "job.companyName"> at {{job.companyName}}</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>

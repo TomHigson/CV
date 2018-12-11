@@ -6,4 +6,43 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
   
+  .nav-bar-job-period{
+    background-color: mat-color($foreground,secondary-text);
+
+    &.light-band{
+      background-color: rgba(mat-color($foreground,secondary-text), 0.4);;
+    }
+  }
+
+  .nav-bar-timeline-label {
+    color: mat-color($foreground,secondary-text);
+  }
+
+  .nav-bar-job-label {
+    color: mat-color($foreground,secondary-text);
+  }
+}
+
+.nav-bar-timeline-label {
+  margin-right:20px;
+}
+
+.nav-bar-job-label {
+  margin-left:20px;
+}
+
+span.avoid-wrap {
+  display:inline-block;
+}
+
+.nav-bar-job-period {
+  width: 10px;
+}
+.nav-bar-job:first-child div{
+  margin-top: 0.5em;
+  border-radius: 10px 10px 0px  0px
+}
+.nav-bar-job:last-child div{
+  margin-bottom: 0.5em;
+  border-radius: 0px  0px  10px 10px
 }
