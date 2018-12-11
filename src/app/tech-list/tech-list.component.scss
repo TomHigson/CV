@@ -7,7 +7,7 @@
   $background: map-get($theme, background);
 
   .tech-container div {
-    background: darken(mat-color($background, background),15%);
+    background: darken(mat-color($background, background),10%);
   }
 }
 
