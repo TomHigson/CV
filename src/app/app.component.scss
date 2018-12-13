@@ -65,6 +65,15 @@ body {
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
 }
+.app-padding {
+  padding-left:30px;
+  padding-right:30px;
+  padding-bottom:30px;
+}
+
+h1 {
+  margin-top:50px;
+}
 
 a {
   text-decoration: none;
@@ -110,11 +119,6 @@ li > ul { //give 2nd level bullets margin similar to 1st level bullets
   position: -webkit-sticky; /* For Safari */
   top: 94px;
   height: calc(100vh - 124px);
-  margin-left:  80px;
-}
-
-.app-side-column {
-  max-width:    350px;
 }
 
 .app-main-column {
@@ -122,17 +126,8 @@ li > ul { //give 2nd level bullets margin similar to 1st level bullets
 }
 .app-fields-of-expertise {
   column-gap: 40px;
+  column-count: 2;
 }
-
-.app-show-more-button {
+.center {
   margin: auto;
-}
-
-.app-side-margins {
-  margin-left:30px;
-  margin-right:30px;
-}
-
-h1 {
-  margin-top:50px;
 }

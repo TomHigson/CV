@@ -8,33 +8,25 @@
                    (themeChanged)  = "setTheme($event)">
     </app-title-bar>
   </div>
-
+  
   <div class = "mat-app-background">
+  
+    <!-- intro section -->
+    <app-banner [twitter]       = "cv?.twitter"
+                [linkedIn]      = "cv?.linkedIn"
+                [gitHub]        = "cv?.gitHub"
+                [textUrl]       = "cv?.description"
+                [backgroundImg] = "cv?.banner"
+                [portraitImg]   = "cv?.portrait"></app-banner>
 
-  <!-- intro section -->
-  <app-banner [twitter]       = "cv?.twitter"
-              [linkedIn]      = "cv?.linkedIn"
-              [gitHub]        = "cv?.gitHub"
-              [textUrl]       = "cv?.description"
-              [backgroundImg] = "cv?.banner"
-              [portraitImg]   = "cv?.portrait"></app-banner>
-
-    <div fxLayout      = "row"
-         fxLayoutAlign = "center start"
-         class         = "app-side-margins">
-      
-      <!-- empty column that matches the opposite column size to
-           keep the main column central -->
-      <div class = "app-side-column"
-           fxFlex = "1 1 auto"></div>
+    <div class = "app-padding center">
 
       <!-- main content column -->
-      <div class  = "app-main-column"
-           fxFlex = "1 1 auto">
+      <div class  = "app-main-column center">
 
         <h1>Fields of expertise</h1>
         <ul>
-          <div class = "app-fields-of-expertise" style = "column-count:3;">
+          <div class = "app-fields-of-expertise">
             <li *ngFor = "let field of cv?.fields">{{field}}</li>
           </div>
         </ul>
@@ -47,7 +39,7 @@
 
         <!-- show more button -->
         <button mat-button
-                class    = "app-show-more-button"
+                class    = "center"
                 *ngIf    = "truncatingJobs"
                 (click)  = "showAllJobs()"
                 fxLayout = "center">
@@ -56,10 +48,9 @@
       </div>
 
       <!-- nav bar column -->
-      <app-nav-bar *ngIf  = "cv?.jobs.length > 1"
-                   class  = "fill-space-below-title-bar app-side-column"
-                   [jobs] = "cv?.jobs"
-                   fxFlex = "1 1 auto"></app-nav-bar>
+      <!-- <app-nav-bar *ngIf  = "cv?.jobs.length > 1"
+                   class  = "fill-space-below-title-bar"
+                   [jobs] = "cv?.jobs"></app-nav-bar> -->
 
     </div>
 
