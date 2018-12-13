@@ -1,38 +1,71 @@
 <mat-toolbar [class.mat-elevation-z0] = "atTop"
              [class.mat-elevation-z4] = "!atTop"
              fxLayout      = "row"
-             fxLayoutGap   = "10px"
+             fxLayoutGap   = "30px"
              fxLayoutAlign = "end center">
 
+  <!-- logo -->
   <img class = "main-logo"
        fxFlex= "none"
        src   = "../assets/logo.png">
 
-  <div *ngIf = "cvOwnersName">
+  <!-- title -->
+  <div *ngIf = "cvOwnersName"
+       fxShow [fxShow.lt-sm] = "false">
     {{cvOwnersName}}'s CV
   </div>
 
+  <!-- fill remaining space -->
   <div fxFlex="grow"></div>
 
-  <button mat-button
+  <!-- buttons -->
+  <button mat-icon-button
+          fxShow [fxShow.gt-sm] = "false"
+          class = "large-icon"
+          matTooltip = "Toggle theme"
           color   = "primary"
           (click) = 'toggleTheme()'
           fxFlex  = "none">
 
     <mat-icon [svgIcon] = "currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'"></mat-icon>
+  </button>
+  <button mat-button
+          fxShow [fxShow.lt-md] = "false"
+          color   = "primary"
+          (click) = 'toggleTheme()'
+          fxFlex  = "none">
+    <mat-icon [svgIcon] = "currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'"></mat-icon>
     Toggle theme
   </button>
 
+  <button mat-icon-button
+          fxShow [fxShow.gt-sm] = "false"
+          class = "large-icon"
+          matTooltip = "Download"
+          color  = "primary"
+          fxFlex = "none">
+    <mat-icon>arrow_downward</mat-icon>
+  </button>
   <button mat-button
+          fxShow [fxShow.lt-md] = "false"
           color  = "primary"
           fxFlex = "none">
     <mat-icon>arrow_downward</mat-icon>
       Download
-    </button>
+  </button>
 
+  <button mat-icon-button
+          fxShow [fxShow.gt-sm] = "false"
+          class = "large-icon"
+          matTooltip = "Contact"
+          color  = "primary"
+          fxFlex = "none">
+    <mat-icon>alternate_email</mat-icon>
+  </button>
   <button mat-button
-    color  = "primary"
-    fxFlex = "none">
+          fxShow [fxShow.lt-md] = "false"
+          color  = "primary"
+          fxFlex = "none">
     <mat-icon>alternate_email</mat-icon>
     Contact
   </button>

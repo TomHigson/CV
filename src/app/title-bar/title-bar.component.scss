@@ -2,3 +2,17 @@
   width:  30px;
   height: 30px;
 }
+
+.large-icon {
+  scale: 2;
+}
+
+button.large-icon {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+}
+
+button.large-icon mat-icon {
+  transform: scale(1.5);
+}

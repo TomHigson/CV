@@ -11,6 +11,7 @@ export class TitleBarComponent implements OnInit {
   @Input() currentTheme:string = null;
   @Output() themeChanged = new EventEmitter<string>();
 
+  a=false;
   atTop:boolean = window.pageYOffset === 0;
   @HostListener("window:scroll", [])
   onWindowScroll() {
