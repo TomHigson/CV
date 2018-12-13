@@ -8,13 +8,9 @@ import {MarkdownModule,
         MarkedOptions}           from 'ngx-markdown';
 
 import {MatButtonModule}         from '@angular/material';
-import {MatCardModule}           from '@angular/material/card';
 import {MatToolbarModule}        from '@angular/material/toolbar';
-import {MatDividerModule}        from '@angular/material/divider';
-import {MatListModule}           from '@angular/material/list';
-import {MatSelectModule}         from '@angular/material/select';
 import {MatIconModule}           from '@angular/material/icon';
-import {MatChipsModule}          from '@angular/material/chips';
+import {MatTooltipModule}        from '@angular/material/tooltip';
 
 import {FlexLayoutModule}        from '@angular/flex-layout';
 
@@ -41,13 +37,9 @@ import {BannerComponent} from './banner/banner.component';
     BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
-    MatCardModule,
     MatToolbarModule,
-    MatDividerModule,
-    MatListModule,
-    MatSelectModule,
     MatIconModule,
-    MatChipsModule,
+    MatTooltipModule,
     FlexLayoutModule,
     MarkdownModule.forRoot({
       markedOptions: {
