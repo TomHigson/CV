@@ -8,9 +8,11 @@
        fxFlex= "none"
        src   = "../assets/logo.png">
 
-  <div fxFlex="grow" *ngIf = "cvOwnersName">
+  <div *ngIf = "cvOwnersName">
     {{cvOwnersName}}'s CV
   </div>
+
+  <div fxFlex="grow"></div>
 
   <button mat-button
           color   = "primary"
