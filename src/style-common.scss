@@ -1,0 +1,54 @@
+@import '~@angular/material/theming';
+@mixin style-common($theme) {
+  $primary:    map-get($theme, primary);
+  $accent:     map-get($theme, accent);
+  $warn:       map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  // Styles for entire app
+
+  //change text selection colour
+  ::-moz-selection { //for Firefox
+    background:mat-color($primary);
+  }
+  ::selection { //for other browsers
+    background:mat-color($primary);
+  }
+  h1 {
+    margin-top:50px;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+    text-decoration: underline;
+    }
+    &:visited {
+    text-decoration: none;
+    }
+  }
+
+  li, p {
+    line-height:1.5;
+  }
+
+  ul {
+    list-style: none   //remove existing bullets
+  }
+  ul li::before {
+    content: "•";
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  li > ul > li::before {
+    content: "-";
+  }
+  li > ul { //give 2nd level bullets margin similar to 1st level bullets
+    margin-top:12px;
+    margin-bottom:12px;
+  }
+
+}

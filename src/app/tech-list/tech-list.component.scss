@@ -1,28 +1,3 @@
-@import '~@angular/material/theming';
-@mixin tech-list-style-light($theme) {
-  $primary:    map-get($theme, primary);
-  $accent:     map-get($theme, accent);
-  $warn:       map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-
-  .tech-container div {
-    background: darken(mat-color($background, background),10%);
-  }
-}
-
-@mixin tech-list-style-dark($theme) {
-  $primary:    map-get($theme, primary);
-  $accent:     map-get($theme, accent);
-  $warn:       map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-
-  .tech-container div {
-    background: lighten(mat-color($background, background),10%);
-  }
-}
-
 .tech-container {
   margin-right: 8px;
   margin-bottom: 8px;

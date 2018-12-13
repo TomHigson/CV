@@ -1,16 +1,3 @@
-@import '~@angular/material/theming';
-@mixin title-bar-component-style($theme) {
-  $primary:    map-get($theme, primary);
-  $accent:     map-get($theme, accent);
-  $warn:       map-get($theme, warn);
-  $foreground: map-get($theme, foreground);
-  $background: map-get($theme, background);
-  
-  mat-toolbar {
-    background: mat-color($background,background) !important;
-  }
-}
-
 .main-logo {
   width:  30px;
   height: 30px;
