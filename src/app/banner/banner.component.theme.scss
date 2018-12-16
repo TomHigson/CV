@@ -7,7 +7,7 @@
   $background: map-get($theme, background);
 
   .app-banner-background {
-    background-color: mat-color($accent);
+    background-color: mat-color($background, background);
   }
   .app-banner-content {
     background-color: rgba(mat-color($background, background), 0.9);
