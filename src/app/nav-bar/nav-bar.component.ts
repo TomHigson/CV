@@ -1,13 +1,17 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
-import { Job } from '../cv.service';
+import {Component, OnInit, Input, SimpleChanges} from '@angular/core';
+import {Job}                                     from '../cv.service';
+import {fade}                                    from '../animations/fade';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss'],
+  animations: [fade]
 })
+
 export class NavBarComponent implements OnInit {
   @Input () jobs:Job[] = [];
+  @Input () visible:boolean = true;
 
   jobsWithStartDate:Job[] = [];
   scaleStartDate:Date = new Date();
@@ -18,29 +22,31 @@ export class NavBarComponent implements OnInit {
 
   ngOnChanges(changes:SimpleChanges) {
 
-    let jobs = changes.jobs.currentValue;
-    this.jobsWithStartDate = jobs.filter(job => job.start);
+    if (changes.jobs) {
+      let jobs = changes.jobs.currentValue;
+      this.jobsWithStartDate = jobs.filter(job => job.start);
 
-    //record earliest date
-    for (let job of jobs) {
-      if (job.start && job.start < this.scaleStartDate) {
-        this.scaleStartDate = job.start;
+      //record earliest date
+      for (let job of jobs) {
+        if (job.start && job.start < this.scaleStartDate) {
+          this.scaleStartDate = job.start;
+        }
       }
-    }
 
-    this.totalPeriod = this.scaleEndDate.getTime() - this.scaleStartDate.getTime();
+      this.totalPeriod = this.scaleEndDate.getTime() - this.scaleStartDate.getTime();
 
-    //reset and then populate labels list
-    this.scaleLabels = [];
+      //reset and then populate labels list
+      this.scaleLabels = [];
 
-    //ensure there was at least 1 start date
-    if(this.scaleStartDate < this.scaleEndDate) {
+      //ensure there was at least 1 start date
+      if(this.scaleStartDate < this.scaleEndDate) {
 
-      for(let year:number = this.scaleEndDate.getFullYear();
-          year >= this.scaleStartDate.getFullYear();
-          year -= this.YEAR_INCREMENT) {
+        for(let year:number = this.scaleEndDate.getFullYear();
+            year >= this.scaleStartDate.getFullYear();
+            year -= this.YEAR_INCREMENT) {
 
-        this.scaleLabels.push(year);
+          this.scaleLabels.push(year);
+        }
       }
     }
   }

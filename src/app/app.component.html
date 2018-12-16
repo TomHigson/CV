@@ -19,10 +19,19 @@
                 [backgroundImg] = "cv?.banner"
                 [portraitImg]   = "cv?.portrait"></app-banner>
 
-    <div class = "app-padding center">
+    <!-- continer for main app -->
+    <div class         = "app-padding"
+         fxLayout      = "row"
+         fxLayoutAlign = "center">
+
+      <!-- empty column to offset nav column -->
+      <div class  = "app-side-column"
+           fxShow [fxShow.lt-md] = "false"
+           fxFlex = "1 1 auto"></div>
 
       <!-- main content column -->
-      <div class  = "app-main-column center">
+      <div class  = "app-main-column"
+           fxFlex = "1 1 auto">
 
         <h1>Fields of expertise</h1>
         <ul>
@@ -31,7 +40,8 @@
           </div>
         </ul>
         <h1>Technology proficiencies</h1>
-        <app-tech-list [techs] = combinedTechList></app-tech-list>
+        <app-tech-list [techs] = combinedTechList
+                       id      = "app-nav-bar-appear-point"></app-tech-list>
 
         <h1>Experience</h1>
         <!-- all jobs listed -->
@@ -40,18 +50,22 @@
         <!-- show more button -->
         <button mat-button
                 class    = "center"
+                fxLayout = "center"
                 *ngIf    = "truncatingJobs"
-                (click)  = "showAllJobs()"
-                fxLayout = "center">
+                (click)  = "showAllJobs()">
           SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
         </button>
       </div>
 
       <!-- nav bar column -->
-      <!-- <app-nav-bar *ngIf  = "cv?.jobs.length > 1"
-                   class  = "fill-space-below-title-bar"
-                   [jobs] = "cv?.jobs"></app-nav-bar> -->
-
+      <app-nav-bar fxShow [fxShow.lt-md] = "false"
+                   [visible] = "showingNavBar"
+                   id        = "app-nav"
+                   fxFlex    = "1 1 auto"
+                   *ngIf     = "cv?.jobs.length > 1"
+                   class     = "fill-space-below-title-bar
+                                app-side-column"
+                   [jobs]    = "cv?.jobs"></app-nav-bar>
     </div>
 
   </div>

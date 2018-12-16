@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {Title}     from '@angular/platform-browser';
 import {CvService, Cv, Technology, Job} from './cv.service';
 import {OverlayContainer} from '@angular/cdk/overlay';
@@ -12,7 +12,22 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 
 export class AppComponent implements OnInit {
+  
+  @HostListener('window:scroll', ['$event']) checkScroll() {
+    
+    //place navElement fixed position on screen
+    let navElement:HTMLElement = document.getElementById("app-nav");
+    let appearPoint:HTMLElement = document.getElementById("app-nav-bar-appear-point");
+    if(navElement && appearPoint) {
+      if(window.pageYOffset > appearPoint.offsetTop) {
+        this.showingNavBar = true;
+      }
+      else this.showingNavBar = false;
+    }
+  }
+      
   cv:Cv = null;
+  showingNavBar:boolean = false;
 
   INITIAL_JOBS_TO_SHOW:number = 4;
   shownJobs:Job[] = [];
