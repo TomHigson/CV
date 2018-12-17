@@ -31,7 +31,7 @@
 
       <!-- main content column -->
       <div class  = "app-main-column"
-           fxFlex = "1 1 auto">
+           fxFlex = "0 1 900px">
 
         <h1>Fields of expertise</h1>
         <ul>
@@ -61,7 +61,7 @@
       <app-nav-bar fxShow [fxShow.lt-md] = "false"
                    [visible] = "showingNavBar"
                    id        = "app-nav"
-                   fxFlex    = "1 1 auto"
+                   fxFlex    = "0 1 350px"
                    *ngIf     = "cv?.jobs.length > 1"
                    class     = "fill-space-below-title-bar
                                 app-side-column"
