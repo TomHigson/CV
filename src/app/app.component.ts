@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
 
     this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
 
-    //load cv using cv service
+    //load cv
     this.cvService.getCv().subscribe(
       (data:Cv) => {
         this.cv = data;
