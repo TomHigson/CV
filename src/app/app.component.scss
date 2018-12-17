@@ -7,27 +7,30 @@
 .fill-space-below-title-bar {
   position: sticky;
   position: -webkit-sticky; /* For Safari */
-  top: 94px;
-  height: calc(100vh - 124px);
+  top: calc(64px + 5vh);  //size of title bar (64px) + top margin (5vh)
+  min-height: 500px;
+  height: calc(90vh - 64px);  // screen height - bottom margin (2.5vh) - top margin (5vh) - title bar (64px)
 }
 .center {
   margin: auto;
 }
 
 .app-padding {
-  padding-left:30px;
-  padding-right:30px;
-  padding-bottom:30px;
+  padding-left:5vw;
+  padding-right:5vw;
+  padding-bottom:2.5vw;
 }
 .app-main-column {
   max-width: 900px;
 }
 .app-side-column {
-  max-width: 350px;
-  margin-left: 60px;
-  margin-top:  30px;
+  max-width: 400px;
+  margin-top:  50px;
 }
 .app-fields-of-expertise {
   column-gap: 40px;
   column-count: 2;
+}
+app-nav-bar {
+  margin-left: 60px;
 }
