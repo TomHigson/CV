@@ -14,6 +14,7 @@
   @include job-component-style($theme);
   @include title-bar-component-style($theme);
   @include nav-bar-component-style($theme);
+  @include tech-list-component-style($theme);
   @include banner-component-style($theme);
   // ...populate as components are created
 
@@ -26,6 +27,7 @@
 body { 
   font-family: Roboto, Arial, sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 
 // Palettes defined using the Material Design palettes available in palette.scss (imported above).
@@ -44,11 +46,9 @@ $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   @include angular-material-theme($dark-theme);
   @include themes-for-local-components($dark-theme);
   @include app-component-style-dark($dark-theme);
-  @include tech-list-style-dark($dark-theme);
 }
 .light-theme{
   @include angular-material-theme($light-theme);
   @include themes-for-local-components($light-theme);
   @include app-component-style-light($light-theme);
-  @include tech-list-style-light($light-theme);
 }
