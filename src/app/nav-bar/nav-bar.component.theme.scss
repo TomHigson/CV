@@ -6,11 +6,15 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
   
-  .nav-bar-job-period{
+  .nav-bar-timeline-axis {
     background-color: mat-color($foreground,secondary-text);
+  }
 
-    &.light-band{
-      background-color: rgba(mat-color($foreground,secondary-text), 0.4);;
+  .nav-bar-job-period{
+    background-color:   opacify(mix(mat-color($foreground,text), mat-color($background,background), 20%),1);
+
+    &.faded-band{
+      background-color: opacify(mix(mat-color($foreground,text), mat-color($background,background), 40%),1);
     }
   }
 
