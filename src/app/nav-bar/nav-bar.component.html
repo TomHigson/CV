@@ -1,41 +1,32 @@
-<div fxLayout = "row"
-     [@fade]  = "visible? 'in' : 'out'"
+<div [@fade]  = "visible? 'in' : 'out'"
      fxFlexFill>
 
+  <!-- axis labels -->
+  <div *ngFor = "let scaleLabel of scaleLabels"
+       class  = "nav-bar-timeline-label"
+       [ngStyle] = "{'top': scale(scaleLabel) + '%'}">
+    {{scaleLabel | date:'yyyy'}}
+  </div>
+
   <!-- axis -->
-  <div fxFlex        = "none"
-       fxLayout      = "column"
-       fxLayoutAlign = "space-between">
+  <div class = "nav-bar-timeline-axis"></div>
 
-    <div *ngFor = "let scaleLabel of scaleLabels"
-         class  = "nav-bar-timeline-label">
-      {{scaleLabel}}
+  <!-- jobs -->
+  <nav class    = "nav-bar-job"
+       *ngFor   = "let job of jobsWithStartDate; let even = even">
+
+    <!-- period indicator -->
+    <div class     = "nav-bar-job-period"
+         [ngStyle] = "{'top'   : scale(job.end) + '%',
+                       'height': scaleBetween(job.end, job.start) + '%'}"
+         [ngClass] = "{'faded-band':even?false:true}"></div>
+
+    <!-- text label -->
+    <div class     = "nav-bar-job-label"
+         [ngStyle] = "{'top' : scale(job.end) + scaleBetween(job.end, job.start) /2 + '%'}">
+      {{job.level}} <span class = "avoid-wrap" *ngIf = "job.companyName"> at {{job.companyName}}</span>
     </div>
 
-  </div>
-
-  <!-- links column -->
-  <div fxLayout = "column">
-
-    <!-- link -->
-    <div class    = "nav-bar-job"
-         *ngFor   = "let job of jobsWithStartDate; let even = even"
-         fxLayout = "row"
-         [fxFlex] = "'1 1 ' + durationOf(job) + '%'"
-         (click)  = "something()">
-
-      <!-- period indicator -->
-      <div class     = "nav-bar-job-period"
-           fxFlex    = "none"
-           [ngClass] = "{'light-band':even?true:false}"></div>
-
-      <!-- text label -->
-      <div fxFlexAlign = "center"
-           class       = "nav-bar-job-label">
-        {{job.level}} <span class = "avoid-wrap" *ngIf = "job.companyName"> at {{job.companyName}}</span>
-      </div>
-
-    </div>
-  </div>
+  </nav>
 
 </div>

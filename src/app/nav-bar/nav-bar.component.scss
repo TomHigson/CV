@@ -1,24 +1,33 @@
+:host{
+  min-width:255px;
+}
 .nav-bar-timeline-label {
-  margin-right: 20px;
+  position: absolute;
+  transform:translateY(-50%);
 }
-
-.nav-bar-job-label {
-  margin-left: 20px;
-  min-width: 170px;
+.nav-bar-timeline-axis {
+  position: absolute;
+  width: 2px;
+  height:100%;
+  top: 0px;
+  left: 59px;
 }
-
-span.avoid-wrap {
-  display:inline-block;
+nav {
+  &:first-of-type div.nav-bar-job-period {
+    border-radius: 10px 10px  0px  0px;
+  }
+  &:last-of-type div.nav-bar-job-period {
+    border-radius:  0px  0px 10px 10px;
+  }
 }
-
 .nav-bar-job-period {
+  position: absolute;
+  left: 55px;
   width: 10px;
 }
-.nav-bar-job:first-child div{
-  margin-top: 0.5em;
-  border-radius: 10px 10px 0px  0px
-}
-.nav-bar-job:last-child div{
-  margin-bottom: 0.5em;
-  border-radius: 0px  0px  10px 10px
+.nav-bar-job-label {
+  position: absolute;
+  left: 85px;
+  min-width: 170px;
+  transform:translateY(-50%);
 }
