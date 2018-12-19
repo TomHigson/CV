@@ -37,11 +37,13 @@
         {
           "position":"3rd party developer lead for Evolve to Open",
           "image":"gd2.png",
+          "imageAlt": "A slide showing a simplified view of the development environment we are creating",
           "description": "gd2.md"
         },
         {
           "position":"Vertex engineering lead",
           "image":"gd1.png",
+          "imageAlt": "Promotional image abstractly showing the Vertex concept",
           "description":"gd1.md"
         }
       ],
@@ -100,7 +102,7 @@
         {
           "position":"Developer of graphical recipe web app",
           "image":"personal1.png",
-          "imageAlt":"Early concept",
+          "imageAlt":"Early concept of the reciepe system",
           "description": "personal2.md"
         },
         {
@@ -175,7 +177,7 @@
         {
           "position":"System safety lead for radar customer projects",
           "image":"zf1.png",
-          "imageAlt":"Adaptive Cruise Control concept image",
+          "imageAlt":"Advertising render of the adaptive cruise control function",
           "description": "zf1.md"
         }
       ],
@@ -210,13 +212,13 @@
         {
           "position":"System architect for Future Cruise & Anti-Ship System",
           "image":"mbda1.png",
-          "imageAlt":"Concept visions render",
+          "imageAlt":"A concept visions rendering of the system",
           "description": "mbda1.md"
         },
         {
           "position":"Flight path management domain lead for Fire Shadow",
           "image":"mbda2.png",
-          "imageAlt":"Trial launch",
+          "imageAlt":"A successful trial of the system",
           "description": "mbda2.md"
         },
         {
@@ -254,17 +256,18 @@
       "roles": [
         {
           "position":"Software engineer for covert radio system",
-          "image":"thales1.png",
-          "imageAlt":"Similar radio",
+          "image":"thales2.png",
+          "imageAlt":"A radio similar to the one developed",
           "description": "thales1.md"
         },
         {
           "position":"Software engineer for Command & Control Information System",
-          "image":"thales2.png",
           "description": "thales2.md"
         },
         {
           "position":"Research engineer for military tracking system",
+          "image":"thales1.png",
+          "imageAlt":"The tracking system ruggedises and repurposes commercial off-the-shelf technology",
           "description": "thales3.md"
         }
       ],
