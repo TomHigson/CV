@@ -17,12 +17,7 @@ export class BannerComponent implements OnInit{
   // the portrait is absolute position as it is partially obscured by the text box
   // This means that it cannot be resized automatically as part of a flex box
   // Instead, it is resized here to match any container resized on screen resize
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.resizePortrait();
-  }
-
-  resizePortrait():void {
+  @HostListener('window:resize', ['$event']) resizePortrait():void {
 
     //get the height of the text box
     let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-content`);
@@ -36,8 +31,6 @@ export class BannerComponent implements OnInit{
   }
 
   constructor(private cvService:CvService) {}
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
