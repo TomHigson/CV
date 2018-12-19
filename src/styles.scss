@@ -24,12 +24,6 @@
 // a single css file. Be sure that this is only ever included once.
 @include mat-core();
 
-body { 
-  font-family: Roboto, Arial, sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-}
-
 // Palettes defined using the Material Design palettes available in palette.scss (imported above).
 // Some specify a default, lighter, and darker hue.
 // Available color palettes: https://material.io/design/color/

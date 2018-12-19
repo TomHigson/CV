@@ -55,3 +55,31 @@
     display: inline-block;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+//short-term fix for a strange issue in Firefox 63.0.3 where setting the
+//scroll-behaviour of the html element broke the sticky positioning of the nav-bar
+@-moz-document url-prefix() {
+  body{
+    scroll-behavior: smooth;
+  }
+  html{
+    scroll-behavior: unset;
+  }
+}
+
+//used to disable trasition effects
+.no-transition * {
+  -webkit-transition: none !important;
+  -moz-transition:    none !important;
+  -o-transition:      none !important;
+  transition:         none !important;
+}
