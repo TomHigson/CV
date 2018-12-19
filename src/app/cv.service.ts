@@ -16,6 +16,7 @@ export interface Cv {
   jobs:Job[];
 }
 export interface Job {
+  id:string;  //unique identifier. Used to set navigation links. Should be alphanumeric
   companyName?:string;
   level:string;
   logo:string;  //path to company logo. should be square to avoid squashing
