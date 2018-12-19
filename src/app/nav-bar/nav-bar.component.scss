@@ -12,22 +12,45 @@
   top: 0px;
   left: 59px;
 }
+
+div.interactive>nav {
+  cursor: pointer;
+}
+
+div:not(.interactive) * {
+-webkit-touch-callout: none; // iOS Safari
+  -webkit-user-select: none; // Safari
+     -moz-user-select: none; // Firefox
+      -ms-user-select: none; // Internet Explorer/Edge
+          user-select: none; // normal
+}
+
 nav {
-  &:first-of-type div.nav-bar-job-period {
+
+  &>.nav-bar-job-label {
+    position: absolute;
+    right: 0px;
+    width: calc(100% - 105px);
+    padding-left: 20px;
+    padding-right: 20px;
+  
+    &>div { //text in label is put in a div to keep multi-lines simple
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &>.nav-bar-job-period {
+    position: absolute;
+    left: 55px;
+    width: 10px;
+  }
+  
+  &:first-of-type>div.nav-bar-job-period {
     border-radius: 10px 10px  0px  0px;
   }
-  &:last-of-type div.nav-bar-job-period {
+  &:last-of-type>div.nav-bar-job-period {
     border-radius:  0px  0px 10px 10px;
   }
-}
-.nav-bar-job-period {
-  position: absolute;
-  left: 55px;
-  width: 10px;
-}
-.nav-bar-job-label {
-  position: absolute;
-  left: 85px;
-  min-width: 170px;
-  transform:translateY(-50%);
 }

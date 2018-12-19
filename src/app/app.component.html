@@ -60,12 +60,12 @@
       <!-- nav bar column -->
       <app-nav-bar fxShow [fxShow.lt-md] = "false"
                    [visible] = "showingNavBar"
-                   id        = "app-nav"
                    fxFlex    = "0 1 350px"
                    *ngIf     = "cv?.jobs.length > 1"
                    class     = "fill-space-below-title-bar
                                 app-side-column"
-                   [jobs]    = "cv?.jobs"></app-nav-bar>
+                   [jobs]    = "cv?.jobs"
+                   (linkNavigated) = navigateLink($event)></app-nav-bar>
     </div>
 
   </div>

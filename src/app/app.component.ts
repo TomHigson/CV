@@ -1,9 +1,16 @@
-import {Component, OnInit, HostListener} from '@angular/core';
-import {Title}     from '@angular/platform-browser';
-import {CvService, Cv, Technology, Job} from './cv.service';
+import {Component,
+        OnInit,
+        HostListener}     from '@angular/core';
+import {Title}            from '@angular/platform-browser';
 import {OverlayContainer} from '@angular/cdk/overlay';
-import {MatIconRegistry} from "@angular/material/icon";
-import {DomSanitizer} from "@angular/platform-browser";
+import {MatIconRegistry}  from '@angular/material/icon';
+import {DomSanitizer}     from '@angular/platform-browser';
+
+import {CvService,
+        Cv,
+        Technology,
+        Job}              from './cv.service';
+
 
 @Component({
   selector: 'app-root',
@@ -13,12 +20,11 @@ import {DomSanitizer} from "@angular/platform-browser";
 
 export class AppComponent implements OnInit {
   
-  @HostListener('window:scroll', ['$event']) checkScroll() {
+  @HostListener('window:scroll', ['$event']) updateNavBarVisibility() {
     
     //place navElement fixed position on screen
-    let navElement:HTMLElement = document.getElementById("app-nav");
     let appearPoint:HTMLElement = document.getElementById("app-nav-bar-appear-point");
-    if(navElement && appearPoint) {
+    if(appearPoint) {
       if(window.pageYOffset > appearPoint.offsetTop) {
         this.showingNavBar = true;
       }
@@ -26,18 +32,20 @@ export class AppComponent implements OnInit {
     }
   }
       
-  cv:Cv = null;
+  cv:Cv = null; //currently shown cv
   showingNavBar:boolean = false;
 
   INITIAL_JOBS_TO_SHOW:number = 4;
-  shownJobs:Job[] = [];
-  truncatingJobs:boolean = true;
+  shownJobs:Job[] = []; //filtered list of jobs for current view
+  truncatingJobs:boolean = true;  //whether the shown jobs include all jobs
 
+  //combination of all the technologies mentioned within
+  //various parts of the CV with no duplicates
   combinedTechList:Technology[] = [];
 
   currentTheme:string = 'dark-theme';
 
-  errorMessage='';
+  errorMessage='';  //captures human readable load errors
   
   constructor(private cvService:CvService,
               private titleService:Title,
@@ -47,6 +55,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit():void {
 
+    //set theme for overlays
     this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
 
     //load cv
@@ -77,6 +86,7 @@ export class AppComponent implements OnInit {
           }
         }
 
+        //filter jobs for initial view
         if(this.cv.jobs.length <= this.INITIAL_JOBS_TO_SHOW) {
           this.truncatingJobs = false;
         }
@@ -100,8 +110,7 @@ export class AppComponent implements OnInit {
   /**Helper method to load an icon into the material icon registry
    * It assumes the icon is located in assets/icons and is an SVG.
    * It uses the filename as the registered name
-   * @param name The of the new icon without any extension or leading path
-   */
+   * @param name The name of the new icon without any extension or leading path */
   private addIcon (filename:string):void {
     this.matIconRegistry.addSvgIcon(
       filename,
@@ -109,10 +118,20 @@ export class AppComponent implements OnInit {
     );
   }
 
+  /**Switches to the stated theme
+   * @param themeName The name of the theme to switch to */
   setTheme(themeName:string):void {
     
+    //disable transitions so the theme change isn't animated
+    document.body.classList.add(`no-transition`);
+
+    //change theme
     this.currentTheme = themeName;
 
+    //re-enable transitions
+    //delay is a hack to ensure angular has enough time to do binding
+    setTimeout(function () {document.body.classList.remove('no-transition')}, 100);
+    
     //also change theme of overlays
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
     const themeClassesToRemove = Array.from(overlayContainerClasses).filter((item: string) => item.includes('-theme'));
@@ -122,9 +141,28 @@ export class AppComponent implements OnInit {
     overlayContainerClasses.add(themeName);
   }
 
-  showAllJobs() {
+  /**Stop job filtering */
+  showAllJobs():void {
     this.shownJobs=this.cv.jobs;
     this.truncatingJobs=false;
   }
 
+  navigateLink(id:string):void {
+
+    let anchorElement:HTMLElement = document.getElementById(id);
+    if(!anchorElement) {
+      
+      //anchor element not found, check if it's a filtered job
+      if (this.truncatingJobs && this.cv.jobs.find(job => job.id === id)) {
+
+        //remove the filter and try again
+        this.showAllJobs();
+        anchorElement = document.getElementById(id);
+
+      }
+
+    }
+    window.scrollTo (0, anchorElement.offsetTop -80);
+    
+  }
 }

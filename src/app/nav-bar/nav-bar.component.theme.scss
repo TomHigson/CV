@@ -10,11 +10,35 @@
     background-color: mat-color($foreground,secondary-text);
   }
 
-  .nav-bar-job-period{
-    background-color:   opacify(mix(mat-color($foreground,text), mat-color($background,background), 20%),1);
+  nav {
 
-    &.faded-band{
-      background-color: opacify(mix(mat-color($foreground,text), mat-color($background,background), 40%),1);
+    &>.nav-bar-job-period {
+      background-color:   opacify(mix(mat-color($foreground,text), mat-color($background,background), 20%),1);
+      transition: background-color 0.25s;
+      -webkit-transition: background-color 0.25s, color 0.25s;
+
+      &.faded-band {
+        background-color: opacify(mix(mat-color($foreground,text), mat-color($background,background), 40%),1);
+      }
+    }
+
+    &.link-active {
+      &>.nav-bar-job-period {
+        background-color: mat-color($primary) !important;
+      }
+      &>.nav-bar-job-label {
+        color: mat-color($foreground,text) !important;
+      }
+    }
+  
+    &>.nav-bar-job-label {
+      color: mat-color($foreground,secondary-text);
+      transition: background-color 0.25s, color 0.25s;
+      -webkit-transition: background-color 0.25s, color 0.25s;
+    }
+
+    &:hover>.nav-bar-job-label {
+      background-color: rgba(mat-color($foreground,text), 0.05);
     }
   }
 
@@ -22,7 +46,4 @@
     color: mat-color($foreground,secondary-text);
   }
 
-  .nav-bar-job-label {
-    color: mat-color($foreground,secondary-text);
-  }
 }
