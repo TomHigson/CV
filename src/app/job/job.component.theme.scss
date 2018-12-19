@@ -11,7 +11,7 @@
     border:5px solid mat-color($primary);  //so elements don't overlap the border
   }
 
-  .job-period {
+  .job-period,.job-contact {
     color:mat-color($foreground, secondary-text);
   }
 

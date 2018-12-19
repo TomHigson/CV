@@ -41,6 +41,17 @@
 
       </div>
 
+      <div *ngIf = "job?.contact"
+           class = "job-contact">
+          References available from 
+          <a *ngIf  = "job?.contactEmail"
+             [href] = "'mailto:' + job.contactEmail"
+             target = "_blank">
+            {{job.contact}}</a>
+          <span *ngIf = "!job?.contactEmail">
+            {{job.contact}}</span>
+      </div>
+
     </div>
 
     <!-- job description and roles -->
