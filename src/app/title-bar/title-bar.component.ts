@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, Input, EventEmitter, HostListener } from '@angular/core';
+import {Component,
+        OnInit,
+        Output,
+        Input,
+        EventEmitter,
+        HostListener} from '@angular/core';
+import {CvService}    from '../cv.service';
 
 @Component({
   selector: 'app-title-bar',
@@ -16,7 +22,7 @@ export class TitleBarComponent implements OnInit {
     this.atTop = window.pageYOffset === 0;
   }
 
-  constructor() {}
+  constructor(private cvService:CvService) {}
   ngOnInit() {}
 
   toggleTheme():void {

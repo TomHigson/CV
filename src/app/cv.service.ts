@@ -49,6 +49,7 @@ export class CvService {
   //future enhancement could be to get this from a config service
   private config = {
     cvUrl:'src/backend/cvs/tomcv.json',
+    pdfUrl: `src/backend/cvs/tomcv.pdf`,
     photoUrl:`src/backend/photos/`,
     logoUrl: `src/backend/logos/`,
     textUrl: `src/backend/text/`
@@ -61,6 +62,9 @@ export class CvService {
   }
   getTextUrl(name:string) {
     return this.config.textUrl + name;
+  }
+  getPdfUrl() {
+    return this.config.pdfUrl;
   }
 
   constructor(private http: HttpClient) { }
