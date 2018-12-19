@@ -4,5 +4,6 @@
        [src] = "cvService.getPhotoUrl(role.image)"
        [alt] = 'role.imageAlt'
        class = "role-image">
-  <markdown [src]="cvService.getTextUrl(role.description)"></markdown>
+  <markdown [src]  = "cvService.getTextUrl(role.description)"
+            (load) = "loadComplete()"></markdown>
 </div>

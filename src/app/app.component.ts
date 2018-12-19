@@ -38,6 +38,9 @@ export class AppComponent implements OnInit {
   INITIAL_JOBS_TO_SHOW:number = 4;
   shownJobs:Job[] = []; //filtered list of jobs for current view
   truncatingJobs:boolean = true;  //whether the shown jobs include all jobs
+  loadedJobs:Job[] = [];  //the set of jobs that have completed loading
+  deferredLink:string = null; //if a link navigation is attempted but the element
+                              //isn't loaded, the link is stored here for future use
 
   //combination of all the technologies mentioned within
   //various parts of the CV with no duplicates
@@ -118,6 +121,16 @@ export class AppComponent implements OnInit {
     );
   }
 
+  /**Handles the event of a role completing its load */
+  jobLoadComplete (job:Job):void {
+    this.loadedJobs.push(job);
+
+    //check if we were waiting of this being loaded
+    if(job.id === this.deferredLink) {
+      this.navigateLink(this.deferredLink);
+    }
+  }
+
   /**Switches to the stated theme
    * @param themeName The name of the theme to switch to */
   setTheme(themeName:string):void {
@@ -155,14 +168,15 @@ export class AppComponent implements OnInit {
       //anchor element not found, check if it's a filtered job
       if (this.truncatingJobs && this.cv.jobs.find(job => job.id === id)) {
 
-        //remove the filter and try again
+        //remove the filter
         this.showAllJobs();
-        anchorElement = document.getElementById(id);
 
       }
 
+      //save the link to be navigated when the anchor is loaded
+      this.deferredLink = id;
     }
-    window.scrollTo (0, anchorElement.offsetTop -80);
     
+    else window.scrollTo (0, anchorElement.offsetTop -80);
   }
 }

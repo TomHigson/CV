@@ -46,8 +46,12 @@
     <!-- job description and roles -->
     <div fxLayout="column">
 
-      <markdown *ngIf = "job?.description" [src]="cvService.getTextUrl(job.description)"></markdown>
-      <app-role *ngFor = 'let role of job?.roles' [role] = 'role'></app-role>
+      <markdown *ngIf = "job?.description"
+                [src] = "cvService.getTextUrl(job.description)"
+                (load) = "jobDescriptionLoadComplete()"></markdown>
+      <app-role *ngFor = 'let role of job?.roles'
+                [role] = 'role'
+                (load) = "roleLoadComplete($event)"></app-role>
   
     </div>
 

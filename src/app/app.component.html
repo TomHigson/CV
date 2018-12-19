@@ -40,12 +40,14 @@
           </div>
         </ul>
         <h1>Technology proficiencies</h1>
-        <app-tech-list [techs] = combinedTechList
+        <app-tech-list [techs] = "combinedTechList"
                        id      = "app-nav-bar-appear-point"></app-tech-list>
 
         <h1>Experience</h1>
         <!-- all jobs listed -->
-        <app-job *ngFor = 'let job of shownJobs' [job] = 'job'></app-job>
+        <app-job *ngFor = "let job of shownJobs"
+                 [job]  = "job"
+                 (load) = "jobLoadComplete($event)"></app-job>
 
         <!-- show more button -->
         <button mat-button
