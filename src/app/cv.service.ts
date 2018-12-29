@@ -8,11 +8,9 @@ export interface Cv {
   email:string; //email to contact CV owner
   description:string; //name of the markdown file
   banner?:string;  //path to image to repeat in banner
+  socialNetworkLinks?:SocialNetworkLink[];
   initialNumberOfShownJobs?:number; //how many jobs to show before 'show more' button
   portrait?:string;  //path to image of the CV owner's face to draw in banner
-  twitter?:string;  //user's twitter link
-  linkedIn?:string;  //user's linkedIn link
-  gitHub?:string;  //user's gitHub link
   fields:string[];
   jobs:Job[];
 }
@@ -40,12 +38,18 @@ export interface Technology {
   name:string;
   link:string;
 }
+export interface SocialNetworkLink {
+  name:string;
+  icon:string;
+  link:string;
+}
 interface Config {
   cvUrl:string,
   pdfUrl:string,
   photoUrl:string,
   logoUrl:string,
-  textUrl:string
+  textUrl:string,
+  iconUrl:string
 }
 @Injectable({
   providedIn: 'root'
@@ -58,7 +62,8 @@ export class CvService {
     pdfUrl: `src/backend/cvs/tomcv.pdf`,
     photoUrl:`src/backend/photos/`,
     logoUrl: `src/backend/logos/`,
-    textUrl: `src/backend/text/`
+    textUrl: `src/backend/text/`,
+    iconUrl: `src/backend/icons/`
   }
 
   constructor (private http:HttpClient) {}
@@ -76,6 +81,11 @@ export class CvService {
           if(cv.portrait) cv.portrait = this.config.photoUrl + cv.portrait;
           cv.description = this.config.textUrl + cv.description;
 
+          if(cv.socialNetworkLinks) {
+            for (let socialNetworkLink of cv.socialNetworkLinks) {
+              socialNetworkLink.icon = this.config.iconUrl + socialNetworkLink.icon;
+            }
+          }
           for(let job of cv.jobs) {
             job.logo = this.config.logoUrl + job.logo;
             if(job.description) job.description = this.config.textUrl + job.description;

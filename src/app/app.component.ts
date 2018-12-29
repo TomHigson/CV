@@ -95,26 +95,30 @@ export class AppComponent implements OnInit {
           this.shownJobs = this.cv.jobs.slice(0,this.initialJobsToShow);
         }
         
+        // load icons from CV
+        if(this.cv.socialNetworkLinks) {
+          for (let socialNetworkLink of this.cv.socialNetworkLinks) {
+            this.addIcon(socialNetworkLink.name, socialNetworkLink.icon);
+          }
+        }
       },
       error => this.errorMessage = error
     );
   
-    //load icons
-    this.addIcon(`lightbulb-on`)
-    this.addIcon(`lightbulb-off`)
-    this.addIcon(`twitter`)
-    this.addIcon(`linked-in`)
-    this.addIcon(`github`)
+    //load icons for app
+    this.addIcon(`lightbulb-on`, `../assets/icons/lightbulb-on.svg`)
+    this.addIcon(`lightbulb-off`, `../assets/icons/lightbulb-off.svg`)
+
   }
   
   /**Helper method to load an icon into the material icon registry
    * It assumes the icon is located in assets/icons and is an SVG.
    * It uses the filename as the registered name
    * @param name The name of the new icon without any extension or leading path */
-  private addIcon (filename:string):void {
+  private addIcon (name:string, filename:string):void {
     this.matIconRegistry.addSvgIcon(
-      filename,
-      this.domSanitizer.bypassSecurityTrustResourceUrl(`../assets/icons/` + filename + `.svg`)
+      name,
+      this.domSanitizer.bypassSecurityTrustResourceUrl(filename)
     );
   }
 

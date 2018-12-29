@@ -4,10 +4,24 @@
   "banner":"banner-background.jpg",
   "portrait":"banner-face.png",
   "initialNumberOfShownJobs": "4",
-  "twitter":"https://twitter.com/TaekHigson",
-  "linkedIn":"https://www.linkedin.com/in/tomhigson/",
-  "gitHub":"https://github.com/tomhigson",
   "description":"intro.md",
+  "socialNetworkLinks": [
+    {
+      "name":"linkedIn",
+      "icon":"linked-in.svg",
+      "link":"https://www.linkedin.com/in/tomhigson/"
+    },
+    {
+      "name":"gitHub",
+      "icon":"github.svg",
+      "link":"https://github.com/tomhigson"
+    },
+    {
+      "name":"twitter",
+      "icon":"twitter.svg",
+      "link":"https://twitter.com/TaekHigson"
+    }
+  ],
   "fields": [
     "Cloud architecture",
     "Microservice architecture",

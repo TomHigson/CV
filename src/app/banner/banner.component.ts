@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, HostListener} from '@angular/core';
+import { SocialNetworkLink } from '../cv.service';
 
 @Component({
   selector: 'app-banner',
@@ -6,12 +7,10 @@ import {Component, OnInit, Input, HostListener} from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit{
-  @Input () twitter:       string = null;
-  @Input () linkedIn:      string = null;
-  @Input () gitHub:        string = null;
-  @Input () textUrl:       string = null;
-  @Input () backgroundImg: string = null;
-  @Input () portraitImg:   string = null;
+  @Input () socialNetworkLinks: SocialNetworkLink[] = [];
+  @Input () textUrl:            string = null;
+  @Input () backgroundImg:      string = null;
+  @Input () portraitImg:        string = null;
 
   // the portrait is absolute position as it is partially obscured by the text box
   // This means that it cannot be resized automatically as part of a flex box
