@@ -1,0 +1,15 @@
+<div class         = "link-bar"
+     fxLayout      = "row wrap"
+     fxLayoutAlign = "space-between center">
+
+  <a *ngFor = "let socialNetworkLink of socialNetworkLinks"
+     mat-icon-button
+     color  = "primary"
+     fxFlex = "none"
+     [href] = "socialNetworkLink.link"
+     target = "_blank">
+
+    <mat-icon [svgIcon] = "socialNetworkLink.name"></mat-icon>
+  </a>
+
+</div>

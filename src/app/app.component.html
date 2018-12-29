@@ -12,11 +12,19 @@
   
   <div class = "mat-app-background">
   
-    <!-- intro section -->
+    <!-- banner -->
     <app-banner [socialNetworkLinks] = "cv?.socialNetworkLinks"
                 [textUrl]       = "cv?.description"
                 [backgroundImg] = "cv?.banner"
                 [portraitImg]   = "cv?.portrait"></app-banner>
+    
+    <!-- social network links -->
+    <div class = "margin-above"
+         *ngIf = "cv?.socialNetworkLinks"
+         fxShow [fxShow.gt-md] = "false">
+      <app-social-network-links [socialNetworkLinks]  = "cv?.socialNetworkLinks">
+      </app-social-network-links>
+    </div>
 
     <!-- continer for main app -->
     <div class         = "app-padding"
@@ -32,12 +40,23 @@
       <div class  = "app-main-column"
            fxFlex = "0 1 900px">
 
+        <!-- about me
+             - small screens only, otherwise part of banner component -->
+        <div fxShow [fxShow.gt-md] = "false"
+             *ngIf = "cv?.description">
+          <h1>About me</h1>
+          <markdown [src] = "cv.description"></markdown>
+        </div>
+  
+        <!-- list of fields of expertise -->
         <h1>Fields of expertise</h1>
         <ul>
           <div class = "app-fields-of-expertise">
             <li *ngFor = "let field of cv?.fields">{{field}}</li>
           </div>
         </ul>
+
+        <!-- list of technologies used -->
         <h1>Technology proficiencies</h1>
         <app-tech-list [techs] = "combinedTechList"
                        id      = "app-nav-bar-appear-point"></app-tech-list>

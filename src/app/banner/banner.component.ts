@@ -17,11 +17,11 @@ export class BannerComponent implements OnInit{
   // Instead, it is resized here to match any container resized on screen resize
   @HostListener('window:resize', ['$event']) resizePortrait():void {
 
-    //get the height of the text box
-    let textBoxes:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-content`);
+    //get the height of the banner. If there are multiple, just use first one
+    let banners:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-background`);
     let targetHeight:number = null;
-    if(textBoxes.length) targetHeight=(textBoxes[0] as HTMLElement).offsetHeight;
-
+    if(banners.length) targetHeight=(banners[0] as HTMLElement).offsetHeight;
+    
     //set the image height to be the same
     let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
     Array.from(portraits).forEach(portrait => (portrait as HTMLElement).style.height = targetHeight + `px`);

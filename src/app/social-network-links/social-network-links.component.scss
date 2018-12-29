@@ -1,0 +1,24 @@
+.link-bar {
+  height: 64px;
+  width: 100%;
+
+  //this is a hack to get space-evenly to work on Edge and Safari
+  //(currently not working on them)
+  //places empty elements to the start and end of the flex box, to 
+  //turn space-between into a pseudo-space-evenly
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+  }
+
+  & a {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+
+    & mat-icon {
+      transform: scale(1.5);
+    }
+  }
+}

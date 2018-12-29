@@ -1,36 +1,27 @@
-<div class         = "app-banner-background"
+<div class           = "app-banner-background"
      [style.background-image] = "backgroundImg ? 'url('+ backgroundImg +')' : 'none'"
-     fxLayout      = "row"
-     fxLayoutAlign = "center end">
+     fxLayout        = "row"
+     fxLayoutAlign   = "center"
+     [ngClass.lt-lg] = "{'fixed-height':true}">
 
   <img *ngIf = "portraitImg"
        [src] = "portraitImg"
-       class = "app-banner-portrait">
+       class = "app-banner-portrait"
+       [ngClass.gt-md] = "{'offset':true}">
 
-  <div class  = "app-banner-content">
+  <div fxShow [fxShow.lt-lg] = "false"
+       class = "app-banner-content">
 
-    <div class = "app-banner-text-box">
+    <div *ngIf = "textUrl">
       <h1>About me</h1>
-      <markdown *ngIf  = "textUrl"
-                [src]  = "textUrl"
+      <markdown [src]  = "textUrl"
                 (load) = "resizePortrait()"></markdown>
     </div>
 
-    <div class         = "app-banner-link-bar"
-         fxLayout      = "row wrap"
-         fxLayoutAlign = "space-between center">
+    <app-social-network-links *ngIf                = "socialNetworkLinks"
+                              [socialNetworkLinks] = "socialNetworkLinks">
+    </app-social-network-links>
 
-      <a *ngFor = "let socialNetworkLink of socialNetworkLinks"
-         mat-icon-button
-         color  = "primary"
-         fxFlex = "none"
-         [href] = "socialNetworkLink.link"
-         target = "_blank">
-
-        <mat-icon [svgIcon] = "socialNetworkLink.name"></mat-icon>
-      </a>
-
-    </div>
   </div>
   
 </div>

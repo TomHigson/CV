@@ -2,6 +2,12 @@
   background-repeat: repeat-x;
   background-position: center;
   background-size: auto 100%;
+  &.fixed-height {
+    min-height: 35vh;
+  }
+  &:not(.fixed-height) {
+    min-height: 350px;
+  }
 }
 
 .app-banner-portrait {
@@ -9,47 +15,23 @@
 
   //gives portrait sensible starting size while loading
   //Note: this will be replaced to fit the banner height once the text is loaded
-  height: 500px;
+  height: 350px;
 
-  //the flexbox places this in the middle. After this, offset slightly
-  transform: translatex(-300px);
-  -webkit-transform: translatex(-300px);  //compatability
+  &.offset {
+
+    //placed this in the middle. Offset slightly
+    transform: translatex(-300px);
+    -webkit-transform: translatex(-300px);  //compatability
+  }
 }
 
 .app-banner-content {
-  width: 700px;
+  width: 600px;
+  padding-left:30px;
+  padding-right:30px;
   padding-bottom:16px;
 
-  //the flexbox places this in the middle. After this, offset slightly
+  //placed in the middle. Offset slightly
   transform: translatex(300px);
   -webkit-transform: translatex(300px);  //compatability
-}
-.app-banner-text-box{
-  padding: 0px 30px 0px 30px;
-  min-height: 350px;
-}
-
-.app-banner-link-bar {
-  height: 64px;
-  width: 100%;
-
-  //this is a hack to get space-evenly to work on Edge and Safari
-  //(currently not working on them)
-  //places empty elements to the start and end of the flex box, to 
-  //turn space-between into a pseudo-space-evenly
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-  }
-
-  & a {
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-
-    & mat-icon {
-      transform: scale(1.5);
-    }
-  }
 }
