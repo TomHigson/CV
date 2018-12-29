@@ -13,6 +13,7 @@ import {CvService}    from '../cv.service';
 })
 export class TitleBarComponent implements OnInit {
   @Input() cvOwnersName:string = null;
+  @Input() lastModified:Date = null;
   @Input() cvOwnersEmail:string = null;
   @Input() currentTheme:string = null;
   @Output() themeChanged = new EventEmitter<string>();

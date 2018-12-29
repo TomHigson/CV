@@ -1,6 +1,7 @@
 import {Component,
         OnInit,
         HostListener}     from '@angular/core';
+import {HttpResponse}     from '@angular/common/http';
 import {Title}            from '@angular/platform-browser';
 import {OverlayContainer} from '@angular/cdk/overlay';
 import {MatIconRegistry}  from '@angular/material/icon';
@@ -10,7 +11,6 @@ import {CvService,
         Cv,
         Technology,
         Job}              from './cv.service';
-
 
 @Component({
   selector: 'app-root',
@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
   }
       
   cv:Cv = null; //currently shown cv
+  cvLastModified:Date = null; //the date the CV was last modified
   showingNavBar:boolean = false;
 
   initialJobsToShow:number = 100; //default to be changed later
@@ -63,10 +64,12 @@ export class AppComponent implements OnInit {
 
     //load cv
     this.cvService.getCv().subscribe(
-      (data:Cv) => {
-        this.cv = data;
+      (response:HttpResponse<Cv>) => {
+        this.cv = {...response.body};
         
-        this.titleService.setTitle(data.name + `'s CV`);
+        this.cvLastModified = new Date (response.headers.get(`last-modified`));
+
+        this.titleService.setTitle(this.cv.name + `'s CV`);
 
         for(let job of this.cv.jobs) {
 

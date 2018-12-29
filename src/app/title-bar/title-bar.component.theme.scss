@@ -9,4 +9,8 @@
   mat-toolbar {
     background: mat-color($background,background) !important;
   }
+
+  .title-modified-date {
+    color: mat-color($foreground,secondary-text);
+  }
 }

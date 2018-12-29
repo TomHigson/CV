@@ -3,6 +3,7 @@
   <!-- title bar -->
   <div class = "stick-to-top">
     <app-title-bar [cvOwnersName]  = "cv?.name"
+                   [lastModified]  = "cvLastModified"
                    [cvOwnersEmail] = "cv?.email"
                    [currentTheme]  = "currentTheme"
                    (themeChanged)  = "setTheme($event)">

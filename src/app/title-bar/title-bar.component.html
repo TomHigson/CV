@@ -13,9 +13,14 @@
          src   = "../assets/logo.png">
 
     <!-- title -->
-    <div *ngIf = "cvOwnersName"
-         fxShow [fxShow.lt-sm] = "false">
-      {{cvOwnersName}}'s CV
+    <div fxShow [fxShow.lt-sm] = "false">
+      <span *ngIf = "cvOwnersName">
+        {{cvOwnersName}}'s CV
+      </span>
+      <div *ngIf = "lastModified"
+           class = "title-modified-date">
+        Last updated: {{lastModified | date:'MMM yyyy'}}
+      </div>
     </div>
 
   </div>
@@ -25,15 +30,15 @@
        margin of the last element is erroneously added until mouse-over if the last element
        is removed at the same time as adding the penultimate element -->
   <div fxLayout    = "row"
-       fxLayoutGap = "30px">
+       fxLayoutGap = "30px"
+       fxFlex      = "none">
 
     <button mat-icon-button
             fxShow [fxShow.gt-sm] = "false"
             class      = "large-icon"
             matTooltip = "Switch theme"
             color      = "primary"
-            (click)    = 'toggleTheme()'
-            fxFlex     = "none">
+            (click)    = 'toggleTheme()'>
       <mat-icon [svgIcon] = "currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'"></mat-icon>
     </button>
 
@@ -42,7 +47,6 @@
             class      = "large-icon"
             matTooltip = "Download"
             color      = "primary"
-            fxFlex     = "none"
             [href]     = "cvService.getPdfUrl()"
             [download] = "cvOwnersName + '\'s CV' + '.pdf'">
       <mat-icon>arrow_downward</mat-icon>
@@ -53,7 +57,6 @@
             class      = "large-icon"
             matTooltip = "Contact"
             color      = "primary"
-            fxFlex     = "none"
             [href]     = "'mailto:' + cvOwnersEmail"
             target     = "_blank">
       <mat-icon>alternate_email</mat-icon>
@@ -62,13 +65,13 @@
 
   <!-- right aligned large buttons -->
   <div fxLayout    = "row"
-       fxLayoutGap = "30px">
+       fxLayoutGap = "30px"
+       fxFlex      = "none">
 
     <button mat-button
             fxShow [fxShow.lt-md] = "false"
             color   = "primary"
-            (click) = 'toggleTheme()'
-            fxFlex  = "none">
+            (click) = 'toggleTheme()'>
       <mat-icon [svgIcon] = "currentTheme==='dark-theme'?'lightbulb-off':'lightbulb-on'"></mat-icon>
       Switch theme
     </button>
@@ -76,7 +79,6 @@
     <a mat-button
             fxShow [fxShow.lt-md] = "false"
             color      = "primary"
-            fxFlex     = "none"
             [href]     = "cvService.getPdfUrl()"
             [download] = "cvOwnersName + '\'s CV' + '.pdf'">
       <mat-icon>arrow_downward</mat-icon>
@@ -86,7 +88,6 @@
     <a mat-button
             fxShow [fxShow.lt-md] = "false"
             color  = "primary"
-            fxFlex = "none"
             [href] = "'mailto:' + cvOwnersEmail"
             target = "_blank">
       <mat-icon>alternate_email</mat-icon>

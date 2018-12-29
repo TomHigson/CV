@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry, map} from 'rxjs/operators';
 
@@ -71,11 +71,16 @@ export class CvService {
   getPdfUrl():string {
     return this.config.pdfUrl;
   }
-  getCv():Observable<Cv> {
-    return this.http.get<Cv>(this.config.cvUrl)
+
+  //TODO: the last-modified header reflects the date of the cv's json file only.
+  //change such that changes to the the associated markdown files are also reflected
+  getCv():Observable<HttpResponse<Cv>> {
+    return this.http.get<Cv>(this.config.cvUrl, {observe:`response`})
       .pipe(
-        map (cv => {
+        map (response => {
           
+          let cv = response.body;
+
           //combine file names from cv json with urls from config
           if(cv.banner) cv.banner = this.config.photoUrl + cv.banner;
           if(cv.portrait) cv.portrait = this.config.photoUrl + cv.portrait;
@@ -106,7 +111,7 @@ export class CvService {
             }
           }
 
-          return cv;
+          return response;
         }),
         retry(3),
         catchError(this.handleCvGetError)
