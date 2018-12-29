@@ -11,7 +11,7 @@
   <!-- main content column -->
   <div fxLayout = "column" fxFlex>
 
-    <!-- header for job level, company, period of work -->
+    <!-- header for job level, company, period of work, contact details -->
     <!-- in line with company logo -->
     <div class         = "job-header"
          fxLayout      = "column"
@@ -22,22 +22,21 @@
         {{job.level}}
       </div>
 
-      <div fxLayout="row wrap">
+      <div>
 
-        <div class = "job-company">
+        <span class = "job-company">
           <a *ngIf = "job.link" [href] = "job.link">{{job.companyName}}</a>
           <span *ngIf = "!job.link">{{job.companyName}}</span>
-        </div>
+        </span>
         
-        <div class = "job-period"
-             *ngIf = "job?.start">
-            &nbsp;•
+        <span class = "job-period"
+              *ngIf = "job?.start">
             {{job.end?'':'since'}}
             {{job.start | date:'MMM yyyy'}}
             {{job.end?' – ':''}}
             {{job.end?(job.end | date:'MMM yyyy'):''}}
             {{getJobDurationString()}}
-        </div>
+        </span>
 
       </div>
 
@@ -55,16 +54,12 @@
     </div>
 
     <!-- job description and roles -->
-    <div fxLayout="column">
-
-      <markdown *ngIf  = "job?.description"
-                [src]  = "job.description"
-                (load) = "jobDescriptionLoadComplete()"></markdown>
-      <app-role *ngFor = "let role of job?.roles"
-                [role] = "role"
-                (load) = "roleLoadComplete($event)"></app-role>
-  
-    </div>
+    <markdown *ngIf  = "job?.description"
+              [src]  = "job.description"
+              (load) = "jobDescriptionLoadComplete()"></markdown>
+    <app-role *ngFor = "let role of job?.roles"
+              [role] = "role"
+              (load) = "roleLoadComplete($event)"></app-role>
 
     <!-- list of technologies used -->
     <ng-container *ngIf = "job?.technologies">

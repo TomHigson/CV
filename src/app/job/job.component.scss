@@ -18,4 +18,18 @@
 
 .job-company {
   font-weight: bold;
+
+  //insert space with background image that looks like a bullet
+  //this prevents the bullet from being selected as text and
+  //prevents it from being inserted if the period is on a new line,
+  //thanks to the period having white-space: nowrap
+  &:after {
+    content: " ";
+    letter-spacing: 1em;
+    background: center center no-repeat url("/assets/bullet.png");
+  }
+}
+
+.job-period {
+  white-space: nowrap;
 }
