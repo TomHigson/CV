@@ -3,6 +3,7 @@
   "email":"Thomas.Higson@gmail.com",
   "banner":"banner-background.jpg",
   "portrait":"banner-face.png",
+  "initialNumberOfShownJobs": "4",
   "twitter":"https://twitter.com/TaekHigson",
   "linkedIn":"https://www.linkedin.com/in/tomhigson/",
   "gitHub":"https://github.com/tomhigson",

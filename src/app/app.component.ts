@@ -35,9 +35,9 @@ export class AppComponent implements OnInit {
   cv:Cv = null; //currently shown cv
   showingNavBar:boolean = false;
 
-  INITIAL_JOBS_TO_SHOW:number = 4;
+  initialJobsToShow:number = 100; //default to be changed later
   shownJobs:Job[] = []; //filtered list of jobs for current view
-  truncatingJobs:boolean = true;  //whether the shown jobs include all jobs
+  truncatingJobs:boolean = false;  //whether the shown jobs include all jobs
   loadedJobs:Job[] = [];  //the set of jobs that have completed loading
   deferredLink:string = null; //if a link navigation is attempted but the element
                               //isn't loaded, the link is stored here for future use
@@ -90,12 +90,17 @@ export class AppComponent implements OnInit {
         }
 
         //filter jobs for initial view
-        if(this.cv.jobs.length <= this.INITIAL_JOBS_TO_SHOW) {
+        if(this.cv.initialNumberOfShownJobs) {
+          this.initialJobsToShow = this.cv.initialNumberOfShownJobs;
+        }
+
+        if(this.cv.jobs.length <= this.initialJobsToShow) {
           this.truncatingJobs = false;
+          this.shownJobs = this.cv.jobs;
         }
         else {
           this.truncatingJobs = true;
-          this.shownJobs = this.cv.jobs.slice(0,this.INITIAL_JOBS_TO_SHOW);
+          this.shownJobs = this.cv.jobs.slice(0,this.initialJobsToShow);
         }
         
       },

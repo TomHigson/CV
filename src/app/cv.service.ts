@@ -8,6 +8,7 @@ export interface Cv {
   email:string; //email to contact CV owner
   description:string; //name of the markdown file
   banner?:string;  //path to image to repeat in banner
+  initialNumberOfShownJobs?:number; //how many jobs to show before 'show more' button
   portrait?:string;  //path to image of the CV owner's face to draw in banner
   twitter?:string;  //user's twitter link
   linkedIn?:string;  //user's linkedIn link
