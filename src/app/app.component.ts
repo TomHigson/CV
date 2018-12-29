@@ -70,14 +70,6 @@ export class AppComponent implements OnInit {
 
         for(let job of this.cv.jobs) {
 
-          //convert dates from strings into JS Dates
-          if(job.start) {
-            job.start = new Date(job.start);
-          }
-          if(job.end) {
-            job.end = new Date(job.end);
-          }
-
           if(job.technologies) {
 
             //consolodate technologies into master list

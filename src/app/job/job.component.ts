@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {CvService, Job, Role}                           from '../cv.service';
+import {Job, Role}                           from '../cv.service';
 
 @Component({
   selector: 'app-job',
@@ -33,7 +33,7 @@ export class JobComponent implements OnInit {
     if(this.loadComplete()) this.load.emit(this.job);
   }
 
-  constructor(private cvService:CvService) {}
+  constructor() {}
   ngOnInit() {}
 
   getJobDurationString():string {

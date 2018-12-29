@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
-import { CvService } from '../cv.service';
+import {Component, OnInit, Input, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-banner',
@@ -30,7 +29,7 @@ export class BannerComponent implements OnInit{
 
   }
 
-  constructor(private cvService:CvService) {}
+  constructor() {}
   ngOnInit() {}
 
 }

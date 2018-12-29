@@ -1,5 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {CvService, Role}                                from '../cv.service';
+import {Role}                                from '../cv.service';
 @Component({
   selector: 'app-role',
   templateUrl: './role.component.html',
@@ -9,7 +9,7 @@ export class RoleComponent implements OnInit {
   @Input() role:Role = null;
   @Output () load = new EventEmitter<Role>();
 
-  constructor(private cvService:CvService) { }
+  constructor() {}
   ngOnInit() {}
 
   /**Notifies the parent component that the text content of the 

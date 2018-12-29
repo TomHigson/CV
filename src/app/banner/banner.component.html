@@ -1,10 +1,10 @@
 <div class         = "app-banner-background"
-     [style.background-image] = "backgroundImg ? 'url('+cvService.getPhotoUrl(backgroundImg)+')' : 'none'"
+     [style.background-image] = "backgroundImg ? 'url('+ backgroundImg +')' : 'none'"
      fxLayout      = "row"
      fxLayoutAlign = "center end">
 
   <img *ngIf = "portraitImg"
-       [src] = "cvService.getPhotoUrl(portraitImg)"
+       [src] = "portraitImg"
        class = "app-banner-portrait">
 
   <div class  = "app-banner-content">
@@ -12,7 +12,7 @@
     <div class = "app-banner-text-box">
       <h1>About me</h1>
       <markdown *ngIf  = "textUrl"
-                [src]  = "cvService.getTextUrl(textUrl)"
+                [src]  = "textUrl"
                 (load) = "resizePortrait()"></markdown>
     </div>
 

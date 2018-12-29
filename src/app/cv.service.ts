@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError, retry} from 'rxjs/operators';
+import {catchError, retry, map} from 'rxjs/operators';
 
 export interface Cv {
   name:string;  //the name of the person the CV describes
@@ -40,39 +40,64 @@ export interface Technology {
   name:string;
   link:string;
 }
+interface Config {
+  cvUrl:string,
+  pdfUrl:string,
+  photoUrl:string,
+  logoUrl:string,
+  textUrl:string
+}
 @Injectable({
   providedIn: 'root'
 })
 
 export class CvService {
 
-  //collected here for convinience
-  //future enhancement could be to get this from a config service
-  private config = {
+  private config:Config = {
     cvUrl:'src/backend/cvs/tomcv.json',
     pdfUrl: `src/backend/cvs/tomcv.pdf`,
     photoUrl:`src/backend/photos/`,
     logoUrl: `src/backend/logos/`,
     textUrl: `src/backend/text/`
   }
-  getPhotoUrl(name:string) {
-    return this.config.photoUrl + name;
-  }
-  getLogoUrl(name:string) {
-    return this.config.logoUrl + name;
-  }
-  getTextUrl(name:string) {
-    return this.config.textUrl + name;
-  }
-  getPdfUrl() {
+
+  constructor (private http:HttpClient) {}
+
+  getPdfUrl():string {
     return this.config.pdfUrl;
   }
-
-  constructor(private http: HttpClient) { }
-
   getCv():Observable<Cv> {
     return this.http.get<Cv>(this.config.cvUrl)
       .pipe(
+        map (cv => {
+          
+          //combine file names from cv json with urls from config
+          if(cv.banner) cv.banner = this.config.photoUrl + cv.banner;
+          if(cv.portrait) cv.portrait = this.config.photoUrl + cv.portrait;
+          cv.description = this.config.textUrl + cv.description;
+
+          for(let job of cv.jobs) {
+            job.logo = this.config.logoUrl + job.logo;
+            if(job.description) job.description = this.config.textUrl + job.description;
+
+            if(job.roles) {
+              for(let role of job.roles) {
+                if(role.description) role.description = this.config.textUrl + role.description;
+                if(role.image) role.image = this.config.photoUrl + role.image;
+              }
+            }
+
+            //convert dates from strings into JS Dates
+            if(job.start) {
+              job.start = new Date(job.start);
+            }
+            if(job.end) {
+              job.end = new Date(job.end);
+            }
+          }
+
+          return cv;
+        }),
         retry(3),
         catchError(this.handleCvGetError)
     );
