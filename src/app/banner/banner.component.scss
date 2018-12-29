@@ -18,6 +18,7 @@
 
 .app-banner-content {
   width: 700px;
+  padding-bottom:16px;
 
   //the flexbox places this in the middle. After this, offset slightly
   transform: translatex(300px);
@@ -31,7 +32,6 @@
 .app-banner-link-bar {
   height: 64px;
   width: 100%;
-  margin-bottom:16px;
 
   //this is a hack to get space-evenly to work on Edge and Safari
   //(currently not working on them)
@@ -42,13 +42,14 @@
     content: '';
     display: block;
   }
-}
 
-.app-banner-link-bar a mat-icon {
-  transform: scale(1.5);
-}
-.app-banner-link-bar a {
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
+  & a {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+
+    & mat-icon {
+      transform: scale(1.5);
+    }
+  }
 }
