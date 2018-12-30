@@ -1,10 +1,16 @@
 <h3>{{role?.position}}</h3>
 <div *ngIf = "role?.description">
-  <img *ngIf = "role?.image"
-       [src] = "role.image"
-       [alt] = "role.imageAlt"
+  <div *ngIf = "role?.image"
        [ngClass.lt-sm] = "{'fit-width':true}"
        [ngClass.gt-xs] = "{'float-to-right':true}">
+    <img [src] = "role.image"
+         [alt] = "role.imageAlt"
+         class = "role-image">
+    <div class = "caption"
+         *ngIf = "role?.imageAlt">
+      {{role.imageAlt}}
+    </div>
+  </div>
   <markdown [src]  = "role.description"
             (load) = "loadComplete()"></markdown>
 </div>

@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 @import './app/app.component.theme.scss';
 @import './app/job/job.component.theme.scss';
+@import './app/role/role.component.theme.scss';
 @import './app/title-bar/title-bar.component.theme.scss';
 @import './app/nav-bar/nav-bar.component.theme.scss';
 @import './app/tech-list/tech-list.component.theme.scss';
@@ -12,6 +13,7 @@
 @mixin themes-for-local-components($theme) {
   @include style-common($theme);
   @include job-component-style($theme);
+  @include role-component-style($theme);
   @include title-bar-component-style($theme);
   @include nav-bar-component-style($theme);
   @include tech-list-component-style($theme);
