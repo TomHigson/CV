@@ -4,11 +4,19 @@
 .role-title {
   font-weight:bold;
 }
-.role-image {
+.float-to-right {
   float: right;
   width: 350px;
   margin-left:   16px;
   margin-bottom: 16px;
+}
+.fit-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 @media print {

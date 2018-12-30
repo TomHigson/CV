@@ -3,7 +3,8 @@
   <img *ngIf = "role?.image"
        [src] = "role.image"
        [alt] = "role.imageAlt"
-       class = "role-image">
+       [ngClass.lt-sm] = "{'fit-width':true}"
+       [ngClass.gt-xs] = "{'float-to-right':true}">
   <markdown [src]  = "role.description"
             (load) = "loadComplete()"></markdown>
 </div>
