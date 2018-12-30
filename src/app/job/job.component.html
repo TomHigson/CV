@@ -1,15 +1,23 @@
-<div fxLayout    = "row"
-     fxLayoutGap = "30px"
-     [id]        = "job.id">
+<div fxLayout = "column"
+     class    = "padding-bottom"
+     [id]     = "job.id">
 
-  <!-- company logo column -->
+  <!-- company logo for small screens -->
   <img class       = "job-logo"
        [src]       = "job.logo"
        fxFlex      = "none"
-       fxFlexAlign = "start">
+       fxFlexAlign = "center"
+       fxShow [fxShow.gt-xs] = "false">
 
-  <!-- main content column -->
-  <div fxLayout = "column" fxFlex>
+  <div fxLayout    = "row"
+       fxLayoutGap = "30px">
+
+    <!-- company logo for large screens -->
+    <img class       = "job-logo"
+         [src]       = "job.logo"
+         fxFlex      = "none"
+         fxFlexAlign = "start"
+         fxShow [fxShow.lt-sm] = "false">
 
     <!-- header for job level, company, period of work, contact details -->
     <!-- in line with company logo -->
@@ -29,7 +37,7 @@
           <span *ngIf = "!job.link">{{job.companyName}}</span>
         </span>
         
-        <span class = "job-period"
+        <span class = "job-period avoid-wrap"
               *ngIf = "job?.start">
             {{job.end?'':'since'}}
             {{job.start | date:'MMM yyyy'}}
@@ -52,20 +60,23 @@
       </div>
 
     </div>
-
-    <!-- job description and roles -->
-    <markdown *ngIf  = "job?.description"
-              [src]  = "job.description"
-              (load) = "jobDescriptionLoadComplete()"></markdown>
-    <app-role *ngFor = "let role of job?.roles"
-              [role] = "role"
-              (load) = "roleLoadComplete($event)"></app-role>
-
-    <!-- list of technologies used -->
-    <ng-container *ngIf = "job?.technologies">
-      <h3>Technologies used</h3>
-      <app-tech-list [techs] = "job.technologies"></app-tech-list>
-    </ng-container>
-    
   </div>
+
+  <!-- job description and roles -->
+  <markdown *ngIf  = "job?.description"
+            [src]  = "job.description"
+            (load) = "jobDescriptionLoadComplete()"
+            [ngClass.gt-md] = "{'indent-to-company-logo':true}"></markdown>
+  <app-role *ngFor = "let role of job?.roles"
+            [role] = "role"
+            (load) = "roleLoadComplete($event)"
+            [ngClass.gt-md] = "{'indent-to-company-logo':true}"></app-role>
+
+  <!-- list of technologies used -->
+  <div *ngIf = "job?.technologies"
+       [ngClass.gt-md] = "{'indent-to-company-logo':true}">
+    <h3>Technologies used</h3>
+    <app-tech-list [techs] = "job.technologies"></app-tech-list>
+  </div>
+  
 </div>

@@ -19,10 +19,6 @@
 .job-company {
   font-weight: bold;
 
-  //insert space with background image that looks like a bullet
-  //this prevents the bullet from being selected as text and
-  //prevents it from being inserted if the period is on a new line,
-  //thanks to the period having white-space: nowrap
   &:after {
     content: " ";
     letter-spacing: 1em;
@@ -30,6 +26,10 @@
   }
 }
 
-.job-period {
-  white-space: nowrap;
+.indent-to-company-logo {
+  margin-left: 130px;
+}
+
+.padding-bottom {
+  padding-bottom: 60px;
 }
