@@ -37,8 +37,10 @@
       -webkit-transition: background-color 0.25s, color 0.25s;
     }
 
-    &:hover>.nav-bar-job-label {
-      background-color: rgba(mat-color($foreground,text), 0.05);
+    @media (hover: hover) {
+      &:hover>.nav-bar-job-label {
+        background-color: rgba(mat-color($foreground,text), 0.05);
+      }
     }
   }
 
