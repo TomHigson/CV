@@ -18,17 +18,21 @@ export class BannerComponent implements OnInit{
   // It is resized here to match its container height when the screen is resized
   @HostListener('window:resize', ['$event']) resizePortrait():void {
 
-    //get any portraits in the page (expect only 1)
-    let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
+    window.requestAnimationFrame(() => {  // do after other resizing
+      
+      //get any portraits in the page (expect only 1)
+      let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
 
-    Array.from(portraits).forEach(portrait => {
-      let container:HTMLElement = portrait.parentElement;
-      if (container.classList.contains(`fixed-height`)) {
-        (portrait as HTMLElement).style.height = `35vh`;
-      }
-      else {
-        (portrait as HTMLElement).style.height = container.offsetHeight + `px`;
-      }
+      Array.from(portraits).forEach(portrait => {
+        let container:HTMLElement = portrait.parentElement;
+        if (container.classList.contains(`fixed-height`)) {
+          (portrait as HTMLElement).style.height = `35vh`;
+        }
+        else {
+          (portrait as HTMLElement).style.height = container.offsetHeight + `px`;
+        }
+      });
+      
     });
   }
 
