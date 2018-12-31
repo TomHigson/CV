@@ -54,6 +54,13 @@
   span.avoid-wrap {
     display: inline-block;
   }
+
+  @media (max-width: 599px) {
+    h1,h2,h3 {
+      text-align: center;
+    }
+  }
+
 }
 
 html {
@@ -65,7 +72,7 @@ body {
   overflow-x: hidden;
 }
 
-//short-term fix for a strange issue in Firefox 63.0.3 where setting the
+//short-term fix for a strange issue in Firefox (observed in 63.0.3) where setting the
 //scroll-behaviour of the html element broke the sticky positioning of the nav-bar
 @-moz-document url-prefix() {
   body{
@@ -76,7 +83,9 @@ body {
   }
 }
 
-//used to disable trasition effects
+//short-term fix to disable trasition effects while the theme is changing
+//better solution would be to exclusively use angular transitions,
+//which bind transitions to states
 .no-transition * {
   -webkit-transition: none !important;
   -moz-transition:    none !important;

@@ -21,10 +21,11 @@
 
     <!-- header for job level, company, period of work, contact details -->
     <!-- in line with company logo -->
-    <div class         = "job-header"
-         fxLayout      = "column"
+    <div fxLayout      = "column"
          fxLayoutGap   = "6px"
-         fxLayoutAlign = "center">
+         fxLayoutAlign = "center"
+         [ngStyle.lt-sm] = "{'text-align': 'center'}"
+         fxFlex>
 
       <div class="job-level">
         {{job.level}}
