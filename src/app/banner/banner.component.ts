@@ -12,20 +12,24 @@ export class BannerComponent implements OnInit{
   @Input () backgroundImg:      string = null;
   @Input () portraitImg:        string = null;
 
-  // the portrait is absolute position as it is partially obscured by the text box
-  // This means that it cannot be resized automatically as part of a flex box
-  // Instead, it is resized here to match any container resized on screen resize
+  // for large displays, the portrait is partially obscured by a text box using
+  // absolute positioning. This means that it cannot easily be resized
+  // automatically with, for example, a flex box
+  // It is resized here to match its container height when the screen is resized
   @HostListener('window:resize', ['$event']) resizePortrait():void {
 
-    //get the height of the banner. If there are multiple, just use first one
-    let banners:HTMLCollectionOf<Element> = document.getElementsByClassName(`app-banner-background`);
-    let targetHeight:number = null;
-    if(banners.length) targetHeight=(banners[0] as HTMLElement).offsetHeight;
-    
-    //set the image height to be the same
+    //get any portraits in the page (expect only 1)
     let portraits:HTMLCollectionOf<Element> = document.getElementsByClassName('app-banner-portrait');
-    Array.from(portraits).forEach(portrait => (portrait as HTMLElement).style.height = targetHeight + `px`);
 
+    Array.from(portraits).forEach(portrait => {
+      let container:HTMLElement = portrait.parentElement;
+      if (container.classList.contains(`fixed-height`)) {
+        (portrait as HTMLElement).style.height = `35vh`;
+      }
+      else {
+        (portrait as HTMLElement).style.height = container.offsetHeight + `px`;
+      }
+    });
   }
 
   constructor() {}

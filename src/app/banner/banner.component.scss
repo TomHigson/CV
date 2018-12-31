@@ -3,19 +3,23 @@
   background-position: center;
   background-size: auto 100%;
   &.fixed-height {
-    min-height: 35vh;
+    height: 35vh;
+    & .app-banner-portrait {
+      height: 35vh;
+    }
   }
   &:not(.fixed-height) {
     min-height: 350px;
+    & .app-banner-portrait {
+    //give portrait sensible starting size while loading
+    //Note: this will be replaced to fit the banner height once the text is loaded
+    height: 350px;
+    }
   }
 }
 
 .app-banner-portrait {
   position: absolute;
-
-  //gives portrait sensible starting size while loading
-  //Note: this will be replaced to fit the banner height once the text is loaded
-  height: 350px;
 
   //ensure doesn't exceep screen width
   object-fit: cover;
