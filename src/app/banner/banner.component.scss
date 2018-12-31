@@ -17,6 +17,10 @@
   //Note: this will be replaced to fit the banner height once the text is loaded
   height: 350px;
 
+  //ensure doesn't exceep screen width
+  object-fit: cover;
+  max-width: 100vw;
+
   &.offset {
 
     //placed this in the middle. Offset slightly
