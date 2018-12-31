@@ -30,4 +30,8 @@ export class TitleBarComponent implements OnInit {
     this.currentTheme = this.currentTheme===`dark-theme`?`light-theme`:`dark-theme`;
     this.themeChanged.emit(this.currentTheme);
   }
+
+  getPdfUrl():string {
+    return this.cvService.getPdfUrl();
+  }
 }

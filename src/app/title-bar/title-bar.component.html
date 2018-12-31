@@ -47,7 +47,7 @@
             class      = "large-icon"
             matTooltip = "Download"
             color      = "primary"
-            [href]     = "cvService.getPdfUrl()"
+            [href]     = "getPdfUrl()"
             [download] = "cvOwnersName + '\'s CV' + '.pdf'">
       <mat-icon>arrow_downward</mat-icon>
     </a>
@@ -79,7 +79,7 @@
     <a mat-button
             fxShow [fxShow.lt-md] = "false"
             color      = "primary"
-            [href]     = "cvService.getPdfUrl()"
+            [href]     = "getPdfUrl()"
             [download] = "cvOwnersName + '\'s CV' + '.pdf'">
       <mat-icon>arrow_downward</mat-icon>
         Download
