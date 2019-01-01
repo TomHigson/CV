@@ -79,7 +79,7 @@
       word-wrap: break-word;
       
       //expand links
-      &a:after {
+      a:after {
         content:" (" attr(href) ") ";
       }
     }
