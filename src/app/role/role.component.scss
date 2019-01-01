@@ -4,33 +4,52 @@
 .role-title {
   font-weight:bold;
 }
-.role-image {
-  height: 100%;
-  width: 100%;
-}
-.float-to-right {
-  position: relative;
-  float: right;
-  width: 350px;
-  margin-left:   16px;
-  margin-bottom: 16px;
-}
-.fit-width {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-.caption {
-  position: absolute;
-  right: 0px;
-  bottom: 4px;
-  padding: 8px 20px;
-  text-align: right;
+
+@media screen {
+
+  .role-image {
+    height: 100%;
+    width: 100%;
+  }
+
+  .float-to-right {
+    position: relative;
+    float: right;
+    margin-left:   16px;
+    margin-bottom: 16px;
+    width: 350px;
+  }
+  .fit-width {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  .caption {
+    position: absolute;
+    right: 0px;
+    bottom: 4px;
+    padding: 8px 20px;
+    text-align: right;
+  }
 }
 
 @media print {
+
+  .role-image {
+    position: relative;
+    float: right;
+    margin-left:   16px;
+    margin-bottom: 16px;
+    width: 40%;
+  }
+
+  .caption {
+    display: none !important;
+  }
+
   app-role {page-break-inside: avoid;}
 }

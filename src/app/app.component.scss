@@ -1,39 +1,77 @@
-.stick-to-top {
-  position: sticky;
-  position: -webkit-sticky; /* For Safari */
-  top: 0;
-  z-index: 1000; /* Ensure draws over app content */
+@media screen {
+
+  .app-print-header,.app-print-footer {
+    display: none;
+  }
+
+  .stick-to-top {
+    position: sticky;
+    position: -webkit-sticky; /* For Safari */
+    top: 0;
+    z-index: 1000; /* Ensure draws over app content */
+  }
+
+  .app-padding {
+    padding-left:5vw;
+    padding-right:5vw;
+    padding-bottom:2.5vw;
+  }
+
+  .app-main-column {
+    max-width: 900px;
+  }
+
+  .app-side-column {
+    max-width: 400px;
+  }
+
+  .fill-space-below-title-bar {
+    position: sticky;
+    position: -webkit-sticky; /* For Safari */
+    top: calc(64px + 5vh);  //size of title bar (64px) + top margin (5vh)
+    min-height: 500px;
+    height: calc(90vh - 64px);  // screen height - bottom margin (2.5vh) - top margin (5vh) - title bar (64px)
+  }
+
+  app-nav-bar {
+    margin-left: 60px;
+    margin-top: 50px;
+  }
+
+  .show-more-button {
+    margin: auto;
+  }
+
 }
-.fill-space-below-title-bar {
-  position: sticky;
-  position: -webkit-sticky; /* For Safari */
-  top: calc(64px + 5vh);  //size of title bar (64px) + top margin (5vh)
-  min-height: 500px;
-  height: calc(90vh - 64px);  // screen height - bottom margin (2.5vh) - top margin (5vh) - title bar (64px)
+
+@media screen and (min-width: 1280px) {
+  .app-intro {
+    display: none;
+  }
 }
+
+@media print {
+  .app-print-header,.app-print-footer {
+    text-align: center;
+  }
+  .app-print-footer {
+    border-top: 1px solid #bbb;
+    padding-top: 20px;
+    display: block;
+  }
+  .app-major-section {
+    page-break-before: always;
+  }
+  .stick-to-top,.show-more-button,.app-side-column,.app-decoration,.app-interractive {
+    display: none !important;
+  }
+}
+
 .margin-above {
   margin-top: 30px;
 }
-.center_horizontally {
-  margin: auto;
-}
 
-.app-padding {
-  padding-left:5vw;
-  padding-right:5vw;
-  padding-bottom:2.5vw;
-}
-.app-main-column {
-  max-width: 900px;
-}
-.app-side-column {
-  max-width: 400px;
-  margin-top:  50px;
-}
 .app-fields-of-expertise {
   column-gap: 40px;
   column-count: 2;
-}
-app-nav-bar {
-  margin-left: 60px;
 }

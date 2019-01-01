@@ -9,4 +9,13 @@
   .tech-container div {
     background: opacify(mix(mat-color($foreground,text), mat-color($background,background), 10%),1);
   }
+
+  @media print {
+    .tech-container div {
+      //colour bullet points
+      &::before {
+        color: mat-color($primary);
+      }
+    }
+  }
 }

@@ -3,9 +3,9 @@
   <div *ngIf = "role?.image"
        [ngClass.lt-sm] = "{'fit-width':true}"
        [ngClass.gt-xs] = "{'float-to-right':true}">
-    <img [src] = "role.image"
-         [alt] = "role.imageAlt"
-         class = "role-image">
+    <img class = "role-image"
+         [src] = "role.image"
+         [alt] = "role.imageAlt">
     <div class = "caption"
          *ngIf = "role?.imageAlt">
       {{role.imageAlt}}

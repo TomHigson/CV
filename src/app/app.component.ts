@@ -36,6 +36,9 @@ export class AppComponent implements OnInit {
   cvLastModified:Date = null; //the date the CV was last modified
   showingNavBar:boolean = false;
 
+  currentTheme:string;
+
+  url:string = null;  //the url of the page, set during init
   initialJobsToShow:number = 100; //default to be changed later
   shownJobs:Job[] = []; //filtered list of jobs for current view
   truncatingJobs:boolean = false;  //whether the shown jobs include all jobs
@@ -47,8 +50,6 @@ export class AppComponent implements OnInit {
   //various parts of the CV with no duplicates
   combinedTechList:Technology[] = [];
 
-  currentTheme:string = 'dark-theme';
-
   errorMessage='';  //captures human readable load errors
   
   constructor(private cvService:CvService,
@@ -59,8 +60,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit():void {
 
+    this.url = document.URL;
+    
     //set theme for overlays
-    this.overlayContainer.getContainerElement().classList.add(this.currentTheme);
+    this.setTheme('dark-theme');
 
     //load cv
     this.cvService.getCv().subscribe(
@@ -142,20 +145,27 @@ export class AppComponent implements OnInit {
     //disable transitions so the theme change isn't animated
     document.body.classList.add(`no-transition`);
 
-    //change theme
-    this.currentTheme = themeName;
-
-    //re-enable transitions
-    //delay is a hack to ensure angular has enough time to do binding
-    setTimeout(function () {document.body.classList.remove('no-transition')}, 100);
-    
-    //also change theme of overlays
+    //remove old theme
+    if(this.currentTheme) {
+      document.body.classList.remove(this.currentTheme);
+    }
     const overlayContainerClasses = this.overlayContainer.getContainerElement().classList;
     const themeClassesToRemove = Array.from(overlayContainerClasses).filter((item: string) => item.includes('-theme'));
     if (themeClassesToRemove.length) {
        overlayContainerClasses.remove(...themeClassesToRemove);
     }
+
+    //apply new theme
+    //applying to body ensures the full app background will be coloured when loading
+    document.body.classList.add(themeName);
     overlayContainerClasses.add(themeName);
+
+    this.currentTheme = themeName;
+
+    //re-enable transitions
+    //delay is a hack to ensure angular has enough time to do binding
+    setTimeout(function () {document.body.classList.remove('no-transition')}, 100);
+
   }
 
   /**Stop job filtering */

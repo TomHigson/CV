@@ -1,92 +1,107 @@
-<div [class]="currentTheme">
-
-  <!-- title bar -->
-  <div class = "stick-to-top">
-    <app-title-bar [cvOwnersName]  = "cv?.name"
-                   [lastModified]  = "cvLastModified"
-                   [cvOwnersEmail] = "cv?.email"
-                   [currentTheme]  = "currentTheme"
-                   (themeChanged)  = "setTheme($event)">
-    </app-title-bar>
+<!-- title, for printing only -->
+<div class = "app-print-header">
+  <h1 *ngIf = "cv?.name">
+    {{cv.name}}'s<br>
+    Curriculum Vitae
+  </h1>
+  <div *ngIf = "cvLastModified">
+    Last updated: {{cvLastModified | date:'MMMM yyyy'}}
   </div>
-  
-  <div class = "mat-app-background">
-  
-    <!-- banner -->
-    <app-banner [socialNetworkLinks] = "cv?.socialNetworkLinks"
-                [textUrl]       = "cv?.description"
-                [backgroundImg] = "cv?.banner"
-                [portraitImg]   = "cv?.portrait"></app-banner>
-    
-    <!-- social network links -->
-    <div class = "margin-above"
-         *ngIf = "cv?.socialNetworkLinks"
-         fxShow [fxShow.gt-md] = "false">
-      <app-social-network-links [socialNetworkLinks]  = "cv?.socialNetworkLinks">
-      </app-social-network-links>
+  <div *ngIf = "cv?.email">
+      contact: {{cv.email}}
+  </div>
+</div>
+
+<!-- title bar -->
+<div class = "stick-to-top">
+  <app-title-bar [cvOwnersName]  = "cv?.name"
+                 [lastModified]  = "cvLastModified"
+                 [cvOwnersEmail] = "cv?.email"
+                 [currentTheme]  = "currentTheme"
+                 (themeChanged)  = "setTheme($event)">
+  </app-title-bar>
+</div>
+
+<!-- banner -->
+<app-banner [socialNetworkLinks] = "cv?.socialNetworkLinks"
+            [textUrl]       = "cv?.description"
+            [backgroundImg] = "cv?.banner"
+            [portraitImg]   = "cv?.portrait"
+            class           = "app-decoration"></app-banner>
+
+<!-- social network links -->
+<div class = "app-interractive margin-above"
+     *ngIf = "cv?.socialNetworkLinks"
+     fxShow [fxShow.gt-md] = "false">
+  <app-social-network-links [socialNetworkLinks]  = "cv?.socialNetworkLinks">
+  </app-social-network-links>
+</div>
+
+<!-- continer for main app -->
+<div class         = "app-padding"
+     fxLayout      = "row"
+     fxLayoutAlign = "center">
+
+  <!-- empty column to offset nav column -->
+  <div class  = "app-side-column"
+       fxShow [fxShow.lt-md] = "false"
+       fxFlex = "1 1 auto"></div>
+
+  <!-- main content column -->
+  <div class  = "app-main-column"
+       fxFlex = "0 1 900px">
+
+    <!-- about me
+         - small screens only, otherwise part of banner component -->
+    <div class = "app-intro"
+         *ngIf = "cv?.description">
+      <h1>About me</h1>
+      <markdown [src] = "cv.description"></markdown>
     </div>
 
-    <!-- continer for main app -->
-    <div class         = "app-padding"
-         fxLayout      = "row"
-         fxLayoutAlign = "center">
-
-      <!-- empty column to offset nav column -->
-      <div class  = "app-side-column"
-           fxShow [fxShow.lt-md] = "false"
-           fxFlex = "1 1 auto"></div>
-
-      <!-- main content column -->
-      <div class  = "app-main-column"
-           fxFlex = "0 1 900px">
-
-        <!-- about me
-             - small screens only, otherwise part of banner component -->
-        <div fxShow [fxShow.gt-md] = "false"
-             *ngIf = "cv?.description">
-          <h1>About me</h1>
-          <markdown [src] = "cv.description"></markdown>
-        </div>
-  
-        <!-- list of fields of expertise -->
-        <h1>Fields of expertise</h1>
-        <ul>
-          <div class = "app-fields-of-expertise">
-            <li *ngFor = "let field of cv?.fields">{{field}}</li>
-          </div>
-        </ul>
-
-        <!-- list of technologies used -->
-        <h1>Technology proficiencies</h1>
-        <app-tech-list [techs] = "combinedTechList"
-                       id      = "app-nav-bar-appear-point"></app-tech-list>
-
-        <h1>Experience</h1>
-        <!-- all jobs listed -->
-        <app-job *ngFor = "let job of shownJobs"
-                 [job]  = "job"
-                 (load) = "jobLoadComplete($event)"></app-job>
-
-        <!-- show more button -->
-        <button mat-button
-                class    = "center_horizontally"
-                fxLayout = "center"
-                *ngIf    = "truncatingJobs"
-                (click)  = "showAllJobs()">
-          SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
-        </button>
+    <!-- list of fields of expertise -->
+    <h1>Fields of expertise</h1>
+    <ul>
+      <div class = "app-fields-of-expertise">
+        <li *ngFor = "let field of cv?.fields">{{field}}</li>
       </div>
+    </ul>
 
-      <!-- nav bar column -->
-      <app-nav-bar fxShow [fxShow.lt-md] = "false"
-                   [visible] = "showingNavBar"
-                   fxFlex    = "0 1 350px"
-                   *ngIf     = "cv?.jobs.length > 1"
-                   class     = "fill-space-below-title-bar
-                                app-side-column"
-                   [jobs]    = "cv?.jobs"
-                   (linkNavigated) = navigateLink($event)></app-nav-bar>
-    </div>
+    <!-- list of technologies used -->
+    <h1>Technology proficiencies</h1>
+    <app-tech-list [techs] = "combinedTechList"
+                   id      = "app-nav-bar-appear-point"></app-tech-list>
 
+    <h1 class = "app-major-section">Experience</h1>
+    <!-- all jobs listed -->
+    <app-job *ngFor = "let job of shownJobs"
+             [job]  = "job"
+             (load) = "jobLoadComplete($event)"></app-job>
+
+    <!-- show more button -->
+    <button mat-button
+            class    = "show-more-button"
+            fxLayout = "center"
+            *ngIf    = "truncatingJobs"
+            (click)  = "showAllJobs()">
+      SHOW {{cv?.jobs.length - shownJobs.length}} OLDER POSITIONS
+    </button>
   </div>
+
+  <!-- nav bar column -->
+  <app-nav-bar fxShow [fxShow.lt-md] = "false"
+               [visible] = "showingNavBar"
+               fxFlex    = "0 1 350px"
+               *ngIf     = "cv?.jobs.length > 1"
+               class     = "fill-space-below-title-bar
+                            app-side-column"
+               [jobs]    = "cv?.jobs"
+               (linkNavigated) = navigateLink($event)></app-nav-bar>
+</div>
+
+<!-- footer, for printing only -->
+<div class = "app-print-footer"
+     *ngIf = "url">
+  <div class = avoid-wrap>This document is a printout of {{url}}</div>
+  Please visit for more details
 </div>

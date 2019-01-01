@@ -3,28 +3,26 @@
      [id]     = "job.id">
 
   <!-- company logo for small screens -->
-  <img class       = "job-logo"
+  <img class       = "job-logo small-only"
        [src]       = "job.logo"
        fxFlex      = "none"
-       fxFlexAlign = "center"
-       fxShow [fxShow.gt-xs] = "false">
+       fxFlexAlign = "center">
 
-  <div fxLayout    = "row"
+  <div class       = "job-header"
+       fxLayout    = "row"
        fxLayoutGap = "30px">
 
     <!-- company logo for large screens -->
-    <img class       = "job-logo"
+    <img class       = "job-logo large-only"
          [src]       = "job.logo"
          fxFlex      = "none"
-         fxFlexAlign = "start"
-         fxShow [fxShow.lt-sm] = "false">
+         fxFlexAlign = "start">
 
-    <!-- header for job level, company, period of work, contact details -->
+    <!-- text for job level, company, period of work, contact details -->
     <!-- in line with company logo -->
     <div fxLayout      = "column"
          fxLayoutGap   = "6px"
          fxLayoutAlign = "center"
-         [ngStyle.lt-sm] = "{'text-align': 'center'}"
          fxFlex>
 
       <div class="job-level">
@@ -75,6 +73,7 @@
 
   <!-- list of technologies used -->
   <div *ngIf = "job?.technologies"
+       class = "job-tech-list"
        [ngClass.gt-md] = "{'indent-to-company-logo':true}">
     <h3>Technologies used</h3>
     <app-tech-list [techs] = "job.technologies"></app-tech-list>

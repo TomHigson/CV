@@ -6,31 +6,12 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  // Styles for entire app
-
-  //change text selection colour
-  ::-moz-selection { //for Firefox
-    background:mat-color($primary);
-  }
-  ::selection { //for other browsers
-    background:mat-color($primary);
-  }
-  h1 {
-    margin-top:50px;
+  li::before {  //bullet colour
+    color: mat-color($primary);
   }
 
   a {
     text-decoration: none;
-    &:hover {
-    text-decoration: underline;
-    }
-    &:visited {
-    text-decoration: none;
-    }
-  }
-
-  li, p {
-    line-height:1.5;
   }
 
   ul {
@@ -46,21 +27,75 @@
   li > ul > li::before {
     content: "-";
   }
-  li > ul { //give 2nd level bullets margin similar to 1st level bullets
-    margin-top:12px;
-    margin-bottom:12px;
-  }
 
   span.avoid-wrap {
     display: inline-block;
   }
 
-  @media (max-width: 599px) {
+  @media screen {
+
+    //change text selection colour
+    ::-moz-selection { //for Firefox
+      background: mat-color($primary);
+    }
+    ::selection { //for other browsers
+      background: mat-color($primary);
+    }
+
+    li, p {
+      line-height: 1.5;
+      color:mat-color($foreground, secondary-text);
+    }
+    h1 {
+      margin-top:50px;
+    }
+    li > ul { //give 2nd level bullets margin similar to 1st level bullets
+      margin-top:12px;
+      margin-bottom:12px;
+    }
+
+    a {
+      color: mat-color($primary);
+      &:visited {
+        color: mix(mat-color($primary), mat-color($foreground, text), 70%);
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @media screen and (max-width: 599px) {
     h1,h2,h3 {
       text-align: center;
     }
   }
 
+  @media print{
+
+    markdown {
+      
+      //links may be long so allow to break
+      word-wrap: break-word;
+      
+      //expand links
+      &a:after {
+        content:" (" attr(href) ") ";
+      }
+    }
+
+    ul, img {
+      page-break-inside: avoid;
+    }
+
+    a {
+      color: black;
+    }
+  }
+}
+
+@page {
+  margin: 1.5cm 2cm;
 }
 
 html {

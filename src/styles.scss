@@ -1,5 +1,4 @@
 @import '~@angular/material/theming';
-@import './app/app.component.theme.scss';
 @import './app/job/job.component.theme.scss';
 @import './app/role/role.component.theme.scss';
 @import './app/title-bar/title-bar.component.theme.scss';
@@ -9,7 +8,6 @@
 @import './style-common.scss';
 
 // collected themes for all local components
-// that don't care about light or dark
 @mixin themes-for-local-components($theme) {
   @include style-common($theme);
   @include job-component-style($theme);
@@ -38,13 +36,20 @@ $dark-theme:  mat-dark-theme( $theme-primary, $theme-accent, $theme-warn);
 $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 
 // Define classes for each theme
-.dark-theme{
-  @include angular-material-theme($dark-theme);
-  @include themes-for-local-components($dark-theme);
-  @include app-component-style-dark($dark-theme);
-}
 .light-theme{
-  @include angular-material-theme($light-theme);
   @include themes-for-local-components($light-theme);
-  @include app-component-style-light($light-theme);
+  @include angular-material-theme($light-theme);
+}
+.dark-theme{
+
+  @include themes-for-local-components($dark-theme);
+
+  @media screen {
+    @include angular-material-theme($dark-theme);
+  }
+
+  //force light theme for printing
+  @media print {
+    @include angular-material-theme($light-theme);
+  }
 }

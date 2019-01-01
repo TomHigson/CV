@@ -1,7 +1,3 @@
-.job {
-  padding-bottom: 60px;
-}
-
 .job-logo {
   width :95px;
   height:95px;
@@ -26,6 +22,46 @@
   }
 }
 
-.indent-to-company-logo {
-  margin-left: 130px;
+@media screen {
+  .job {
+    padding-bottom: 60px;
+  }
+  
+  .indent-to-company-logo {
+    margin-left: 130px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .small-only {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .large-only {
+    display: none;
+  }
+  .job-header {
+    text-align: center;
+  }
+}
+
+@media print {
+  .job {
+    padding-bottom: 20px;
+  }
+  
+  .job-tech-list {
+    display: none;
+  }
+
+  .job-logo.small-only {
+    display: none;
+  }
+
+  .job-header {
+    page-break-before: avoid;
+    page-break-inside: avoid;
+  }
 }
