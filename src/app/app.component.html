@@ -60,7 +60,7 @@
     </div>
 
     <!-- list of fields of expertise -->
-    <h1>Fields of expertise</h1>
+    <h1 *ngIf = "cv?.fields">Fields of expertise</h1>
     <ul>
       <div class = "app-fields-of-expertise">
         <li *ngFor = "let field of cv?.fields">{{field}}</li>
@@ -68,15 +68,17 @@
     </ul>
 
     <!-- list of technologies used -->
-    <h1>Technology proficiencies</h1>
+    <h1 *ngIf = "combinedTechList?.length">Technology proficiencies</h1>
     <app-tech-list [techs] = "combinedTechList"
                    id      = "app-nav-bar-appear-point"></app-tech-list>
 
-    <h1 class = "app-major-section">Experience</h1>
-    <!-- all jobs listed -->
-    <app-job *ngFor = "let job of shownJobs"
-             [job]  = "job"
-             (load) = "jobLoadComplete($event)"></app-job>
+    <ng-container *ngIf = "cv?.jobs">
+      <h1 class = "app-major-section">Experience</h1>
+      <!-- all jobs listed -->
+      <app-job *ngFor = "let job of shownJobs"
+               [job]  = "job"
+               (load) = "jobLoadComplete($event)"></app-job>
+    </ng-container>
 
     <!-- show more button -->
     <button mat-button

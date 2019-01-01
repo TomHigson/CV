@@ -11,8 +11,8 @@ export interface Cv {
   socialNetworkLinks?:SocialNetworkLink[];
   initialNumberOfShownJobs?:number; //how many jobs to show before 'show more' button
   portrait?:string;  //path to image of the CV owner's face to draw in banner
-  fields:string[];
-  jobs:Job[];
+  fields?:string[];
+  jobs?:Job[];
 }
 export interface Job {
   id:string;  //unique identifier. Used to set navigation links. Should be alphanumeric
