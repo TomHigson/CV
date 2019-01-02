@@ -22,7 +22,15 @@
   }
 
   .app-side-column {
+
+    //remove side bars if sticky not supported
+    display: none;
+    @supports (position:sticky) {
+      display: unset;
+    }
+
     max-width: 400px;
+
   }
 
   .fill-space-below-title-bar {
