@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry, map} from 'rxjs/operators';
-
 export interface Cv {
   name:string;  //the name of the person the CV describes
   email:string; //email to contact CV owner
@@ -44,12 +43,12 @@ export interface SocialNetworkLink {
   link:string;
 }
 interface Config {
-  cvUrl:string,
-  pdfUrl:string,
-  photoUrl:string,
-  logoUrl:string,
-  textUrl:string,
-  iconUrl:string
+  cvUrl:   string;
+  pdfUrl:  string;
+  photoUrl:string;
+  logoUrl: string;
+  textUrl: string;
+  iconUrl: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -57,15 +56,7 @@ interface Config {
 
 export class CvService {
 
-  private config:Config = {
-    cvUrl:'src/backend/cvs/tomcv.json',
-    pdfUrl: `src/backend/cvs/tomcv.pdf`,
-    photoUrl:`src/backend/photos/`,
-    logoUrl: `src/backend/logos/`,
-    textUrl: `src/backend/text/`,
-    iconUrl: `src/backend/icons/`
-  }
-
+  config:Config = require('./config.json');
   constructor (private http:HttpClient) {}
 
   getPdfUrl():string {

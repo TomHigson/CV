@@ -1,0 +1,8 @@
+{
+  "cvUrl":   "somewhere/cvname.json",
+  "pdfUrl":  "somewhere/cvname.pdf",
+  "photoUrl":"somewhere/",
+  "logoUrl": "somewhere/",
+  "textUrl": "somewhere/",
+  "iconUrl": "somewhere/"
+}
