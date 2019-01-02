@@ -5,10 +5,18 @@
   }
 
   .stick-to-top {
-    position: sticky;
-    position: -webkit-sticky; /* For Safari */
+    
+    position: fixed;  //fallback for browsers that don't support sticky
+
+    @supports (position:sticky) {
+      position: sticky;
+      position: -webkit-sticky; /* For Safari */
+    }
+
     top: 0;
     z-index: 1000; /* Ensure draws over app content */
+    width: 100%;
+    
   }
 
   .app-padding {
