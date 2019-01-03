@@ -1,8 +1,7 @@
 {
-  "cvUrl":   "somewhere/cvname.json",
-  "pdfUrl":  "somewhere/cvname.pdf",
-  "photoUrl":"somewhere/",
-  "logoUrl": "somewhere/",
-  "textUrl": "somewhere/",
-  "iconUrl": "somewhere/"
+  "cvUrl":    "/assets/temp/cvs/tomcv.json",
+  "pdfUrl":   "/assets/temp/cvs/tomcv.pdf",
+  "imagesUrl":"/assets/temp/images/",
+  "textUrl":  "/assets/temp/text/",
+  "iconsUrl":  "/assets/temp/icons/"
 }

@@ -43,12 +43,11 @@ export interface SocialNetworkLink {
   link:string;
 }
 interface Config {
-  cvUrl:   string;
-  pdfUrl:  string;
-  photoUrl:string;
-  logoUrl: string;
-  textUrl: string;
-  iconUrl: string;
+  cvUrl:     string;
+  pdfUrl:   string;
+  imagesUrl:string;
+  textUrl:  string;
+  iconsUrl: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -73,23 +72,23 @@ export class CvService {
           let cv = response.body;
 
           //combine file names from cv json with urls from config
-          if(cv.banner) cv.banner = this.config.photoUrl + cv.banner;
-          if(cv.portrait) cv.portrait = this.config.photoUrl + cv.portrait;
+          if(cv.banner) cv.banner = this.config.imagesUrl + cv.banner;
+          if(cv.portrait) cv.portrait = this.config.imagesUrl + cv.portrait;
           cv.description = this.config.textUrl + cv.description;
 
           if(cv.socialNetworkLinks) {
             for (let socialNetworkLink of cv.socialNetworkLinks) {
-              socialNetworkLink.icon = this.config.iconUrl + socialNetworkLink.icon;
+              socialNetworkLink.icon = this.config.iconsUrl + socialNetworkLink.icon;
             }
           }
           for(let job of cv.jobs) {
-            job.logo = this.config.logoUrl + job.logo;
+            job.logo = this.config.imagesUrl + job.logo;
             if(job.description) job.description = this.config.textUrl + job.description;
 
             if(job.roles) {
               for(let role of job.roles) {
                 if(role.description) role.description = this.config.textUrl + role.description;
-                if(role.image) role.image = this.config.photoUrl + role.image;
+                if(role.image) role.image = this.config.imagesUrl + role.image;
               }
             }
 
