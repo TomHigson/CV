@@ -44,11 +44,15 @@
     float: right;
     margin-left:   16px;
     margin-bottom: 16px;
-    width: 40%;
+    width: 40vw;
   }
 
   .caption {
     display: none !important;
+  }
+
+  h3 {
+    margin-top: 10px;
   }
 
   app-role {page-break-inside: avoid;}
