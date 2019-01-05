@@ -42,14 +42,14 @@ $light-theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
 }
 .dark-theme{
 
-  @include themes-for-local-components($dark-theme);
-
   @media screen {
+    @include themes-for-local-components($dark-theme);
     @include angular-material-theme($dark-theme);
   }
 
   //force light theme for printing
   @media print {
+    @include themes-for-local-components($light-theme);
     @include angular-material-theme($light-theme);
   }
 }
