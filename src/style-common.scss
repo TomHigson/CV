@@ -73,7 +73,7 @@
 
   @media print{
 
-    markdown {
+    app-role markdown {
       
       //links may be long so allow to break
       word-wrap: break-word;
@@ -84,12 +84,12 @@
       }
     }
 
-    ul, img {
+    img {
       page-break-inside: avoid;
     }
 
     a {
-      color: black;
+      color: mat-color($foreground, text);
     }
   }
 }
