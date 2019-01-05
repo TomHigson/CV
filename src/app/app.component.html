@@ -5,10 +5,10 @@
     Curriculum Vitae
   </h1>
   <div *ngIf = "cvLastModified">
-    Last updated: {{cvLastModified | date:'MMMM yyyy'}}
+    Last updated {{cvLastModified | date:'MMMM yyyy'}}
   </div>
   <div *ngIf = "cv?.email">
-      Contact: {{cv.email}}
+      Contact {{cv.email}}
   </div>
 </div>
 
