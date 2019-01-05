@@ -1,3 +1,12 @@
+.margin-above {
+  margin-top: 30px;
+}
+
+.app-fields-of-expertise {
+  column-gap: 40px;
+  column-count: 2;
+}
+
 @media screen {
 
   .app-print-header,.app-print-footer {
@@ -81,13 +90,4 @@
   .stick-to-top,.show-more-button,.app-side-column,.app-decoration,.app-interractive {
     display: none !important;
   }
-}
-
-.margin-above {
-  margin-top: 30px;
-}
-
-.app-fields-of-expertise {
-  column-gap: 40px;
-  column-count: 2;
 }
